@@ -301,5 +301,7 @@
   <qemu:commandline>
     <qemu:arg value='-cpu'/>
     <qemu:arg value='host,vendor=GenuineIntel,+invtsc,kvm=on'/>
+    <qemu:arg value='-device'/>
+    <qemu:arg value='isa-applesmc,osk="ourhardworkbythesewordsguardedpleasedontsteal(c)AppleComputerInc"'/>
   </qemu:commandline>
 </domain>
