@@ -58,14 +58,11 @@
     <acpi/>
     <apic/>
   </features>
-  <cpu mode='host-passthrough' check='none'>
+  <cpu mode='custom' check='none'>
+    <model fallback='forbid'>Cascadelake-Server</model>
     <topology sockets='1' dies='1' cores='16' threads='2'/>
-    <cache mode='passthrough'/>
-    <feature policy='require' name='topoext'/>
   </cpu>
-  <clock offset='utc'>
-    <timer name='rtc' tickpolicy='catchup'/>
-    <timer name='pit' tickpolicy='delay'/>
+  <clock offset='localtime'>
     <timer name='hpet' present='no'/>
   </clock>
   <on_poweroff>destroy</on_poweroff>
@@ -344,6 +341,6 @@
     <qemu:arg value='-device'/>
     <qemu:arg value='isa-applesmc,osk=ourhardworkbythesewordsguardedpleasedontsteal(c)AppleComputerInc'/>
     <qemu:arg value='-cpu'/>
-    <qemu:arg value='host,vendor=GenuineIntel,+invtsc,kvm=on,vmware-cpuid-freq=on'/>
+    <qemu:arg value='Cascadelake-Server,vendor=GenuineIntel,+invtsc,kvm=on,vmware-cpuid-freq=on'/>
   </qemu:commandline>
 </domain>
