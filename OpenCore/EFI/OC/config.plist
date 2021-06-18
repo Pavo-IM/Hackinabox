@@ -59,6 +59,8 @@
 			<false/>
 			<key>ResetLogoStatus</key>
 			<false/>
+			<key>SyncTableIds</key>
+			<false/>
 		</dict>
 	</dict>
 	<key>Booter</key>
@@ -74,7 +76,7 @@
 			<key>AvoidRuntimeDefrag</key>
 			<true/>
 			<key>DevirtualiseMmio</key>
-			<true/>
+			<false/>
 			<key>DisableSingleUser</key>
 			<false/>
 			<key>DisableVariableWrite</key>
@@ -119,201 +121,18 @@
 	<key>Kernel</key>
 	<dict>
 		<key>Add</key>
-		<array>
-			<dict>
-				<key>Arch</key>
-				<string>x86_64</string>
-				<key>BundlePath</key>
-				<string>USB-Map.kext</string>
-				<key>Enabled</key>
-				<true/>
-				<key>MaxKernel</key>
-				<string></string>
-				<key>MinKernel</key>
-				<string></string>
-				<key>PlistPath</key>
-				<string>Contents/Info.plist</string>
-			</dict>
-			<dict>
-				<key>Arch</key>
-				<string>x86_64</string>
-				<key>BundlePath</key>
-				<string>LogiWheelDriver.kext</string>
-				<key>Enabled</key>
-				<true/>
-				<key>ExecutablePath</key>
-				<string>Contents/MacOS/LogiWheelDriver</string>
-				<key>MaxKernel</key>
-				<string></string>
-				<key>MinKernel</key>
-				<string></string>
-				<key>PlistPath</key>
-				<string>Contents/Info.plist</string>
-			</dict>
-			<dict>
-				<key>Arch</key>
-				<string>x86_64</string>
-				<key>BundlePath</key>
-				<string>LogiGamingMouseFilter.kext</string>
-				<key>Enabled</key>
-				<true/>
-				<key>ExecutablePath</key>
-				<string>Contents/MacOS/LogiGamingMouseFilter</string>
-				<key>MaxKernel</key>
-				<string></string>
-				<key>MinKernel</key>
-				<string></string>
-				<key>PlistPath</key>
-				<string>Contents/Info.plist</string>
-			</dict>
-			<dict>
-				<key>Arch</key>
-				<string>x86_64</string>
-				<key>BundlePath</key>
-				<string>AnVMSR.kext</string>
-				<key>Enabled</key>
-				<true/>
-				<key>ExecutablePath</key>
-				<string>Contents/MacOS/AnVMSR</string>
-				<key>MaxKernel</key>
-				<string></string>
-				<key>MinKernel</key>
-				<string></string>
-				<key>PlistPath</key>
-				<string>Contents/Info.plist</string>
-			</dict>
-			<dict>
-				<key>Arch</key>
-				<string>x86_64</string>
-				<key>BundlePath</key>
-				<string>Lilu.kext</string>
-				<key>Enabled</key>
-				<true/>
-				<key>ExecutablePath</key>
-				<string>Contents/MacOS/Lilu</string>
-				<key>MaxKernel</key>
-				<string></string>
-				<key>MinKernel</key>
-				<string></string>
-				<key>PlistPath</key>
-				<string>Contents/Info.plist</string>
-			</dict>
-			<dict>
-				<key>Arch</key>
-				<string>x86_64</string>
-				<key>BundlePath</key>
-				<string>AirportBrcmFixup.kext/Contents/PlugIns/AirPortBrcmNIC_Injector.kext</string>
-				<key>Enabled</key>
-				<true/>
-				<key>MaxKernel</key>
-				<string></string>
-				<key>MinKernel</key>
-				<string></string>
-				<key>PlistPath</key>
-				<string>Contents/Info.plist</string>
-			</dict>
-			<dict>
-				<key>Arch</key>
-				<string>x86_64</string>
-				<key>BundlePath</key>
-				<string>AirportBrcmFixup.kext</string>
-				<key>Enabled</key>
-				<true/>
-				<key>ExecutablePath</key>
-				<string>Contents/MacOS/AirportBrcmFixup</string>
-				<key>MaxKernel</key>
-				<string></string>
-				<key>MinKernel</key>
-				<string></string>
-				<key>PlistPath</key>
-				<string>Contents/Info.plist</string>
-			</dict>
-			<dict>
-				<key>Arch</key>
-				<string>x86_64</string>
-				<key>BundlePath</key>
-				<string>BrcmBluetoothInjector.kext</string>
-				<key>Enabled</key>
-				<true/>
-				<key>MaxKernel</key>
-				<string></string>
-				<key>MinKernel</key>
-				<string></string>
-				<key>PlistPath</key>
-				<string>Contents/Info.plist</string>
-			</dict>
-			<dict>
-				<key>Arch</key>
-				<string>x86_64</string>
-				<key>BundlePath</key>
-				<string>BrcmFirmwareData.kext</string>
-				<key>Enabled</key>
-				<true/>
-				<key>ExecutablePath</key>
-				<string>Contents/MacOS/BrcmFirmwareData</string>
-				<key>MaxKernel</key>
-				<string></string>
-				<key>MinKernel</key>
-				<string></string>
-				<key>PlistPath</key>
-				<string>Contents/Info.plist</string>
-			</dict>
-			<dict>
-				<key>Arch</key>
-				<string>x86_64</string>
-				<key>BundlePath</key>
-				<string>BrcmPatchRAM3.kext</string>
-				<key>Enabled</key>
-				<true/>
-				<key>ExecutablePath</key>
-				<string>Contents/MacOS/BrcmPatchRAM3</string>
-				<key>MaxKernel</key>
-				<string></string>
-				<key>MinKernel</key>
-				<string></string>
-				<key>PlistPath</key>
-				<string>Contents/Info.plist</string>
-			</dict>
-			<dict>
-				<key>Arch</key>
-				<string>x86_64</string>
-				<key>BundlePath</key>
-				<string>AGPMInjector.kext</string>
-				<key>Enabled</key>
-				<true/>
-				<key>MaxKernel</key>
-				<string></string>
-				<key>MinKernel</key>
-				<string></string>
-				<key>PlistPath</key>
-				<string>Contents/Info.plist</string>
-			</dict>
-			<dict>
-				<key>Arch</key>
-				<string>x86_64</string>
-				<key>BundlePath</key>
-				<string>SmallTreeIntel82576.kext</string>
-				<key>Enabled</key>
-				<true/>
-				<key>ExecutablePath</key>
-				<string>Contents/MacOS/SmallTreeIntel82576</string>
-				<key>MaxKernel</key>
-				<string></string>
-				<key>MinKernel</key>
-				<string></string>
-				<key>PlistPath</key>
-				<string>Contents/Info.plist</string>
-			</dict>
-		</array>
+		<array/>
 		<key>Block</key>
 		<array/>
 		<key>Emulate</key>
 		<dict>
 			<key>Cpuid1Data</key>
 			<data>
+			VwYFAAAAAAAAAAAAAAAAAA==
 			</data>
 			<key>Cpuid1Mask</key>
 			<data>
+			/////wAAAAAAAAAAAAAAAA==
 			</data>
 			<key>DummyPowerManagement</key>
 			<false/>
@@ -325,45 +144,7 @@
 		<key>Force</key>
 		<array/>
 		<key>Patch</key>
-		<array>
-			<dict>
-				<key>Arch</key>
-				<string>x86_64</string>
-				<key>Base</key>
-				<string>_cpu_topology_sort</string>
-				<key>Comment</key>
-				<string>algrey - cpu_topology_sort -disable _x86_validate_topology</string>
-				<key>Count</key>
-				<integer>1</integer>
-				<key>Enabled</key>
-				<true/>
-				<key>Find</key>
-				<data>
-				6AAA//8=
-				</data>
-				<key>Identifier</key>
-				<string>kernel</string>
-				<key>Limit</key>
-				<integer>0</integer>
-				<key>Mask</key>
-				<data>
-				/wAA//8=
-				</data>
-				<key>MaxKernel</key>
-				<string>20.99.99</string>
-				<key>MinKernel</key>
-				<string>17.0.0</string>
-				<key>Replace</key>
-				<data>
-				Dx9EAAA=
-				</data>
-				<key>ReplaceMask</key>
-				<data>
-				</data>
-				<key>Skip</key>
-				<integer>0</integer>
-			</dict>
-		</array>
+		<array/>
 		<key>Quirks</key>
 		<dict>
 			<key>AppleCpuPmCfgLock</key>
@@ -398,6 +179,8 @@
 			<true/>
 			<key>PowerTimeoutKernelPanic</key>
 			<true/>
+			<key>ProvideCurrentCpuInfo</key>
+			<false/>
 			<key>SetApfsTrimTimeout</key>
 			<integer>-1</integer>
 			<key>ThirdPartyDrives</key>
@@ -436,7 +219,7 @@
 			<key>PickerAudioAssist</key>
 			<false/>
 			<key>PickerMode</key>
-			<string>External</string>
+			<string>Builtin</string>
 			<key>PickerVariant</key>
 			<string>Auto</string>
 			<key>PollAppleHotKeys</key>
@@ -475,6 +258,8 @@
 			<true/>
 			<key>AllowSetDefault</key>
 			<true/>
+			<key>AllowToggleSip</key>
+			<false/>
 			<key>ApECID</key>
 			<integer>0</integer>
 			<key>AuthRestart</key>
@@ -522,12 +307,18 @@
 			</dict>
 			<key>4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102</key>
 			<dict>
+				<key>revcpu</key>
+				<integer>1</integer>
+				<key>revcpuname</key>
+				<string>32-Core AMD Ryzen Threadripper 3970X</string>
 				<key>rtc-blacklist</key>
 				<data>
 				</data>
 			</dict>
 			<key>7C436110-AB2A-4BBB-A880-FE41995C9F82</key>
 			<dict>
+				<key>ForceDisplayRotationInEFI</key>
+				<integer>0</integer>
 				<key>SystemAudioVolume</key>
 				<data>
 				Rg==
@@ -598,10 +389,10 @@
 		<key>Automatic</key>
 		<true/>
 		<key>CustomMemory</key>
-		<true/>
+		<false/>
 		<key>Generic</key>
 		<dict>
-			<key>AdviseWindows</key>
+			<key>AdviseFeatures</key>
 			<false/>
 			<key>MLB</key>
 			<string></string>
@@ -629,235 +420,20 @@
 			<integer>64</integer>
 			<key>Devices</key>
 			<array>
-				<dict>
-					<key>AssetTag</key>
-					<string></string>
-					<key>BankLocator</key>
-					<string>P0 CHANNEL A</string>
-					<key>DeviceLocator</key>
-					<string>DIMM 0</string>
-					<key>Manufacturer</key>
-					<string>Corsair</string>
-					<key>PartNumber</key>
-					<string>CMW64GX4M4C3200C16</string>
-					<key>SerialNumber</key>
-					<string>00000000</string>
-					<key>Size</key>
-					<integer>16384</integer>
-					<key>Speed</key>
-					<integer>3200</integer>
-				</dict>
-				<dict>
-					<key>AssetTag</key>
-					<string></string>
-					<key>BankLocator</key>
-					<string>P0 CHANNEL A</string>
-					<key>DeviceLocator</key>
-					<string>DIMM 1</string>
-					<key>Manufacturer</key>
-					<string>Corsair</string>
-					<key>PartNumber</key>
-					<string>CMW64GX4M4C3200C16</string>
-					<key>SerialNumber</key>
-					<string>00000000</string>
-					<key>Size</key>
-					<integer>16384</integer>
-					<key>Speed</key>
-					<integer>3200</integer>
-				</dict>
-				<dict>
-					<key>AssetTag</key>
-					<string></string>
-					<key>BankLocator</key>
-					<string>P0 CHANNEL B</string>
-					<key>DeviceLocator</key>
-					<string>DIMM 0</string>
-					<key>Manufacturer</key>
-					<string>Corsair</string>
-					<key>PartNumber</key>
-					<string>CMW64GX4M4C3200C16</string>
-					<key>SerialNumber</key>
-					<string>00000000</string>
-					<key>Size</key>
-					<integer>16384</integer>
-					<key>Speed</key>
-					<integer>3200</integer>
-				</dict>
-				<dict>
-					<key>AssetTag</key>
-					<string></string>
-					<key>BankLocator</key>
-					<string>P0 CHANNEL B</string>
-					<key>DeviceLocator</key>
-					<string>DIMM 1</string>
-					<key>Manufacturer</key>
-					<string>Corsair</string>
-					<key>PartNumber</key>
-					<string>CMW64GX4M4C3200C16</string>
-					<key>SerialNumber</key>
-					<string>00000000</string>
-					<key>Size</key>
-					<integer>16384</integer>
-					<key>Speed</key>
-					<integer>3200</integer>
-				</dict>
-				<dict>
-					<key>AssetTag</key>
-					<string></string>
-					<key>BankLocator</key>
-					<string>P0 CHANNEL C</string>
-					<key>DeviceLocator</key>
-					<string>DIMM 0</string>
-					<key>Manufacturer</key>
-					<string>Acidanthera</string>
-					<key>PartNumber</key>
-					<string></string>
-					<key>SerialNumber</key>
-					<string></string>
-					<key>Size</key>
-					<integer>1</integer>
-					<key>Speed</key>
-					<integer>3200</integer>
-				</dict>
-				<dict>
-					<key>AssetTag</key>
-					<string></string>
-					<key>BankLocator</key>
-					<string>P0 CHANNEL C</string>
-					<key>DeviceLocator</key>
-					<string>DIMM 1</string>
-					<key>Manufacturer</key>
-					<string>Acidanthera</string>
-					<key>PartNumber</key>
-					<string></string>
-					<key>SerialNumber</key>
-					<string></string>
-					<key>Size</key>
-					<integer>1</integer>
-					<key>Speed</key>
-					<integer>3200</integer>
-				</dict>
-				<dict>
-					<key>AssetTag</key>
-					<string></string>
-					<key>BankLocator</key>
-					<string>P0 CHANNEL D</string>
-					<key>DeviceLocator</key>
-					<string>DIMM 0</string>
-					<key>Manufacturer</key>
-					<string>Acidanthera</string>
-					<key>PartNumber</key>
-					<string></string>
-					<key>SerialNumber</key>
-					<string></string>
-					<key>Size</key>
-					<integer>1</integer>
-					<key>Speed</key>
-					<integer>3200</integer>
-				</dict>
-				<dict>
-					<key>AssetTag</key>
-					<string></string>
-					<key>BankLocator</key>
-					<string>P0 CHANNEL D</string>
-					<key>DeviceLocator</key>
-					<string>DIMM 1</string>
-					<key>Manufacturer</key>
-					<string>Acidanthera</string>
-					<key>PartNumber</key>
-					<string></string>
-					<key>SerialNumber</key>
-					<string></string>
-					<key>Size</key>
-					<integer>1</integer>
-					<key>Speed</key>
-					<integer>3200</integer>
-				</dict>
-				<dict>
-					<key>AssetTag</key>
-					<string></string>
-					<key>BankLocator</key>
-					<string>P0 CHANNEL E</string>
-					<key>DeviceLocator</key>
-					<string>DIMM 0</string>
-					<key>Manufacturer</key>
-					<string>Acidanthera</string>
-					<key>PartNumber</key>
-					<string></string>
-					<key>SerialNumber</key>
-					<string></string>
-					<key>Size</key>
-					<integer>1</integer>
-					<key>Speed</key>
-					<integer>3200</integer>
-				</dict>
-				<dict>
-					<key>AssetTag</key>
-					<string></string>
-					<key>BankLocator</key>
-					<string>P0 CHANNEL E</string>
-					<key>DeviceLocator</key>
-					<string>DIMM 1</string>
-					<key>Manufacturer</key>
-					<string>Acidanthera</string>
-					<key>PartNumber</key>
-					<string></string>
-					<key>SerialNumber</key>
-					<string></string>
-					<key>Size</key>
-					<integer>1</integer>
-					<key>Speed</key>
-					<integer>3200</integer>
-				</dict>
-				<dict>
-					<key>AssetTag</key>
-					<string></string>
-					<key>BankLocator</key>
-					<string>P0 CHANNEL F</string>
-					<key>DeviceLocator</key>
-					<string>DIMM 0</string>
-					<key>Manufacturer</key>
-					<string>Acidanthera</string>
-					<key>PartNumber</key>
-					<string></string>
-					<key>SerialNumber</key>
-					<string></string>
-					<key>Size</key>
-					<integer>1</integer>
-					<key>Speed</key>
-					<integer>3200</integer>
-				</dict>
-				<dict>
-					<key>AssetTag</key>
-					<string></string>
-					<key>BankLocator</key>
-					<string>P0 CHANNEL F</string>
-					<key>DeviceLocator</key>
-					<string>DIMM 1</string>
-					<key>Manufacturer</key>
-					<string>Acidanthera</string>
-					<key>PartNumber</key>
-					<string></string>
-					<key>SerialNumber</key>
-					<string></string>
-					<key>Size</key>
-					<integer>1</integer>
-					<key>Speed</key>
-					<integer>3200</integer>
-				</dict>
+				<dict/>
 			</array>
 			<key>ErrorCorrection</key>
 			<integer>3</integer>
 			<key>FormFactor</key>
 			<integer>9</integer>
 			<key>MaxCapacity</key>
-			<integer>137438953472</integer>
+			<integer>68719476736</integer>
 			<key>TotalWidth</key>
 			<integer>64</integer>
 			<key>Type</key>
 			<integer>26</integer>
 			<key>TypeDetail</key>
-			<integer>34</integer>
+			<integer>128</integer>
 		</dict>
 		<key>UpdateDataHub</key>
 		<true/>
@@ -892,7 +468,7 @@
 			<key>AppleEvent</key>
 			<string>Builtin</string>
 			<key>CustomDelays</key>
-			<string>Auto</string>
+			<false/>
 			<key>KeyInitialDelay</key>
 			<integer>0</integer>
 			<key>KeySubsequentDelay</key>
@@ -960,7 +536,7 @@
 			<key>ForceResolution</key>
 			<false/>
 			<key>GopPassThrough</key>
-			<false/>
+			<string>Disabled</string>
 			<key>IgnoreTextInGraphics</key>
 			<false/>
 			<key>ProvideConsoleGop</key>
@@ -985,6 +561,8 @@
 			<key>AppleBootPolicy</key>
 			<false/>
 			<key>AppleDebugLog</key>
+			<false/>
+			<key>AppleEg2Info</key>
 			<false/>
 			<key>AppleFramebufferInfo</key>
 			<false/>
@@ -1021,11 +599,17 @@
 			<false/>
 			<key>DisableSecurityPolicy</key>
 			<false/>
+			<key>EnableVectorAcceleration</key>
+			<true/>
 			<key>ExitBootServicesDelay</key>
 			<integer>0</integer>
+			<key>ForgeUefiSupport</key>
+			<false/>
 			<key>IgnoreInvalidFlexRatio</key>
 			<false/>
 			<key>ReleaseUsbOwnership</key>
+			<false/>
+			<key>ReloadOptionRoms</key>
 			<false/>
 			<key>RequestBootVarRouting</key>
 			<true/>
