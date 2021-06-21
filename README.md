@@ -25,10 +25,10 @@ This guide is for the computer user who would like to run macOS inside of a VM o
 - [2) Making the UnRAID USB](https://github.com/osx86-ijb/Hackinabox#2-making-the-unraid-usb)
 - [3) Setting up your Host Device](https://github.com/osx86-ijb/Hackinabox#3-setting-up-your-unraid-server-os-host)
 - [4) Setting up your macOS VM](https://github.com/osx86-ijb/Hackinabox#4-setting-up-your-macos-vm)
-- [5) Making the Recovery USB on Linux]()
-- [6) Making the EFI]() 
-- [7) Installation of macOS]()
-- [8) Post-Installation]()
+- [5) Making the Recovery USB on Linux](https://github.com/osx86-ijb/Hackinabox#5-making-the-recovery-usb-on-linux)
+- [6) Making the EFI](https://github.com/osx86-ijb/Hackinabox#6-making-the-efi) 
+- [7) Installation of macOS](https://github.com/osx86-ijb/Hackinabox#7-installation-of-macos)
+- [8) Post-Installation](https://github.com/osx86-ijb/Hackinabox#8-post-installation-finalization--ssdt-setup)
 
 ## FAQ
 
