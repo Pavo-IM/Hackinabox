@@ -90,16 +90,27 @@ This guide is for the computer user who would like to run macOS inside of a VM o
 - 3) [Once loaded, click "EDIT" button load the edit page and edit VM settings. When that next page loads, go to the "Logical CPUs" section, and select every other CPU thread combination except for CPU 0 / X (where as X is the variable for your specific core / thread count). After that, make sure to set your Max Memory. Do keep in mind that Unraid needs 4GB of RAM, so anything 4GB less than your Maximum installed RAM should be sufficient if you don't need to allocate more elsewhere.](https://i.ibb.co/0Qdsk5J/14-5.png)
 - 4) [Next, scroll down on the page and select "3.0 qemu XHCI" from the drop down menu for USB Controller. Then make sure to select your GPU from the Graphics Card drop down menu. Then select your appropriate Audio Chipset from the drop down menu in the selection named Sound Card.](https://i.ibb.co/ChvQdtR/14-6.png)
 - 5) [Make sure that Network Bridge is set to "br0" from the dropdown menu, and Network Model is set to "virtio-net" from the appropriate drop down selection as well. Then place check marks next to the two(or more?) devices in the "Other PCI Devices" section that you want to pass through. Uncheck "Start VM after creation", and then click on the "CREATE" button](https://i.ibb.co/wdP7V24/14-7.png)
-- 
+- 6) [Click on FreeBSD icon, and choose "Edit". In the top right corner when the Edit page loads, you'll see a slider with the words "FORM VIEW" next to it.](https://i.ibb.co/4jFdyLP/14-8.png) [Then, click on that to change it to "XML VIEW".](https://i.ibb.co/t826xfx/14-9.png)
+- 7) [After the XML view has loaded, we're going to go to line 37 and remove it (the entire line, that is) per what we have selected in the image here](https://i.ibb.co/Qbq5j1R/15.png)
+- 8) [Next, we're going to go to line 40 and select the text "utc",](https://i.ibb.co/xYFgx8D/17.png) [and change it to "localtime"](https://i.ibb.co/5ry53yH/18.png)
+- 9) [Scroll down to what should be line 63 and copy multifunction =‘on’,](https://i.ibb.co/GTCJncP/19.png) [and paste it at the end of line 118 as shown in the corresponding picture, making sure to change the last zero in function='0x0' to function='0x1' after you're done doing the prior pasting job, since it needs to be changed, also](https://i.ibb.co/MZDrV16/20.png)
+- 10) [On the line below 120 it says bus=‘0x03’ well at 127 change bus=‘0x04’ to 0x03 to match the gpu thats sets it as one device so the audio works](https://i.ibb.co/MZDrV16/20.png)
+- 11) [Head to the bottom on line 144 click the end of </devices> and hit enter to make a new line (145) and paste this:](https://i.ibb.co/P5YDmZy/22.png) `<qemu:commandline>
+    <qemu:arg value='-device'/>
+    <qemu:arg value='isa-applesmc,osk=ourhardworkbythesewordsguardedpleasedontsteal(c)AppleComputerInc'/>
+    <qemu:arg value='-smbios'/>
+    <qemu:arg value='type=2'/>
+    <qemu:arg value='-cpu'/>
+    <qemu:arg value='host,vendor=GenuineIntel,+invtsc,kvm=on'/>
+  </qemu:commandline>
+- 12) **After pasting in the required text into new line 145, please hit the "UPDATE" button. Now after hitting update button we can shut down and reboot into our Linux Live Distro of choice and continue with making the macOS Installer, if one already doesn't have one made previously.**
 
+#### 5) 
 
-
-
-
-
-
-
-
+- 1)
+- 2)
+- 3)
+- 4)
 
 
 
