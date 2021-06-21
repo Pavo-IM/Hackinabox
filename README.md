@@ -21,14 +21,15 @@ This guide is for the computer user who would like to run macOS inside of a VM o
 
 ## Appendix
 
-- [1) Getting Started]()
-- [2) Making the UnRAID USB]()
-- [3) Setting up your Host Device]()
-- [4) Setting up your macOS VM]()
-- [5) Making the EFI]()
-- [6) Making the Recovery USB on Linux]() 
+- [1) Getting Started](https://github.com/osx86-ijb/Hackinabox#1-getting-started)
+- [2) Making the UnRAID USB](https://github.com/osx86-ijb/Hackinabox#2-making-the-unraid-usb)
+- [3) Setting up your Host Device](https://github.com/osx86-ijb/Hackinabox#3-setting-up-your-unraid-server-os-host)
+- [4) Setting up your macOS VM](https://github.com/osx86-ijb/Hackinabox#4-setting-up-your-macos-vm)
+- [5) Making the Recovery USB on Linux]()
+- [6) Making the EFI]() 
 - [7) Installation of macOS]()
 - [8) Post-Installation]()
+
 ## FAQ
 
 #### 1) If I don't have an existing macOS installation to use to create an offline installer of macOS, yet am already booted into unRAID, what can I do to achieve such?
@@ -105,17 +106,34 @@ This guide is for the computer user who would like to run macOS inside of a VM o
   </qemu:commandline>
 - 12) **After pasting in the required text into new line 145, please hit the "UPDATE" button. Now after hitting update button we can shut down and reboot into our Linux Live Distro of choice and continue with making the macOS Installer, if one already doesn't have one made previously.**
 
-#### 5) 
+#### 5) Making the Recovery USB on Linux
+
+- 1) [Head to the OpenCore Install Guide page for making a macOS Installer USB via Linux to continue making your USB, and once finished, return here to continue](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/linux-install.html)
+
+#### 6) Making the EFI]
+
+- 1) [So after you've made your macOS Installer USB, please apply the OpenCore EFI from here to your macOS USB Installer's ESP/EFI partition, utilizing the proper folder hierarchies.](https://cdn.discordapp.com/attachments/469592019384270858/855930439343931452/EFI.zip)
+
+#### 7) Installation of macOS
+
+- 1) 
+- 2)
+- 3)
+- 4)
+
+#### 8) Post Installation Finalization / SSDT Setup
 
 - 1)
 - 2)
 - 3)
 - 4)
-
-
+- 5)
+- 6)
+- 7)
+- 8)
+- 9)
+- 10)
 
 ## Support
 
-For support, join the AMD-OSX Discord Server and ask your question there, or joing and ask at the AMD-OSX.com forums! Thank you, and regards!
-
-  
+For support, please join the AMD-OSX Discord Server and ask your question there, or join and ask at the AMD-OSX.com forums! One can also seek out assistance regarding Unraid related questions at the Unraid forums! Thank you, enjoy, and regards!
