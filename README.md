@@ -1,2 +1,110 @@
+
 # Hackinabox
-MacOS install using UnRaid
+
+### MacOS install using UnRaid
+
+This guide is for the computer user who would like to run macOS inside of a VM on UnRAID in efforts of circumventing the need for multiple patches on AMD based hardware and motherboards, whilst enhancing the goals of providing the most native experience possible.
+
+## Acknowledgements
+
+ - [Lime Technology](https://twitter.com/limetechnology)
+ - [UnRAID](https://unraid.net/)
+ - [OpenCore Bootloader](https://github.com/acidanthera/OpenCorePkg)
+ - [Dortania Team](https://dortania.github.io/)
+
+  
+## Authors of Guide
+
+- [@Pavo-IM](https://www.github.com/Pavo-IM)
+- [@osx86-ijb](https://www.github.com/osx86-ijb)
+- [@MattsCreative](https://twitter.com/MattsCreative1)
+
+## Appendix
+
+- [1) Getting Started]()
+- [2) Making the UnRAID USB]()
+- [3) Setting up your Host Device]()
+- [4) Setting up your macOS VM]()
+- [5) Making the EFI]()
+- [6) Making the Recovery USB on Linux]() 
+- [7) Installation of macOS]()
+- [8) Post-Installation]()
+## FAQ
+
+#### 1) If I don't have an existing macOS installation to use to create an offline installer of macOS, yet am already booted into unRAID, what can I do to achieve such?
+[Use Macinabox from SpaceinvaderOne](https://github.com/SpaceinvaderOne/Macinabox)
+
+#### 2) If my VM freezes and I cannot restart it properly from within the unRAID backend and am faced with the choices of hard restarting my computer, what can/should I do?
+**WARNING:** 
+
+*Forcefully restarting the machine and or hard resetting your machine and not choosing to shut down using the option to do so in the unRAID backend can result in data corruption, and the potential need to remake the unRAID USB drive. At all costs, one should always make sure to use the SHUTDOWN button within the unRAID backend to shutdown your computer, instead of hard restarting. It also would be wise to make sure to have a 1/1 clone of your unRAID installation, just in case the need would arise.*
+
+### 3) 
+  
+## Features
+
+- No need to use ANY of the AMD patches
+- Full performance/utilization of supported GPU
+- Ethernet works OOB via setting up VirtIO networking device, no need to passthrough physical Ethernet controllers
+- No hassle updating
+- macOS 12 Monterey Compatible
+
+  
+## Installation Procedurals
+
+#### 1) Getting Started:
+- 1) [Download Unraid Server OS USB Creator for Mac/Windows](https://unraid.net/download)
+- 2) **Run Unraid Server OS USB Creator application**
+
+#### 2) Making the Unraid USB:
+- 1) [Under "select version", select "Stable", then Unraid 6.9.2 or newer version depending on when you read this](https://i.ibb.co/mX8cB7j/Unraid-USB-Creator-01.png)
+- 2) [Click on "Customize" and check the "Allow UEFI Boot" checkbox](https://i.ibb.co/tBkb1XG/Unraid-USB-Creator-02.png)
+- 3) [Select USB Drive that you want to create as your Unraid USB, and then click on the "Write" button under Write Image](https://i.ibb.co/CHb1j1m/Unraid-USB-Creator-03.png)
+- 4) **Wait for USB Creator to finish creating Unraid USB and then restart machine and attempt to boot from newly created Unraid USB**
+
+#### 3) Setting Up Your Unraid Server OS Host:
+- 1) **Boot From Your Unraid Server OS USB**
+- 2) **Select The First Option To Boot Unraid**
+- 3) **Enter the Username and Password = root**
+- 4) From another device connected to the same network as your booted Unraid Server OS, go to http://tower.local in your Browser of choice
+- 5) [Select the disk to install/store the Unraid Server OS files to from the drop down menu of "Disk 1"](https://i.ibb.co/pychKXD/01.png)
+- 6) [Go the bottom of the page after selecting your disk in Disk 1 drop down menu, and click on "START" button](https://i.ibb.co/NndYd5w/02.png)
+- 7) **(It will then prompt you around the same time to confirm that you want to Format the drive, make sure to agree to such!)**
+- 8) [After it's finished, you're going to click on the clickable text that says "Flash"](https://i.ibb.co/wBd6p1m/03.png)
+- 9) [In the page that loads afterwards, scroll down to the green text box that's labeled "Unraid OS"](https://i.ibb.co/fQjQLQN/04.png)
+- 10) [ Inside of the green Unraid OS text entry box field you will see `apend initrd=/bzroot`. We're going to change that to `append pcie_acs_override=downstream,multifunction video=efifb:off initrd=/bzroot`](https://i.ibb.co/JzJhxv8/05.png)
+- 11) [Scroll down to the bottom of the page and click the "APPLY" button](https://i.ibb.co/wwBTKKD/06.png)
+- 12) [Click the button called "MAIN" at the top, and when that page loads, scroll down to the bottom, and click on the REBOOT button](https://i.ibb.co/TPP03Vw/07.png)
+- 13) [Once you're booted back up into your Unraid Server OS from your Unraid Server OS USB Key, click on "TOOLS", and then "System Devices"](https://i.ibb.co/wcBNDqk/08.png)
+- 14) [Once System Devices is loaded, you'll want to make sure to isolate your Unraid USB on it's own USB controller, away from all of the other peripherals. This should be able to be done plug and play without having to reboot, but if it doesn't end up being possible to plug and play refresh the device list for you, then you can shut down and restart between each switching of the port, testing to see which port will allow for the Unraid USB to be isolated by itself. If needed/possible, use a rear lower port, and a USB hub with Unraid USB plugged into it if plugging it bare won't detect the USB when doing the process and attempting to reboot from Unraid USB)](https://i.ibb.co/2tqmPBB/09.png)
+- 15) **Once that has been accomplished, make sure to select the check boxes for your GPU, GPU audio, any potential supported onboard audio chipset (if needed), as well as your network controller (WiFi), and your NVME controller (or if you have two SATA groups, bind the SSD/HDD you want), and hit the "BIND SELECTED TO VFIO AT BOOT" button at the bottom**
+- 16) **Once that is done, you will want to go back to the "MAIN" tab and go to the bottom of the page and press the "REBOOT" button.
+- 17) [Once you are rebooted into your Unraid Server OS from your Unraid USB again, head to the bottom of the MAIN tab and make sure to press the "START" button to start your array.]()
+- 18) [After that, we're going to go to "SETTINGS", and then select "Disk Settings"](https://i.ibb.co/Yj5GDG7/10.png)
+- 19) [Once we're in the Disk Settings page, we're going to change "Enable auto start" to "Yes", then click the "APPLY" button](https://i.ibb.co/9cW1Ltr/11.png)
+
+#### 4) Setting Up Your macOS VM
+
+- 1) [Now we're going to head to the "VMS" tab of the backend and click on the "ADD VM" button](https://i.ibb.co/hLhL1jR/12.png)
+- 2) [When the Add VM page loads, we're going to select FreeBSD](https://i.ibb.co/NCYytQv/13.png)
+- 3) [Once loaded, click "EDIT" button load the edit page and edit VM settings. When that next page loads, go to the "Logical CPUs" section, and select every other CPU thread combination except for CPU 0 / X (where as X is the variable for your specific core / thread count). After that, make sure to set your Max Memory. Do keep in mind that Unraid needs 4GB of RAM, so anything 4GB less than your Maximum installed RAM should be sufficient if you don't need to allocate more elsewhere.](https://i.ibb.co/0Qdsk5J/14-5.png)
+- 4) [Next, scroll down on the page and select "3.0 qemu XHCI" from the drop down menu for USB Controller. Then make sure to select your GPU from the Graphics Card drop down menu. Then select your appropriate Audio Chipset from the drop down menu in the selection named Sound Card.](https://i.ibb.co/ChvQdtR/14-6.png)
+- 5) [Make sure that Network Bridge is set to "br0" from the dropdown menu, and Network Model is set to "virtio-net" from the appropriate drop down selection as well. Then place check marks next to the two(or more?) devices in the "Other PCI Devices" section that you want to pass through. Uncheck "Start VM after creation", and then click on the "CREATE" button](https://i.ibb.co/wdP7V24/14-7.png)
+- 
+
+
+
+
+
+
+
+
+
+
+
+
+## Support
+
+For support, join the AMD-OSX Discord Server and ask your question there, or joing and ask at the AMD-OSX.com forums! Thank you, and regards!
+
+  
