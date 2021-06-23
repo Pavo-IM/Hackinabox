@@ -111,7 +111,8 @@ This guide is for the computer user who would like to run macOS inside of a VM o
      <qemu:arg value='type=2'/>  
      <qemu:arg value='-cpu'/>  
      <qemu:arg value='host,vendor=GenuineIntel,+invtsc,kvm=on'/>  
-     </qemu:commandline>```
+     </qemu:commandline>  
+```
 - 12) **After pasting in the required text into new line 145, please hit the "UPDATE" button. Now after hitting update button we can shut down and reboot into our Linux Live Distro of choice and continue with making the macOS Installer, if one already doesn't have one made previously.**
 
 #### 5) Making the Recovery USB on Linux
