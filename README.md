@@ -125,23 +125,23 @@ This guide is for the computer user who would like to run macOS inside of a VM o
 
 ## 7) Installation of macOS
 
-- 1) 
-- 2)
-- 3)
-- 4)
+- 1) Create your USB based macOS installer as you normally would. I suggest using the ```createinstallmedia``` method on macOS.
+- 2) Apply the EFI that can be obtained from this repo and in the previous step to the ESP partition of the created USB installer.
+- 3) Boot from the created installer inside of booted VM instance of OpenCore.
+- 4) Install your macOS version, and then boot into it after everything has finished!
 
 ## 8) Post Installation Finalization / SSDT Setup
 
-- 1)
-- 2)
-- 3)
-- 4)
-- 5)
-- 6)
-- 7)
-- 8)
-- 9)
-- 10)
+- 1) 
+- 2) 
+- 3) 
+- 4) 
+- 5) 
+- 6) 
+- 7) 
+- 8) 
+- 9) 
+- 10) 
 
 # Support
 
