@@ -119,7 +119,7 @@ This guide is for the computer user who would like to run macOS inside of a VM o
 
 - 1) [Head to the OpenCore Install Guide page for making a macOS Installer USB via Linux to continue making your USB, and once finished, return here to continue](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/linux-install.html)
 
-#### 6) Making the EFI]
+#### 6) Making the EFI
 
 - 1) [So after you've made your macOS Installer USB, please apply the OpenCore EFI from here to your macOS USB Installer's ESP/EFI partition, utilizing the proper folder hierarchies.](https://cdn.discordapp.com/attachments/469592019384270858/855930439343931452/EFI.zip)
 
