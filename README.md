@@ -1,7 +1,7 @@
 
 # Hackinabox
 
-### MacOS install using UnRaid
+## MacOS install using UnRaid
 
 This guide is for the computer user who would like to run macOS inside of a VM on UnRAID in efforts of circumventing the need for multiple patches on AMD based hardware and motherboards, whilst enhancing the goals of providing the most native experience possible.
 
@@ -40,7 +40,7 @@ This guide is for the computer user who would like to run macOS inside of a VM o
 
 *Forcefully restarting the machine and or hard resetting your machine and not choosing to shut down using the option to do so in the unRAID backend can result in data corruption, and the potential need to remake the unRAID USB drive. At all costs, one should always make sure to use the SHUTDOWN button within the unRAID backend to shutdown your computer, instead of hard restarting. It also would be wise to make sure to have a 1/1 clone of your unRAID installation, just in case the need would arise.*
 
-### 3) 
+#### 3) 
   
 ## Features
 
@@ -51,19 +51,19 @@ This guide is for the computer user who would like to run macOS inside of a VM o
 - macOS 12 Monterey Compatible
 
   
-## Installation Procedurals
+# Installation Procedurals
 
-#### 1) Getting Started:
+## 1) Getting Started:
 - 1) [Download Unraid Server OS USB Creator for Mac/Windows](https://unraid.net/download)
 - 2) **Run Unraid Server OS USB Creator application**
 
-#### 2) Making the Unraid USB:
+## 2) Making the Unraid USB:
 - 1) **Under "select version", select "Stable", then Unraid 6.9.2 or newer version depending on when you read this** ![UnraidUSBSelectVersion_01](https://i.ibb.co/mX8cB7j/Unraid-USB-Creator-01.png)
 - 2) **Click on "Customize" and check the "Allow UEFI Boot" checkbox**![UnraidUSBSelectVersion_02](https://i.ibb.co/tBkb1XG/Unraid-USB-Creator-02.png)
 - 3) **Select USB Drive that you want to create as your Unraid USB, and then click on the "Write" button under Write Image**![UnraidUSBSelectVersion_03](https://i.ibb.co/CHb1j1m/Unraid-USB-Creator-03.png)
 - 4) **Wait for USB Creator to finish creating Unraid USB and then restart machine and attempt to boot from newly created Unraid USB**
 
-#### 3) Setting Up Your Unraid Server OS Host:
+## 3) Setting Up Your Unraid Server OS Host:
 - 1) **Boot From Your Unraid Server OS USB**
 - 2) **Select The First Option To Boot Unraid**
 - 3) **Enter the Username and Password = root**
@@ -85,7 +85,7 @@ This guide is for the computer user who would like to run macOS inside of a VM o
 - 18) **After that, we're going to go to "SETTINGS", and then select "Disk Settings"** ![3.18](https://i.ibb.co/Yj5GDG7/10.png)
 - 19) **Once we're in the Disk Settings page, we're going to change "Enable auto start" to "Yes", then click the "APPLY" button** ![3.19](https://i.ibb.co/9cW1Ltr/11.png)
 
-#### 4) Setting Up Your macOS VM
+## 4) Setting Up Your macOS VM
 
 - 1) **Now we're going to head to the "VMS" tab of the backend and click on the "ADD VM" button** ![4.1](https://i.ibb.co/hLhL1jR/12.png)
 - 2) **When the Add VM page loads, we're going to select FreeBSD** ![4.2](https://i.ibb.co/NCYytQv/13.png)
@@ -115,22 +115,22 @@ This guide is for the computer user who would like to run macOS inside of a VM o
 ```
 - 12) **After pasting in the required text into new line 145, please hit the "UPDATE" button. Now after hitting update button we can shut down and reboot into our Linux Live Distro of choice and continue with making the macOS Installer, if one already doesn't have one made previously.**
 
-#### 5) Making the Recovery USB on Linux
+## 5) Making the Recovery USB on Linux
 
 - 1) [Head to the OpenCore Install Guide page for making a macOS Installer USB via Linux to continue making your USB, and once finished, return here to continue](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/linux-install.html)
 
-#### 6) Making the EFI
+## 6) Making the EFI
 
 - 1) [So after you've made your macOS Installer USB, please apply the OpenCore EFI from here to your macOS USB Installer's ESP/EFI partition, utilizing the proper folder hierarchies.](https://cdn.discordapp.com/attachments/469592019384270858/855930439343931452/EFI.zip)
 
-#### 7) Installation of macOS
+## 7) Installation of macOS
 
 - 1) 
 - 2)
 - 3)
 - 4)
 
-#### 8) Post Installation Finalization / SSDT Setup
+## 8) Post Installation Finalization / SSDT Setup
 
 - 1)
 - 2)
@@ -143,6 +143,6 @@ This guide is for the computer user who would like to run macOS inside of a VM o
 - 9)
 - 10)
 
-## Support
+# Support
 
 For support, please join the AMD-OSX Discord Server and ask your question there, or join and ask at the AMD-OSX.com forums! One can also seek out assistance regarding Unraid related questions at the Unraid forums! Thank you, enjoy, and regards!
