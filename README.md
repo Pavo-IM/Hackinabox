@@ -95,8 +95,11 @@ This guide is for the computer user who would like to run macOS inside of a VM o
 ![4.6.1](https://i.ibb.co/4jFdyLP/14-8.png)  
 **Then, click on that to change it to "XML VIEW".**  \
 ![4.6.2](https://i.ibb.co/t826xfx/14-9.png)
-- 7) **After the XML view has loaded, we're going to go to line 37 and remove it (the entire line, that is) per what we have selected in the image here. This is done because QEMU's topology isn't read by macOS correctly and would require the topology kernel patch from the AMD kernel patches in order for it to work otherwise** ![4.7](https://i.ibb.co/Qbq5j1R/15.png)
-- 8) **Next, we're going to go to line 40 and select the text "utc",** ![4.8.1](https://i.ibb.co/xYFgx8D/17.png) **and change it to "localtime"** ![4.8.2](https://i.ibb.co/5ry53yH/18.png)
+- 7) **After the XML view has loaded, we're going to go to line 37 and remove it (the entire line, that is) per what we have selected in the image here. This is done because QEMU's topology isn't read by macOS correctly and would require the topology kernel patch from the AMD kernel patches in order for it to work otherwise**  
+![4.7](https://i.ibb.co/Qbq5j1R/15.png)
+- 8) **Next, we're going to go to line 40 and select the text "utc",** ![4.8.1](https://i.ibb.co/xYFgx8D/17.png)  
+**and change it to "localtime"**  
+![4.8.2](https://i.ibb.co/5ry53yH/18.png)
 - 9) **Scroll down to what should be line 63 and copy multifunction =‘on’,** ![4.9.1](https://i.ibb.co/GTCJncP/19.png) **and paste it at the end of line 118 as shown in the corresponding picture, making sure to change the last zero in function='0x0' to function='0x1' after you're done doing the prior pasting job, since it needs to be changed, also.** ![4.9.2](https://i.ibb.co/MZDrV16/20.png)
 - 10) **On the line below 120 it says bus=‘0x03’ well at 127 change bus=‘0x04’ to 0x03 to match the gpu thats sets it as one device so the audio works.** ![4.10](https://i.ibb.co/MZDrV16/20.png) **Steps number 9 and number 10 are done to make your GPU and GPU audio device be seen to macOS as one device. The multifunction argument tells the hypervisor to allow multiple devices to operate on the same bus. Only the GPU audio device must match the GPU device bus and slot. The GPU audio device must use the function 0x1**
 - 11) **Head to the bottom on line 144 click the end of </devices> and hit enter to make a new line (145) and paste this:** ![4.11](https://i.ibb.co/P5YDmZy/22.png) `<qemu:commandline>
