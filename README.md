@@ -58,9 +58,9 @@ This guide is for the computer user who would like to run macOS inside of a VM o
 - 2) **Run Unraid Server OS USB Creator application**
 
 #### 2) Making the Unraid USB:
-- 1) [Under "select version", select "Stable", then Unraid 6.9.2 or newer version depending on when you read this](https://i.ibb.co/mX8cB7j/Unraid-USB-Creator-01.png)
-- 2) [Click on "Customize" and check the "Allow UEFI Boot" checkbox](https://i.ibb.co/tBkb1XG/Unraid-USB-Creator-02.png)
-- 3) [Select USB Drive that you want to create as your Unraid USB, and then click on the "Write" button under Write Image](https://i.ibb.co/CHb1j1m/Unraid-USB-Creator-03.png)
+- 1) **Under "select version", select "Stable", then Unraid 6.9.2 or newer version depending on when you read this** ![UnraidUSBSelectVersion_01](https://i.ibb.co/mX8cB7j/Unraid-USB-Creator-01.png)
+- 2) **Click on "Customize" and check the "Allow UEFI Boot" checkbox**![UnraidUSBSelectVersion_02](https://i.ibb.co/tBkb1XG/Unraid-USB-Creator-02.png)
+- 3) **Select USB Drive that you want to create as your Unraid USB, and then click on the "Write" button under Write Image**![UnraidUSBSelectVersion_03](https://i.ibb.co/CHb1j1m/Unraid-USB-Creator-03.png)
 - 4) **Wait for USB Creator to finish creating Unraid USB and then restart machine and attempt to boot from newly created Unraid USB**
 
 #### 3) Setting Up Your Unraid Server OS Host:
