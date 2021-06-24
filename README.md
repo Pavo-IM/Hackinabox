@@ -28,7 +28,7 @@ This guide is for the computer user who would like to run macOS inside of a VM o
 - [5) Making the Recovery USB on Linux](https://github.com/osx86-ijb/Hackinabox#5-making-the-recovery-usb-on-linux)
 - [6) Making the EFI](https://github.com/osx86-ijb/Hackinabox#6-making-the-efi) 
 - [7) Installation of macOS](https://github.com/osx86-ijb/Hackinabox#7-installation-of-macos)
-- [8) Post-Installation](https://github.com/osx86-ijb/Hackinabox#8-post-installation-finalization--ssdt-setup)
+- [8) Post-Installation Finalization](https://github.com/osx86-ijb/Hackinabox#8-post-installation-finalization--ssdt-setup)
 - [9) SSDT Setup Examples - Before & After](https://github.com/osx86-ijb/Hackinabox/tree/master#9-ssdt-setup-examples---before--after)
 
 ## FAQ
@@ -145,7 +145,7 @@ This guide is for the computer user who would like to run macOS inside of a VM o
 - 7.4) **Install your macOS version, and then boot into it after everything has finished! Make sure to copy over the EFI to the install drive so you can boot without using your macOS installer USB!**
 
 
-## 8) Post Installation Finalization / SSDT Setup
+## 8) Post Installation Finalization
 
 - 8.1) **We're going to want to set up our hardware via inputting the correct information and values into the correct locations using both IORegistryExplorer to obtain the appropriate Address locations and naming, and MaciASL to edit the SSDT files and place in our hardware's corresponding information. Remember to test your changes non destructively so you don't bork your EFI, and have a working backup EFI to boot from!**
 - 8.2) **Mount your EFI/ESP partiton using whatever means/software that you choose.**
