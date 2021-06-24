@@ -87,7 +87,7 @@ This guide is for the computer user who would like to run macOS inside of a VM o
 
 ## 4) Setting Up Your macOS VM
 
-# !! **DISCLAIMER: YOUR LINE COUNTS MIGHT BE DIFFERENT SLIGHTLY DUE TO DIFFERENCES IN HARDWARE CONFIGURATIONS, TAKE NOTE OF THIS AND BE ON THE LOOK OUT FOR THE DIFFERENCES** !!
+# !! **DISCLAIMER: YOUR LINE COUNT PLACINGS MIGHT NOT BE THE SAME AS IN THE GUIDE DUE TO ANY POTENTIAL DIFFERENCES IN HARDWARE CONFIGURATION, TAKE NOTE OF THIS AND BE ON THE LOOK OUT FOR THE DIFFERENCES** !!
 
 - 1) **Now we're going to head to the "VMS" tab of the backend and click on the "ADD VM" button** ![4.1](https://i.ibb.co/hLhL1jR/12.png)
 - 2) **When the Add VM page loads, we're going to select FreeBSD** ![4.2](https://i.ibb.co/NCYytQv/13.png)
