@@ -29,6 +29,7 @@ This guide is for the computer user who would like to run macOS inside of a VM o
 - [6) Making the EFI](https://github.com/osx86-ijb/Hackinabox#6-making-the-efi) 
 - [7) Installation of macOS](https://github.com/osx86-ijb/Hackinabox#7-installation-of-macos)
 - [8) Post-Installation](https://github.com/osx86-ijb/Hackinabox#8-post-installation-finalization--ssdt-setup)
+- [9) SSDT Setup Examples - Before & After]()
 
 ## FAQ
 
@@ -53,17 +54,23 @@ This guide is for the computer user who would like to run macOS inside of a VM o
   
 # Installation Procedurals
 
+
 ## 1) Getting Started:
+
 - 1.1) [Download Unraid Server OS USB Creator for Mac/Windows](https://unraid.net/download)
 - 1.2) **Run Unraid Server OS USB Creator application**
 
+
 ## 2) Making the Unraid USB:
+
 - 2.1) **Under "select version", select "Stable", then Unraid 6.9.2 or newer version depending on when you read this** ![UnraidUSBSelectVersion_01](https://i.ibb.co/mX8cB7j/Unraid-USB-Creator-01.png)
 - 2.2) **Click on "Customize" and check the "Allow UEFI Boot" checkbox**![UnraidUSBSelectVersion_02](https://i.ibb.co/tBkb1XG/Unraid-USB-Creator-02.png)
 - 2.3) **Select USB Drive that you want to create as your Unraid USB, and then click on the "Write" button under Write Image**![UnraidUSBSelectVersion_03](https://i.ibb.co/CHb1j1m/Unraid-USB-Creator-03.png)
 - 2.4) **Wait for USB Creator to finish creating Unraid USB and then restart machine and attempt to boot from newly created Unraid USB**
 
+
 ## 3) Setting Up Your Unraid Server OS Host:
+
 - 3.1) **Boot From Your Unraid Server OS USB**
 - 3.2) **Select The First Option To Boot Unraid**
 - 3.3) **Enter the Username and Password = root**
@@ -84,6 +91,7 @@ This guide is for the computer user who would like to run macOS inside of a VM o
 - 3.17) **Once you are rebooted into your Unraid Server OS from your Unraid USB again, head to the bottom of the MAIN tab and make sure to press the "START" button to start your array.**
 - 3.18) **After that, we're going to go to "SETTINGS", and then select "Disk Settings"** ![3.18](https://i.ibb.co/Yj5GDG7/10.png)
 - 3.19) **Once we're in the Disk Settings page, we're going to change "Enable auto start" to "Yes", then click the "APPLY" button** ![3.19](https://i.ibb.co/9cW1Ltr/11.png)
+
 
 ## 4) Setting Up Your macOS VM
 
@@ -118,13 +126,16 @@ This guide is for the computer user who would like to run macOS inside of a VM o
 ```
 - 4.12) **After pasting in the required text into new line 145, please hit the "UPDATE" button. Now after hitting update button we can shut down and reboot into our Linux Live Distro of choice and continue with making the macOS Installer, if one already doesn't have one made previously.**
 
+
 ## 5) Making the Recovery USB on Linux
 
 - 5.1) [Head to the OpenCore Install Guide page for making a macOS Installer USB via Linux to continue making your USB, and once finished, return here to continue](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/linux-install.html)
 
+
 ## 6) Making the EFI
 
 - 6.1) [So after you've made your macOS Installer USB, please apply the OpenCore EFI from here to your macOS USB Installer's ESP/EFI partition, utilizing the proper folder hierarchies.](https://cdn.discordapp.com/attachments/469592019384270858/855930439343931452/EFI.zip)
+
 
 ## 7) Installation of macOS
 
@@ -132,6 +143,7 @@ This guide is for the computer user who would like to run macOS inside of a VM o
 - 7.2) **Apply the EFI that can be obtained from this repo and in the previous step to the ESP partition of the created USB installer.**
 - 7.3) **Boot from the created installer inside of booted VM instance of OpenCore.**
 - 7.4) **Install your macOS version, and then boot into it after everything has finished! Make sure to copy over the EFI to the install drive so you can boot without using your macOS installer USB!**
+
 
 ## 8) Post Installation Finalization / SSDT Setup
 
@@ -145,6 +157,22 @@ This guide is for the computer user who would like to run macOS inside of a VM o
 - 8.8) 
 - 8.9) 
 - 8.10) 
+
+
+## 9) SSDT Setup Examples - Before & After
+
+- 9.1a) **SSDT-ARPT.aml Before Editing:** ![9.1a](https://i.ibb.co/1bVw8XP/SSDT-ARPT-aml.png)  
+- 9.1b) **SSDT-ARPT.aml After Editing:** ![9.1b](https://i.ibb.co/3m211Ft/SSDT-ARPT-aml.png)
+- 9.2a) **SSDT-GFX.aml Before Editing:** ![9.2a](https://i.ibb.co/sJw0fpp/SSDT-GFX-aml.png)
+- 9.2b) **SSDT-GFX.aml After Editing:** ![9.2b](https://i.ibb.co/XD6Wn46/SSDT-GFX-aml.png)
+- 9.3a) **SSDT-NVME.aml Before Editing:** ![9.3a](https://i.ibb.co/sWBjgNB/SSDT-NVME-aml.png)
+- 9.3b) **SSDT-NVME.aml After Editing:** ![9.3b](https://i.ibb.co/zXC19jX/SSDT-NVME-aml.png)
+- 9.4a) **SSDT-PLUG.aml Before Editing:** ![9.4a](https://i.ibb.co/9Y8XyCT/SSDT-PLUG-aml.png)
+- 9.4b) **SSDT-PLUG.aml After Editing:** ![9.4b](https://i.ibb.co/TBTmc5s/SSDT-PLUG-aml.png)
+- 9.5a) **SSDT-XGE.aml Before Editing:** ![!9.5a](https://i.ibb.co/j5ssrxd/SSDT-XGE-aml.png)
+- 9.5b) **SSDT-XGE.aml After Editing:** ![9.5b](https://i.ibb.co/mqyPbc0/SSDT-XGE-aml.png)
+- 9.6a) **SSDT-XHC.aml Before Editing:** ![9.6a](https://i.ibb.co/cT5RmmF/SSDT-XHC-aml.png)
+
 
 # Support
 
