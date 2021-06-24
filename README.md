@@ -87,6 +87,8 @@ This guide is for the computer user who would like to run macOS inside of a VM o
 
 ## 4) Setting Up Your macOS VM
 
+# !! **DISCLAIMER: YOUR LINE COUNTS MIGHT BE DIFFERENT SLIGHTLY DUE TO DIFFERENCES IN HARDWARE CONFIGURATIONS, TAKE NOTE OF THIS AND BE ON THE LOOK OUT FOR THE DIFFERENCES** !!
+
 - 1) **Now we're going to head to the "VMS" tab of the backend and click on the "ADD VM" button** ![4.1](https://i.ibb.co/hLhL1jR/12.png)
 - 2) **When the Add VM page loads, we're going to select FreeBSD** ![4.2](https://i.ibb.co/NCYytQv/13.png)
 - 3) **Once loaded, click "EDIT" button load the edit page and edit VM settings. When that next page loads, go to the "Logical CPUs" section, and select every other CPU thread combination except for CPU 0 / X (where as X is the variable for your specific core / thread count). After that, make sure to set your Max Memory. Do keep in mind that Unraid needs 4GB of RAM, so anything 4GB less than your Maximum installed RAM should be sufficient if you don't need to allocate more elsewhere.** ![4.3](https://i.ibb.co/0Qdsk5J/14-5.png)
