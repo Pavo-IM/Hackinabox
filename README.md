@@ -87,6 +87,8 @@ This guide is for the computer user who would like to run macOS inside of a VM o
 
 ## 4) Setting Up Your macOS VM
 
+# !! **DISCLAIMER: YOUR LINE COUNT PLACINGS MIGHT NOT BE THE SAME AS IN THE GUIDE DUE TO ANY POTENTIAL DIFFERENCES IN HARDWARE CONFIGURATION, TAKE NOTE OF THIS AND BE ON THE LOOK OUT FOR THE DIFFERENCES** !!
+
 - 1) **Now we're going to head to the "VMS" tab of the backend and click on the "ADD VM" button** ![4.1](https://i.ibb.co/hLhL1jR/12.png)
 - 2) **When the Add VM page loads, we're going to select FreeBSD** ![4.2](https://i.ibb.co/NCYytQv/13.png)
 - 3) **Once loaded, click "EDIT" button load the edit page and edit VM settings. When that next page loads, go to the "Logical CPUs" section, and select every other CPU thread combination except for CPU 0 / X (where as X is the variable for your specific core / thread count). After that, make sure to set your Max Memory. Do keep in mind that Unraid needs 4GB of RAM, so anything 4GB less than your Maximum installed RAM should be sufficient if you don't need to allocate more elsewhere.** ![4.3](https://i.ibb.co/0Qdsk5J/14-5.png)
@@ -126,23 +128,23 @@ This guide is for the computer user who would like to run macOS inside of a VM o
 
 ## 7) Installation of macOS
 
-- 1) 
-- 2)
-- 3)
-- 4)
+- 1) **Create your USB based macOS installer as you normally would. I suggest using the ```createinstallmedia``` method on macOS.**
+- 2) **Apply the EFI that can be obtained from this repo and in the previous step to the ESP partition of the created USB installer.**
+- 3) **Boot from the created installer inside of booted VM instance of OpenCore.**
+- 4) **Install your macOS version, and then boot into it after everything has finished! Make sure to copy over the EFI to the install drive so you can boot without using your macOS installer USB!**
 
 ## 8) Post Installation Finalization / SSDT Setup
 
-- 1)
-- 2)
-- 3)
-- 4)
-- 5)
-- 6)
-- 7)
-- 8)
-- 9)
-- 10)
+- 1) **We're going to want to set up our hardware via inputting the correct information and values into the correct locations using both IORegistryExplorer to obtain the appropriate Address locations and naming, and MaciASL to edit the SSDT files and place in our hardware's corresponding information. Remember to test your changes non destructively so you don't bork your EFI, and have a working backup EFI to boot from!**
+- 2) **Mount your EFI/ESP partiton using whatever means/software that you choose.**
+- 3) **Obtain and open IORegistryExplorer, preferrably the newest one  if possible, although any version of at least 2.x should suffice.**
+- 4) **Obtain and open MaciASL, preferrably the version from Acidanthera's GitHub repo.**
+- 5) **oad each of the SSDT's, working on them one at a time so as not to convolute the process.**
+- 6) **In each loaded SSDT, look for the corresponding Address and Device Name, and copy both sets of information to the corresponding SSDT that you are working on.**
+- 7) 
+- 8) 
+- 9) 
+- 10) 
 
 # Support
 
