@@ -173,6 +173,7 @@ This guide is for the computer user who would like to run macOS inside of a VM o
 - 9.5b) **SSDT-XGE.aml After Editing:** ![9.5b](https://i.ibb.co/mqyPbc0/SSDT-XGE-aml.png)
 - 9.6a) **SSDT-XHC.aml Before Editing:** ![9.6a](https://i.ibb.co/cT5RmmF/SSDT-XHC-aml.png)
 
+# Video Guide : https://www.youtube.com/watch?v=Hl6BUs0ysyw
 
 # Support
 
