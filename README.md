@@ -151,7 +151,7 @@ This guide is for the computer user who would like to run macOS inside of a VM o
 - 8.2) **Mount your EFI/ESP partiton using whatever means/software that you choose.**
 - 8.3) **Obtain and open IORegistryExplorer, preferrably the newest one  if possible, although any version of at least 2.x should suffice.**
 - 8.4) **Obtain and open MaciASL, preferrably the version from Acidanthera's GitHub repo.**
-- 8.5) **oad each of the SSDT's, working on them one at a time so as not to convolute the process.**
+- 8.5) **Load each of the SSDT's, working on them one at a time so as not to convolute the process.**
 - 8.6) **In each loaded SSDT, look for the corresponding Address and Device Name, and copy both sets of information to the corresponding SSDT that you are working on.**
 - 8.7) 
 - 8.8) 
