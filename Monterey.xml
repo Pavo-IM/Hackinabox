@@ -181,6 +181,9 @@ or other application using the libvirt API.
     <input type='mouse' bus='ps2'/>
     <input type='keyboard' bus='ps2'/>
     <audio id='1' type='none'/>
+    <!--
+      GPU device.
+    -->
     <hostdev mode='subsystem' type='pci' managed='yes'>
       <driver name='vfio'/>
       <source>
@@ -193,6 +196,9 @@ or other application using the libvirt API.
       </source>
       <address type='pci' domain='0x0000' bus='0x01' slot='0x00' function='0x0' multifunction='on'/>
     </hostdev>
+    <!--
+      GPU Audio device.
+    -->
     <hostdev mode='subsystem' type='pci' managed='yes'>
       <driver name='vfio'/>
       <source>
@@ -200,6 +206,9 @@ or other application using the libvirt API.
       </source>
       <address type='pci' domain='0x0000' bus='0x01' slot='0x00' function='0x1'/>
     </hostdev>
+    <!--
+      NVMe device.
+    -->
     <hostdev mode='subsystem' type='pci' managed='yes'>
       <driver name='vfio'/>
       <source>
@@ -207,6 +216,9 @@ or other application using the libvirt API.
       </source>
       <address type='pci' domain='0x0000' bus='0x04' slot='0x00' function='0x0'/>
     </hostdev>
+    <!--
+      NVMe device.
+    -->
     <hostdev mode='subsystem' type='pci' managed='yes'>
       <driver name='vfio'/>
       <source>
@@ -214,6 +226,9 @@ or other application using the libvirt API.
       </source>
       <address type='pci' domain='0x0000' bus='0x05' slot='0x00' function='0x0'/>
     </hostdev>
+    <!--
+      Wifi device.
+    -->
     <hostdev mode='subsystem' type='pci' managed='yes'>
       <driver name='vfio'/>
       <source>
@@ -221,6 +236,9 @@ or other application using the libvirt API.
       </source>
       <address type='pci' domain='0x0000' bus='0x06' slot='0x00' function='0x0'/>
     </hostdev>
+    <!--
+      Blackmagic Video Capture card device.
+    -->
     <hostdev mode='subsystem' type='pci' managed='yes'>
       <driver name='vfio'/>
       <source>
