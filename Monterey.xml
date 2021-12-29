@@ -16,8 +16,14 @@ or other application using the libvirt API.
   <memoryBacking>
     <nosharepages/>
   </memoryBacking>
+  <!--
+    Change the number after `static` to the amount of CPUs you are giving to the guest VM.
+  -->
   <vcpu placement='static'>32</vcpu>
   <cputune>
+    <!--
+      Adjust the amount of vcpus to match the total amount of CPUs you put for the above section.
+    -->
     <vcpupin vcpu='0' cpuset='16'/>
     <vcpupin vcpu='1' cpuset='48'/>
     <vcpupin vcpu='2' cpuset='17'/>
@@ -62,9 +68,11 @@ or other application using the libvirt API.
     <apic/>
   </features>
   <cpu mode='host-passthrough' check='none' migratable='on'>
+    <!--
+      Change the `cores` to half the total number of CPUs you put in the above section.
+    -->
     <topology sockets='1' dies='1' cores='16' threads='2'/>
     <cache mode='passthrough'/>
-    <feature policy='require' name='topoext'/>
   </cpu>
   <clock offset='localtime'>
     <timer name='rtc' tickpolicy='catchup'/>
@@ -176,6 +184,11 @@ or other application using the libvirt API.
     <hostdev mode='subsystem' type='pci' managed='yes'>
       <driver name='vfio'/>
       <source>
+        <!--
+        Change the `bus`, `slot` and `function` to reflect your IOMMU device location address.
+        Example... `IOMMU group 30:			 	[1002:73bf] 23:00.0 VGA compatible controller: Advanced Micro Devices, Inc. [AMD/ATI] Navi 21 [Radeon RX 6800/6800 XT / 6900 XT] (rev c1)`
+        The `23:00.0` is the bus, slot and function
+        -->
         <address domain='0x0000' bus='0x23' slot='0x00' function='0x0'/>
       </source>
       <address type='pci' domain='0x0000' bus='0x01' slot='0x00' function='0x0' multifunction='on'/>
