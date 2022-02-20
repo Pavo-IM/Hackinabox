@@ -185,7 +185,7 @@ This guide is for the AMD motherboard/cpu user who would like to run macOS from 
 - 8.4) **Obtain and open MaciASL if you haven't already.(Preferrably the version from Acidanthera's GitHub repo.)**
 - 8.5) **Load each of the SSDT's in MaciASL, working on them one at a time, replacing the information per your own hardwares addresses and devices names, so as not to convolute the process.**
 - 8.6) **In each loaded SSDT, look for the corresponding Address and Device Name, and copy both sets of information to the corresponding SSDT that you are working on. (See below in Section #9 for SSDT Setup Examples)**
-- 8.7) **After all have been replaced, you should be good to go, so you'll restart your VM and UnRaid Server OS again (if need be and using a Navi based GPU, as there's a Reset Bug Present).**
+- 8.7) **After all have been replaced, you should be good to go, so you'll restart your VM and UnRaid Server OS again (if need be and one is using a Navi based GPU, as there's a Reset Bug that exists. Plus it's just a good practice to do so, anyway).**
 - 8.8) **Go back into your UnRaid Server VM's, and start the macOS VM.**
 - 8.9) **Boot from your installed version of macOS, and profit!**
 
