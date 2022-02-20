@@ -3,14 +3,14 @@
 
 ## MacOS install using UnRaid
 
-This guide is for the computer user who would like to run macOS inside of a VM on UnRAID in efforts of circumventing the need for multiple patches on AMD based hardware and motherboards, whilst enhancing the goals of providing the most native experience possible.
+This guide is for the AMD motherboard/cpu user who would like to run macOS from a VM inside of UnRAID Server OS, in efforts of circumventing the need for multiple patches on AMD based hardware and motherboards when booting bare metal from OpenCore.
 
 ## Acknowledgements
 
  - [Lime Technology](https://twitter.com/limetechnology)
  - [UnRAID](https://unraid.net/)
- - [OpenCore Bootloader](https://github.com/acidanthera/OpenCorePkg)
- - [Dortania Team](https://dortania.github.io/)
+ - [AcidAnthera, and the OpenCore Bootloader team](https://github.com/acidanthera/OpenCorePkg)
+ - [Dortania Team for the OpenCore Install Guide](https://dortania.github.io/OpenCore-Install-Guide/)
 
   
 ## Authors of Guide
@@ -33,15 +33,33 @@ This guide is for the computer user who would like to run macOS inside of a VM o
 
 ## FAQ
 
-#### 1) If I don't have an existing macOS installation to use to create an offline installer of macOS, yet am already booted into unRAID, what can I do to achieve such?
+#### 1) This sounds great! Where do I begin?
+[You can begin by making sure that you can adhere to the requirements outlined in this guide]
+
+#### 2) This is great, but UnRaid says that it costs money on the website?
+[That is correct, but as with all good things in life, there is a 30 day free trial, and the cheapest version costs a one time $60 USD payment. Gotta pay to play the game, right?]
+
+#### 3) How do I access this server once I boot it up, and what's the deal with me not being able to boot into GUI mode?
+[In order to access your UnRaid Server OS page for the UnRaid server via tower.local (default name) or the IP address given by your network, you must connect to such from a browser on another device attached to the same network]
+
+#### 2) Why won't my UnRaid installation boot after I install it the first time?
+[Due to requirements from the creators of UnRaid, the USB boot key created to boot UnRaid the first time around must be both booted from every time, and left inserted in the USB port at all times]
+
+#### 3) Why can't I access some devices attached to my SATA controllers?
+[Per how UnRaid operates, one SATA controller must be allocated to the Host OS, thereby making it unsuable by a VM]
+
+#### 4) Why don't some of my attached USB devices work?
+[Per how UnRaid operates, one USB controller must be allocated to the Host OS, thereby making it unusable by a VM]
+
+#### 5) If I don't have an existing macOS installation to use to create an offline installer of macOS, yet am already booted into unRAID, what can I do to achieve such?
 [Use Macinabox from SpaceinvaderOne](https://github.com/SpaceinvaderOne/Macinabox)
 
-#### 2) If my VM freezes and I cannot restart it properly from within the unRAID backend and am faced with the choices of hard restarting my computer, what can/should I do?
-**WARNING:** 
+#### 6) If my VM freezes and I cannot restart it properly from within the unRAID backend and am faced with the choices of hard restarting my computer, what can/should I do?
 
-*Forcefully restarting the machine and or hard resetting your machine and not choosing to shut down using the option to do so in the unRAID backend can result in data corruption, and the potential need to remake the unRAID USB drive. At all costs, one should always make sure to use the SHUTDOWN button within the unRAID backend to shutdown your computer, instead of hard restarting. It also would be wise to make sure to have a 1/1 clone of your unRAID installation, just in case the need would arise.*
+**NOTE:** 
 
-#### 3) 
+*Forcefully restarting the machine and or hard resetting your machine and not choosing to shut down using the option to do so in the unRAID backend can result in data corruption, and the potential need to remake the unRAID USB drive. At all costs, one should always make sure to use the SHUTDOWN button within the unRAID backend to shutdown your computer, instead of hard restarting. It also would be wise to make sure to have a 1/1 clone or backup of your unRAID installation, just in case the need should arise.*
+*If you find yourself needing to hard restart your machine, there is a potential that the VM's tab will not be present when you go to look for it. If that ends up being the case/situation for you, just re-enable it from the appropriate location nested within Settings.*
   
 ## Features
 
@@ -51,15 +69,29 @@ This guide is for the computer user who would like to run macOS inside of a VM o
 - No hassle updating
 - macOS 12 Monterey Compatible
 
-  
-# Installation Procedurals
+## Requirements
 
+- An AMD based motherboard (AM4 or newer?)
+- An AMD based central processing unit (Ryzen or newer?)
+- A USB Flash Key larger than 1GB, no larger than 32GB (PS: It will need to be left inserted at all times, as this is required by UnRaid Server OS)
+- [The Unraid Server OS USB Creator application to properly create your UnRaid Server USB key that your machine will be booted from every time.](https://unraid.net/download)
+- A dedicated drive for the UnRaid Server OS (SSD?)
+- One SATA controller that you don't mind having allocated to the Host OS, as it will be unusable by the VM.
+- One USB controller that you don't mind having allocated to the Host OS, as it will be unusable by the VM.
+- [A copy of the IORegistryExplorer application for macOS that can be obtained from here:](https://github.com/khronokernel/IORegistryClone)
+- [A copy of the MacIASL application that can be obtained from here:](https://github.com/acidanthera/MaciASL)
+- An ability to follow detailed instructions down to a meticulously accurate and finite level.
+- An ability to stay extremely calm as you follow a lengthy set of instructions.
+- An unbridled/unmatched zest for all things technological.
+
+# Installation Procedurals
 
 ## 1) Getting Started:
 
-- 1.1) [Download Unraid Server OS USB Creator for Mac/Windows](https://unraid.net/download)
-- 1.2) **Run Unraid Server OS USB Creator application**
-
+- 1.1) **Double check and make sure that you can adhere to the requirements listed above. If so, then proceed to follow the rest of the instructions.**
+- 1.2) [Download Unraid Server OS USB Creator for Mac/Windows](https://unraid.net/download)
+- 1.4) **Open/Run the Unraid Server OS USB Creator.**
+- 1.5) **Proceed with the next step (#2), and continue from there.**
 
 ## 2) Making the Unraid USB:
 
@@ -147,16 +179,15 @@ This guide is for the computer user who would like to run macOS inside of a VM o
 
 ## 8) Post Installation Finalization
 
-- 8.1) **We're going to want to set up our hardware via inputting the correct information and values into the correct locations using both IORegistryExplorer to obtain the appropriate Address locations and naming, and MaciASL to edit the SSDT files and place in our hardware's corresponding information. Remember to test your changes non destructively so you don't bork your EFI, and have a working backup EFI to boot from!**
+- 8.1) **Next, we're going to want to set up our hardware via inputting the correct information and values into the correct locations using both IORegistryExplorer to obtain the appropriate Address locations and naming, and MaciASL to edit the SSDT files and place in our hardware's corresponding information. Remember to test your changes non destructively so you don't bork your EFI, and have a working backup EFI to boot from!**
 - 8.2) **Mount your EFI/ESP partiton using whatever means/software that you choose.**
-- 8.3) **Obtain and open IORegistryExplorer, preferrably the newest one  if possible, although any version of at least 2.x should suffice.**
-- 8.4) **Obtain and open MaciASL, preferrably the version from Acidanthera's GitHub repo.**
-- 8.5) **Load each of the SSDT's, working on them one at a time so as not to convolute the process.**
-- 8.6) **In each loaded SSDT, look for the corresponding Address and Device Name, and copy both sets of information to the corresponding SSDT that you are working on.**
-- 8.7) 
-- 8.8) 
-- 8.9) 
-- 8.10) 
+- 8.3) **Obtain and open IORegistryExplorer if you haven't already. (Preferrably the newest one if one has an Apple Developer account and it's possible, although any version of at least 2.x should suffice.)**
+- 8.4) **Obtain and open MaciASL if you haven't already.(Preferrably the version from Acidanthera's GitHub repo.)**
+- 8.5) **Load each of the SSDT's in MaciASL, working on them one at a time, replacing the information per your own hardwares addresses and devices names, so as not to convolute the process.**
+- 8.6) **In each loaded SSDT, look for the corresponding Address and Device Name, and copy both sets of information to the corresponding SSDT that you are working on. (See below in Section #9 for SSDT Setup Examples)**
+- 8.7) **After all have been replaced, you should be good to go, so you'll restart your VM and UnRaid Server OS again (if need be and using a Navi based GPU, as there's a Reset Bug Present).**
+- 8.8) **Go back into your UnRaid Server VM's, and start the macOS VM.**
+- 8.9) **Boot from your installed version of macOS, and profit!**
 
 
 ## 9) SSDT Setup Examples - Before & After
@@ -176,4 +207,4 @@ This guide is for the computer user who would like to run macOS inside of a VM o
 
 # Support
 
-For support, please join the AMD-OSX Discord Server and ask your question there, or join and ask at the AMD-OSX.com forums! One can also seek out assistance regarding Unraid related questions at the Unraid forums! Thank you, enjoy, and regards!
+For support, please join the AMD-OSX Discord Server and ask your question there, or you could also join the UnRaid Server OS Discord Server! One can also seek out assistance regarding Unraid related questions at the Unraid forums! Thank you, enjoy, and regards!
