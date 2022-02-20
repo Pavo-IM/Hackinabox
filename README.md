@@ -29,7 +29,7 @@ This guide is for the AMD motherboard/cpu user who would like to run macOS from 
 - [6) Making the EFI](https://github.com/osx86-ijb/Hackinabox#6-making-the-efi) 
 - [7) Installation of macOS](https://github.com/osx86-ijb/Hackinabox#7-installation-of-macos)
 - [8) Post-Installation Finalization](https://github.com/osx86-ijb/Hackinabox#8-post-installation-finalization--ssdt-setup)
-- [9) SSDT Setup Examples - Before & After](https://github.com/osx86-ijb/Hackinabox/tree/master#9-ssdt-setup-examples---before--after)
+- [9) SSDT Setup Examples - Before & After](https://github.com/osx86-ijb/Hackinabox#9-ssdt-setup-examples---before--after)
 
 ## FAQ
 
