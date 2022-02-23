@@ -17,7 +17,7 @@ This guide is for the AMD motherboard/cpu user who would like to run macOS from 
 
 - [@Pavo-IM](https://www.github.com/Pavo-IM)
 - [@osx86-ijb](https://www.github.com/osx86-ijb)
-- [@MattsCreative](https://twitter.com/MattsCreative1)
+- [@MattsCreative](https://www.youtube.com/c/MattsCreative)
 
 ## Appendix
 
@@ -42,19 +42,23 @@ This guide is for the AMD motherboard/cpu user who would like to run macOS from 
 #### 3) How do I access this server once I boot it up, and what's the deal with me not being able to boot into GUI mode?
 [In order to access your UnRaid Server OS page for the UnRaid server via tower.local (default name) or the IP address given by your network, you must connect to such from a browser on another device attached to the same network]
 
-#### 2) Why won't my UnRaid installation boot after I install it the first time?
+#### 4) Why won't my UnRaid installation boot after I install it the first time?
 [Due to requirements from the creators of UnRaid, the USB boot key created to boot UnRaid the first time around must be both booted from every time, and left inserted in the USB port at all times]
 
-#### 3) Why can't I access some devices attached to my SATA controllers?
+#### 5) Why can't I access some devices attached to my SATA controllers?
 [Per how UnRaid operates, one SATA controller must be allocated to the Host OS, thereby making it unsuable by a VM]
 
-#### 4) Why don't some of my attached USB devices work?
+#### 6) Why don't some of my attached USB devices work?
 [Per how UnRaid operates, one USB controller must be allocated to the Host OS, thereby making it unusable by a VM]
 
-#### 5) If I don't have an existing macOS installation to use to create an offline installer of macOS, yet am already booted into unRAID, what can I do to achieve such?
+#### 7) Why am I getting "VM Creation Error - XML error: Attempted double use of PCI address 0000:03:00.0"?
+[If you're seeing this error, maybe with a different number in the set of numbers as well, it's because function is set on the incorrect line, and bus might be set incorrectly as well. Double check your double check, and set them to the appropriate correct lines.]
+
+#### 8) If I don't have an existing macOS installation to use to create an offline installer of macOS, yet am already booted into unRAID, what can I do to achieve such?
 [Use Macinabox from SpaceinvaderOne](https://github.com/SpaceinvaderOne/Macinabox)
 
-#### 6) If my VM freezes and I cannot restart it properly from within the unRAID backend and am faced with the choices of hard restarting my computer, what can/should I do?
+#### 9) If my VM freezes and I cannot restart it properly from within the unRAID backend and am faced with the choices of hard restarting my computer, what can/should I do?
+
 
 **NOTE:** 
 
@@ -145,7 +149,7 @@ This guide is for the AMD motherboard/cpu user who would like to run macOS from 
 ![4.8.2](https://i.ibb.co/5ry53yH/18.png)
 - 4.9) **Scroll down to what should be line 63 and copy multifunction =‘on’,** ![4.9.1](https://i.ibb.co/GTCJncP/19.png) **and paste it at the end of line 118 as shown in the corresponding picture, making sure to change the last zero in function='0x0' to function='0x1' after you're done doing the prior pasting job, since it needs to be changed, also.** ![4.9.2](https://i.ibb.co/MZDrV16/20.png)
 - 4.10) **On the line below 120 it says bus=‘0x03’ well at 127 change bus=‘0x04’ to 0x03 to match the gpu thats sets it as one device so the audio works.** ![4.10](https://i.ibb.co/MZDrV16/20.png) **Steps number 9 and number 10 are done to make your GPU and GPU audio device be seen to macOS as one device. The multifunction argument tells the hypervisor to allow multiple devices to operate on the same bus. Only the GPU audio device must match the GPU device bus and slot. The GPU audio device must use the function 0x1**
-- 4.11) **Head to the bottom on line 144 click the end of </devices> and hit enter to make a new line (145) and paste this:** ![4.11](https://i.ibb.co/P5YDmZy/22.png) 
+- 4.11) **Head to the bottom of the document and on line 144 click at the end of </devices> and hit enter/return to make a new line (145) and paste this:** ![4.11](https://i.ibb.co/P5YDmZy/22.png) 
 ```
      <qemu:commandline>  
      <qemu:arg value='-device'/>  
