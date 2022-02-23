@@ -1,17 +1,29 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<domain type='kvm' id='1' xmlns:qemu='http://libvirt.org/schemas/domain/qemu/1.0'>
-  <name>BigSur</name>
-  <uuid>b83a9f50-14d0-a96f-e4e7-abefa834b8cd</uuid>
+<!--
+WARNING: THIS IS AN AUTO-GENERATED FILE. CHANGES TO IT ARE LIKELY TO BE
+OVERWRITTEN AND LOST. Changes to this xml configuration should be made using:
+  virsh edit Monterey
+or other application using the libvirt API.
+-->
+
+<domain type='kvm' xmlns:qemu='http://libvirt.org/schemas/domain/qemu/1.0'>
+  <name>Monterey</name>
+  <uuid>32f3dcf1-75f5-dd3c-6b3f-857e7de6b326</uuid>
   <metadata>
-    <vmtemplate xmlns="unraid" name="Linux" icon="linux.png" os="linux"/>
+    <vmtemplate xmlns="unraid" name="FreeBSD" icon="Apple_OSX.png" os="freebsd"/>
   </metadata>
   <memory unit='KiB'>67108864</memory>
-  <currentMemory unit='KiB'>67108864</currentMemory>
+  <currentMemory unit='KiB'>1048576</currentMemory>
   <memoryBacking>
     <nosharepages/>
   </memoryBacking>
+  <!--
+    Change the number after `static` to the amount of CPUs you are giving to the guest VM.
+  -->
   <vcpu placement='static'>32</vcpu>
   <cputune>
+    <!--
+      Adjust the amount of vcpus to match the total amount of CPUs you put for the above section.
+    -->
     <vcpupin vcpu='0' cpuset='16'/>
     <vcpupin vcpu='1' cpuset='48'/>
     <vcpupin vcpu='2' cpuset='17'/>
@@ -44,251 +56,209 @@
     <vcpupin vcpu='29' cpuset='62'/>
     <vcpupin vcpu='30' cpuset='31'/>
     <vcpupin vcpu='31' cpuset='63'/>
-    <emulatorpin cpuset='0,32'/>
   </cputune>
-  <resource>
-    <partition>/machine</partition>
-  </resource>
   <os>
-    <type arch='x86_64' machine='pc-q35-5.1'>hvm</type>
+    <type arch='x86_64' machine='pc-q35-6.0'>hvm</type>
     <loader readonly='yes' type='pflash'>/usr/share/qemu/ovmf-x64/OVMF_CODE-pure-efi.fd</loader>
-    <nvram>/etc/libvirt/qemu/nvram/33eb05d1-340e-dbd1-7c63-1716289ba439_VARS-pure-efi.fd</nvram>
+    <nvram>/etc/libvirt/qemu/nvram/32f3dcf1-75f5-dd3c-6b3f-857e7de6b326_VARS-pure-efi.fd</nvram>
     <boot dev='hd'/>
   </os>
   <features>
     <acpi/>
     <apic/>
-    <kvm>
-      <hidden state='on'/>
-    </kvm>
   </features>
   <cpu mode='host-passthrough' check='none' migratable='on'>
+    <!--
+      Change the `cores` to half the total number of CPUs you put in the above section.
+    -->
     <topology sockets='1' dies='1' cores='16' threads='2'/>
     <cache mode='passthrough'/>
   </cpu>
-   <clock offset='localtime'>
+  <clock offset='localtime'>
     <timer name='rtc' tickpolicy='catchup'/>
     <timer name='pit' tickpolicy='delay'/>
-    <timer name='hpet' present='yes'/>
+    <timer name='hpet' present='no'/>
+    <timer name='tsc' present='yes' mode='native'/>
   </clock>
   <on_poweroff>destroy</on_poweroff>
   <on_reboot>restart</on_reboot>
   <on_crash>restart</on_crash>
   <devices>
     <emulator>/usr/local/sbin/qemu</emulator>
-    <controller type='usb' index='0' model='qemu-xhci' ports='15'>
-      <alias name='usb'/>
-      <address type='pci' domain='0x0000' bus='0x00' slot='0x07' function='0x0'/>
+    <controller type='sata' index='0'>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x1f' function='0x2'/>
     </controller>
-    <controller type='pci' index='0' model='pcie-root'>
-      <alias name='pcie.0'/>
-    </controller>
+    <controller type='pci' index='0' model='pcie-root'/>
     <controller type='pci' index='1' model='pcie-root-port'>
       <model name='pcie-root-port'/>
       <target chassis='1' port='0x8'/>
-      <alias name='pci.1'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x01' function='0x0' multifunction='on'/>
     </controller>
     <controller type='pci' index='2' model='pcie-root-port'>
       <model name='pcie-root-port'/>
       <target chassis='2' port='0x9'/>
-      <alias name='pci.2'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x01' function='0x1'/>
     </controller>
     <controller type='pci' index='3' model='pcie-root-port'>
       <model name='pcie-root-port'/>
       <target chassis='3' port='0xa'/>
-      <alias name='pci.3'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x01' function='0x2'/>
     </controller>
     <controller type='pci' index='4' model='pcie-root-port'>
       <model name='pcie-root-port'/>
       <target chassis='4' port='0xb'/>
-      <alias name='pci.4'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x01' function='0x3'/>
     </controller>
     <controller type='pci' index='5' model='pcie-root-port'>
       <model name='pcie-root-port'/>
       <target chassis='5' port='0xc'/>
-      <alias name='pci.5'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x01' function='0x4'/>
     </controller>
     <controller type='pci' index='6' model='pcie-root-port'>
       <model name='pcie-root-port'/>
       <target chassis='6' port='0xd'/>
-      <alias name='pci.6'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x01' function='0x5'/>
     </controller>
     <controller type='pci' index='7' model='pcie-root-port'>
       <model name='pcie-root-port'/>
       <target chassis='7' port='0xe'/>
-      <alias name='pci.7'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x01' function='0x6'/>
     </controller>
     <controller type='pci' index='8' model='pcie-root-port'>
       <model name='pcie-root-port'/>
       <target chassis='8' port='0xf'/>
-      <alias name='pci.8'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x01' function='0x7'/>
     </controller>
     <controller type='pci' index='9' model='pcie-root-port'>
       <model name='pcie-root-port'/>
       <target chassis='9' port='0x10'/>
-      <alias name='pci.9'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x02' function='0x0' multifunction='on'/>
     </controller>
     <controller type='pci' index='10' model='pcie-root-port'>
       <model name='pcie-root-port'/>
       <target chassis='10' port='0x11'/>
-      <alias name='pci.10'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x02' function='0x1'/>
     </controller>
     <controller type='pci' index='11' model='pcie-root-port'>
       <model name='pcie-root-port'/>
       <target chassis='11' port='0x12'/>
-      <alias name='pci.11'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x02' function='0x2'/>
     </controller>
     <controller type='pci' index='12' model='pcie-root-port'>
       <model name='pcie-root-port'/>
       <target chassis='12' port='0x13'/>
-      <alias name='pci.12'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x02' function='0x3'/>
     </controller>
     <controller type='pci' index='13' model='pcie-root-port'>
       <model name='pcie-root-port'/>
       <target chassis='13' port='0x14'/>
-      <alias name='pci.13'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x02' function='0x4'/>
     </controller>
     <controller type='virtio-serial' index='0'>
-      <alias name='virtio-serial0'/>
       <address type='pci' domain='0x0000' bus='0x02' slot='0x00' function='0x0'/>
     </controller>
-    <controller type='sata' index='0'>
-      <alias name='ide'/>
-      <address type='pci' domain='0x0000' bus='0x00' slot='0x1f' function='0x2'/>
+    <controller type='usb' index='0' model='qemu-xhci' ports='7'>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x07' function='0x0'/>
     </controller>
     <interface type='bridge'>
-      <mac address='52:54:00:cf:3b:c4'/>
+      <mac address='52:54:00:ae:d3:19'/>
       <source bridge='br0'/>
-      <target dev='vnet0'/>
-      <model type='virtio-net'/>
-      <alias name='net0'/>
-      <address type='pci' domain='0x0000' bus='0x08' slot='0x00' function='0x0'/>
+      <model type='virtio'/>
+      <address type='pci' domain='0x0000' bus='0x07' slot='0x00' function='0x0'/>
     </interface>
     <serial type='pty'>
-      <source path='/dev/pts/0'/>
       <target type='isa-serial' port='0'>
         <model name='isa-serial'/>
       </target>
-      <alias name='serial0'/>
     </serial>
-    <console type='pty' tty='/dev/pts/0'>
-      <source path='/dev/pts/0'/>
+    <console type='pty'>
       <target type='serial' port='0'/>
-      <alias name='serial0'/>
     </console>
     <channel type='unix'>
-      <source mode='bind' path='/var/lib/libvirt/qemu/channel/target/domain-1-Monterey/org.qemu.guest_agent.0'/>
-      <target type='virtio' name='org.qemu.guest_agent.0' state='connected'/>
-      <alias name='channel0'/>
+      <target type='virtio' name='org.qemu.guest_agent.0'/>
       <address type='virtio-serial' controller='0' bus='0' port='1'/>
     </channel>
-    <input type='mouse' bus='ps2'>
-      <alias name='input0'/>
-    </input>
-    <input type='keyboard' bus='ps2'>
-      <alias name='input1'/>
-    </input>
+    <input type='mouse' bus='ps2'/>
+    <input type='keyboard' bus='ps2'/>
+    <audio id='1' type='none'/>
+    <!--
+      GPU device.
+    -->
     <hostdev mode='subsystem' type='pci' managed='yes'>
       <driver name='vfio'/>
       <source>
+        <!--
+        Change the `bus`, `slot` and `function` to reflect your IOMMU device location address.
+        Example... `IOMMU group 30:			 	[1002:73bf] 23:00.0 VGA compatible controller: Advanced Micro Devices, Inc. [AMD/ATI] Navi 21 [Radeon RX 6800/6800 XT / 6900 XT] (rev c1)`
+        The `23:00.0` is the bus, slot and function
+        -->
         <address domain='0x0000' bus='0x23' slot='0x00' function='0x0'/>
       </source>
-      <alias name='hostdev0'/>
       <address type='pci' domain='0x0000' bus='0x01' slot='0x00' function='0x0' multifunction='on'/>
     </hostdev>
+    <!--
+      GPU Audio device.
+    -->
     <hostdev mode='subsystem' type='pci' managed='yes'>
       <driver name='vfio'/>
       <source>
         <address domain='0x0000' bus='0x23' slot='0x00' function='0x1'/>
       </source>
-      <alias name='hostdev1'/>
       <address type='pci' domain='0x0000' bus='0x01' slot='0x00' function='0x1'/>
     </hostdev>
+    <!--
+      NVMe device.
+    -->
     <hostdev mode='subsystem' type='pci' managed='yes'>
       <driver name='vfio'/>
       <source>
-        <address domain='0x0000' bus='0x02' slot='0x00' function='0x3'/>
+        <address domain='0x0000' bus='0x01' slot='0x00' function='0x0'/>
       </source>
-      <alias name='hostdev2'/>
       <address type='pci' domain='0x0000' bus='0x04' slot='0x00' function='0x0'/>
     </hostdev>
+    <!--
+      NVMe device.
+    -->
     <hostdev mode='subsystem' type='pci' managed='yes'>
       <driver name='vfio'/>
       <source>
-        <address domain='0x0000' bus='0x25' slot='0x00' function='0x3'/>
+        <address domain='0x0000' bus='0x02' slot='0x00' function='0x0'/>
       </source>
-      <alias name='hostdev3'/>
       <address type='pci' domain='0x0000' bus='0x05' slot='0x00' function='0x0'/>
     </hostdev>
-    <hostdev mode='subsystem' type='pci' managed='yes'>
-      <driver name='vfio'/>
-      <source>
-        <address domain='0x0000' bus='0x4a' slot='0x00' function='0x0'/>
-      </source>
-      <alias name='hostdev4'/>
-      <address type='pci' domain='0x0000' bus='0x06' slot='0x00' function='0x0'/>
-    </hostdev>
-    <hostdev mode='subsystem' type='pci' managed='yes'>
-      <driver name='vfio'/>
-      <source>
-        <address domain='0x0000' bus='0x47' slot='0x00' function='0x0'/>
-      </source>
-      <alias name='hostdev5'/>
-      <address type='pci' domain='0x0000' bus='0x0d' slot='0x00' function='0x0'/>
-    </hostdev>
-    <hostdev mode='subsystem' type='pci' managed='yes'>
-      <driver name='vfio'/>
-      <source>
-        <address domain='0x0000' bus='0x47' slot='0x00' function='0x1'/>
-      </source>
-      <alias name='hostdev6'/>
-      <address type='pci' domain='0x0000' bus='0x09' slot='0x00' function='0x0'/>
-    </hostdev>
-    <hostdev mode='subsystem' type='pci' managed='yes'>
-      <driver name='vfio'/>
-      <source>
-        <address domain='0x0000' bus='0x47' slot='0x00' function='0x3'/>
-      </source>
-      <alias name='hostdev7'/>
-      <address type='pci' domain='0x0000' bus='0x0a' slot='0x00' function='0x0'/>
-    </hostdev>
-    <hostdev mode='subsystem' type='pci' managed='yes'>
-      <driver name='vfio'/>
-      <source>
-        <address domain='0x0000' bus='0x4b' slot='0x00' function='0x0'/>
-      </source>
-      <alias name='hostdev8'/>
-      <address type='pci' domain='0x0000' bus='0x0b' slot='0x00' function='0x0'/>
-    </hostdev>
+    <!--
+      Wifi device.
+    -->
     <hostdev mode='subsystem' type='pci' managed='yes'>
       <driver name='vfio'/>
       <source>
         <address domain='0x0000' bus='0x4c' slot='0x00' function='0x0'/>
       </source>
-      <alias name='hostdev9'/>
-      <address type='pci' domain='0x0000' bus='0x0c' slot='0x00' function='0x0'/>
+      <address type='pci' domain='0x0000' bus='0x06' slot='0x00' function='0x0'/>
+    </hostdev>
+    <!--
+      Blackmagic Video Capture card device.
+    -->
+    <hostdev mode='subsystem' type='pci' managed='yes'>
+      <driver name='vfio'/>
+      <source>
+        <address domain='0x0000' bus='0x4b' slot='0x00' function='0x0'/>
+      </source>
+      <address type='pci' domain='0x0000' bus='0x0b' slot='0x00' function='0x0'/>
+    </hostdev>
+    <hostdev mode='subsystem' type='usb' managed='no'>
+      <source>
+        <vendor id='0x05ac'/>
+        <product id='0x828d'/>
+      </source>
+      <address type='usb' bus='0' port='1'/>
     </hostdev>
     <memballoon model='none'/>
   </devices>
   <qemu:commandline>
     <qemu:arg value='-device'/>
     <qemu:arg value='isa-applesmc,osk=ourhardworkbythesewordsguardedpleasedontsteal(c)AppleComputerInc'/>
-    <qemu:arg value='-smbios'/>
-    <qemu:arg value='type=2'/>
     <qemu:arg value='-cpu'/>
-    <qemu:arg value='host,vendor=GenuineIntel,+invtsc,kvm=on'/>
+    <qemu:arg value='host,vendor=GenuineIntel'/>
   </qemu:commandline>
 </domain>
