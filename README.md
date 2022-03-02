@@ -36,31 +36,31 @@ THIS INFORMATION/RESEARCH HAS BEEN DONE AND SHARED PURELY FOR EXPERIMENTAL AND R
 
 ## FAQ
 
-#### 1) This sounds great! Where do I begin?
-[You can begin by making sure that you can adhere to the requirements outlined in this guide]
+### 1) This sounds great! Where do I begin?
+You can begin by making sure that you can adhere to the requirements outlined in this guide
 
-#### 2) This is great, but UnRaid says that it costs money on the website?
-[That is correct, but as with all good things in life, there is a 30 day free trial, and the cheapest version costs a one time $60 USD payment. Gotta pay to play the game, right?]
+### 2) This is great, but UnRaid says that it costs money on the website?
+That is correct, but as with all good things in life, there is a 30 day free trial, and the cheapest version costs a one time $60 USD payment. Gotta pay to play the game, right?
 
-#### 3) How do I access this server once I boot it up, and what's the deal with me not being able to boot into GUI mode?
-[In order to access your UnRaid Server OS page for the UnRaid server via tower.local (default name) or the IP address given by your network, you must connect to such from a browser on another device attached to the same network]
+### 3) How do I access this server once I boot it up, and what's the deal with me not being able to boot into GUI mode?
+In order to access your UnRaid Server OS page for the UnRaid server via tower.local (default name) or the IP address given by your network, you must connect to such from a browser on another device attached to the same network
 
-#### 4) Why won't my UnRaid installation boot after I install it the first time?
-[Due to requirements from the creators of UnRaid, the USB boot key created to boot UnRaid the first time around must be both booted from every time, and left inserted in the USB port at all times]
+### 4) Why won't my UnRaid installation boot after I install it the first time?
+Due to requirements from the creators of UnRaid, the USB boot key created to boot UnRaid the first time around must be both booted from every time, and left inserted in the USB port at all times
 
-#### 5) Why can't I access some devices attached to my SATA controllers?
-[Per how UnRaid operates, one SATA controller must be allocated to the Host OS, thereby making it unsuable by a VM]
+### 5) Why can't I access some devices attached to my SATA controllers?
+Per how UnRaid operates, one SATA controller must be allocated to the Host OS, thereby making it unsuable by a VM
 
-#### 6) Why don't some of my attached USB devices work?
-[Per how UnRaid operates, one USB controller must be allocated to the Host OS, thereby making it unusable by a VM]
+### 6) Why don't some of my attached USB devices work?
+Per how UnRaid operates, one USB controller must be allocated to the Host OS, thereby making it unusable by a VM
 
-#### 7) Why am I getting "VM Creation Error - XML error: Attempted double use of PCI address 0000:03:00.0"?
-[If you're seeing this error, maybe with a different number in the set of numbers as well, it's because function is set on the incorrect line, and bus might be set incorrectly as well. Double check your double check, and set them to the appropriate correct lines.]
+### 7) Why am I getting "VM Creation Error - XML error: Attempted double use of PCI address 0000:03:00.0"?
+If you're seeing this error, maybe with a different number in the set of numbers as well, it's because function is set on the incorrect line, and bus might be set incorrectly as well. Double check your double check, and set them to the appropriate correct lines.
 
-#### 8) If I don't have an existing macOS installation to use to create an offline installer of macOS, yet am already booted into unRAID, what can I do to achieve such?
+### 8) If I don't have an existing macOS installation to use to create an offline installer of macOS, yet am already booted into unRAID, what can I do to achieve such?
 [Use Macinabox from SpaceinvaderOne](https://github.com/SpaceinvaderOne/Macinabox)
 
-#### 9) If my VM freezes and I cannot restart it properly from within the unRAID backend and am faced with the choices of hard restarting my computer, what can/should I do?
+### 9) If my VM freezes and I cannot restart it properly from within the unRAID backend and am faced with the choices of hard restarting my computer, what can/should I do?
 
 
 **NOTE:** 
