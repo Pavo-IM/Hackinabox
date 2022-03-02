@@ -11,13 +11,16 @@ This guide is for the AMD motherboard/cpu user who would like to run macOS from 
  - [UnRAID](https://unraid.net/)
  - [AcidAnthera, and the OpenCore Bootloader team](https://github.com/acidanthera/OpenCorePkg)
  - [Dortania Team for the OpenCore Install Guide](https://dortania.github.io/OpenCore-Install-Guide/)
-
   
 ## Authors of Guide
 
 - [@Pavo-IM](https://www.github.com/Pavo-IM)
 - [@osx86-ijb](https://www.github.com/osx86-ijb)
 - [@MattsCreative](https://www.youtube.com/c/MattsCreative)
+
+## DISCLAIMER
+
+THIS INFORMATION/RESEARCH HAS BEEN DONE AND SHARED PURELY FOR EXPERIMENTAL AND RESEARCH PURPOSES, AND IS IN NO MAY MEANT TO PROMOTE CIRCUMVENTING OF ANYTHING THAT IS SOMEONE ELSE'S CORPORATE PRIVATE PROPERTY. THE INFORMATION LISTED HERE IS PURELY FOR EDUCATIONAL PURPOSES AND SHOULD YOU CHOOSE TO UTILIZE IT IN ANY WAY, I AM IN NO WAY RESPONSIBLE FOR ANY INJUNCTIONS/PROBLEMS THAT MAY OR MAY NOT ARISE AND/OR BE BROUGHT AGAINST ANOTHER FOR THEIR CHOOSING TO HAVE DONE SO.
 
 ## Appendix
 
