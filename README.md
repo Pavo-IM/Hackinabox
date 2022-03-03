@@ -172,30 +172,34 @@ If you're seeing this error, maybe with a different number in the set of numbers
 - 5.1) [Head to the OpenCore Install Guide page for making a macOS Installer USB via Linux to continue making your USB, and once finished, return here to continue](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/linux-install.html)
 
 
-## 6) Making the EFI
+## 6) Obtaining and placing the EFI on the macOS USB Installer
 
 - 6.1) [So after you've made your macOS Installer USB, please apply the OpenCore EFI from here to your macOS USB Installer's ESP/EFI partition, utilizing the proper folder hierarchies.](https://cdn.discordapp.com/attachments/469592019384270858/855930439343931452/EFI.zip)
 
 
-## 7) Installation of macOS
+## 7) Installation of macOS from within your booted VM
 
 - 7.1) **Create your USB based macOS installer as you normally would. I suggest using the ```createinstallmedia``` method on macOS.**
 - 7.2) **Apply the EFI that can be obtained from this repo and in the previous step to the ESP partition of the created USB installer.**
-- 7.3) **Boot from the created installer inside of booted VM instance of OpenCore.**
-- 7.4) **Install your macOS version, and then boot into it after everything has finished! Make sure to copy over the EFI to the install drive so you can boot without using your macOS installer USB!**
+- 7.3) **Start up your macOS VM, and boot from the created installer once inside of the OpenCore bootloader menu/screen.**
+- 7.4) **Install your macOS version, making sure to reboot your UnRaid server if necessary along the way, and then boot into it after everything has finished!**
 
 
 ## 8) Post Installation Finalization
 
-- 8.1) **Next, we're going to want to set up our hardware via inputting the correct information and values into the correct locations using both IORegistryExplorer to obtain the appropriate Address locations and naming, and MaciASL to edit the SSDT files and place in our hardware's corresponding information. Remember to test your changes non destructively so you don't bork your EFI, and have a working backup EFI to boot from!**
-- 8.2) **Mount your EFI/ESP partiton using whatever means/software that you choose.**
-- 8.3) **Obtain and open IORegistryExplorer if you haven't already. (Preferrably the newest one if one has an Apple Developer account and it's possible, although any version of at least 2.x should suffice.)**
-- 8.4) **Obtain and open MaciASL if you haven't already.(Preferrably the version from Acidanthera's GitHub repo.)**
-- 8.5) **Load each of the SSDT's in MaciASL, working on them one at a time, replacing the information per your own hardwares addresses and devices names, so as not to convolute the process.**
-- 8.6) **In each loaded SSDT, look for the corresponding Address and Device Name, and copy both sets of information to the corresponding SSDT that you are working on. (See below in Section #9 for SSDT Setup Examples)**
-- 8.7) **After all have been replaced, you should be good to go, so you'll restart your VM and UnRaid Server OS again (if need be and one is using a Navi based GPU, as there's a Reset Bug that exists. Plus it's just a good practice to do so, anyway).**
-- 8.8) **Go back into your UnRaid Server VM's, and start the macOS VM.**
-- 8.9) **Boot from your installed version of macOS, and profit!**
+- 8.1) **Boot into your newly installed VM instance of macOS, yet again.**
+- 8.2) **Once you've gone through the first time user set up and set everything up the way that you prefer and have reached the desktop UI, make sure to obtain and run "EFI Agent" by HeadKaze from their appropriate GitHub repo, making sure to grant it the permissions that it asks for when it asks.**
+- 8.3) **Mount both the macOS Installer USB EFI/ESP partition that contains the OpenCore EFI files that you've booted from, and mount the Internal EFI/ESP of the installed macOS drive as well.**
+- 8.4) **Copy the "EFI" folder on the root of the macOS Installer USB to the root of the installed macOS drive.**
+- 8.5) **Next, we're going to want to set up our hardware via inputting the correct information and values into the correct locations using both IORegistryExplorer to obtain the appropriate Address locations and naming, and MaciASL to edit the SSDT files and place in our hardware's corresponding information. Remember to test your changes non destructively so you don't bork your EFI, and have a working backup EFI to boot from!**
+- 8.6) **Mount your installed macOS EFI/ESP partiton again using EFI Agent.**
+- 8.7) **Obtain and open IORegistryExplorer if you haven't already. (Preferrably the newest one if one has an Apple Developer account and it's possible, although any version of at least 2.x should suffice.)**
+- 8.8) **Obtain and open MaciASL if you haven't already.(Preferrably the version from Acidanthera's GitHub repo.)**
+- 8.9) **Load each of the SSDT's in MaciASL, working on them one at a time, replacing the information per your own hardwares addresses and devices names, so as not to convolute the process.**
+- 8.10) **In each loaded SSDT, look for the corresponding Address and Device Name, and copy both sets of information to the corresponding SSDT that you are working on. (See below in Section #9 for SSDT Setup Examples)**
+- 8.11) **After all have been replaced, you should be good to go, so you'll restart your VM and UnRaid Server OS again, if need be. (For Example: if one is using a Navi based GPU, as there's a Reset Bug that exists. Plus it's just a good practice to do so, anyway).**
+- 8.12) **Go back into your UnRaid Server VM's, and start the macOS VM.**
+- 8.13) **Boot from your installed version of macOS without having to use the Installer USB, and profit!**
 
 
 ## 9) SSDT Setup Examples - Before & After
