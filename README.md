@@ -102,9 +102,12 @@ If you're seeing this error, maybe with a different number in the set of numbers
 
 ## 2) Making the Unraid USB:
 
-- 2.1) **Under "select version", select "Stable", then Unraid 6.9.2 or newer version depending on when you read this** ![UnraidUSBSelectVersion_01](https://i.ibb.co/cJ5ST55/Unraid-USBCreator-01.png)
-- 2.2) **Click on "Customize" and check the "Allow UEFI Boot" checkbox**![UnraidUSBSelectVersion_02](https://i.ibb.co/gjtpsd0/Unraid-USBCreator-02.png)
-- 2.3) **Select USB Drive that you want to create as your Unraid USB, and then click on the "Write" button under Write Image**![UnraidUSBSelectVersion_03](https://i.ibb.co/bJwHGVk/Unraid-USBCreator-03.png)
+- 2.1) **Under "select version", select "Stable", then Unraid 6.9.2 or newer version depending on when you read this** 
+<br> ![UnraidUSBSelectVersion_01](https://i.ibb.co/cJ5ST55/Unraid-USBCreator-01.png)
+- 2.2) **Click on "Customize" and check the "Allow UEFI Boot" checkbox**
+<br> ![UnraidUSBSelectVersion_02](https://i.ibb.co/gjtpsd0/Unraid-USBCreator-02.png)
+- 2.3) **Select USB Drive that you want to create as your Unraid USB, and then click on the "Write" button under Write Image**
+<br> ![UnraidUSBSelectVersion_03](https://i.ibb.co/bJwHGVk/Unraid-USBCreator-03.png)
 - 2.4) **Wait for USB Creator to finish creating Unraid USB and then restart machine and attempt to boot from newly created Unraid USB**
 
 
@@ -114,8 +117,10 @@ If you're seeing this error, maybe with a different number in the set of numbers
 - 3.2) **Select The First Option To Boot Unraid**
 - 3.3) **Enter the Username and Password = root**
 - 3.4) From another device connected to the same network as your booted Unraid Server OS, go to http://tower.local in your Browser of choice
-- 3.5) **Select the disk to install/store the Unraid Server OS files to from the drop down menu of "Disk 1"** ![3.5](https://i.ibb.co/pychKXD/01.png)
-- 3.6) **Go the bottom of the page after selecting your disk in Disk 1 drop down menu, and click on "START" button** ![3.6](https://i.ibb.co/NndYd5w/02.png)
+- 3.5) **Select the disk to install/store the Unraid Server OS files to from the drop down menu of "Disk 1"**
+<br> ![3.5](https://i.ibb.co/pychKXD/01.png)
+- 3.6) **Go the bottom of the page after selecting your disk in Disk 1 drop down menu, and click on "START" button**
+<br> ![3.6](https://i.ibb.co/NndYd5w/02.png)
 - 3.7) **(It will then prompt you around the same time to confirm that you want to Format the drive, make sure to agree to such!)**
 - 3.8) **After it's finished, you're going to click on the clickable text that says "Flash"** 
 <br> ![3.8](https://i.ibb.co/wBd6p1m/03.png)
