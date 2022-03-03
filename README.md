@@ -117,43 +117,58 @@ If you're seeing this error, maybe with a different number in the set of numbers
 - 3.5) **Select the disk to install/store the Unraid Server OS files to from the drop down menu of "Disk 1"** ![3.5](https://i.ibb.co/pychKXD/01.png)
 - 3.6) **Go the bottom of the page after selecting your disk in Disk 1 drop down menu, and click on "START" button** ![3.6](https://i.ibb.co/NndYd5w/02.png)
 - 3.7) **(It will then prompt you around the same time to confirm that you want to Format the drive, make sure to agree to such!)**
-- 3.8) **After it's finished, you're going to click on the clickable text that says "Flash"** ![3.8](https://i.ibb.co/wBd6p1m/03.png)
-- 3.9) **In the page that loads afterwards, scroll down to the green text box that's labeled "Unraid OS"** ![3.9](https://i.ibb.co/fQjQLQN/04.png)
-- 3.10) **Inside of the green Unraid OS text entry box field you will see** `apend initrd=/bzroot` **We're going to change that to** `append pcie_acs_override=downstream,multifunction video=efifb:off initrd=/bzroot` ![3.10](https://i.ibb.co/JzJhxv8/05.png)
-- 3.11) **Scroll down to the bottom of the page and click the "APPLY" button** ![3.11](https://i.ibb.co/wwBTKKD/06.png)
-- 3.12) **Click the button called "MAIN" at the top, and when that page loads, scroll down to the bottom, and click on the REBOOT button** ![3.12](https://i.ibb.co/TPP03Vw/07.png)
-- 3.13) **Once you're booted back up into your Unraid Server OS from your Unraid Server OS USB Key, click on "TOOLS", and then "System Devices"**  
-![3.13](https://i.ibb.co/wcBNDqk/08.png)
-- 3.14) **Once System Devices is loaded, you'll want to make sure to isolate your Unraid USB on it's own USB controller, away from all of the other peripherals. This should be able to be done plug and play without having to reboot, but if it doesn't end up being possible to plug and play refresh the device list for you, then you can shut down and restart between each switching of the port, testing to see which port will allow for the Unraid USB to be isolated by itself. If needed/possible, use a rear lower port. (Feel free to use a USB hub with Unraid USB plugged into it if hot plugging it bare won't detect the USB when doing the process, or when attempting to reboot from Unraid USB)** ![3.14](https://i.ibb.co/2tqmPBB/09.png)
+- 3.8) **After it's finished, you're going to click on the clickable text that says "Flash"** 
+<br> ![3.8](https://i.ibb.co/wBd6p1m/03.png)
+- 3.9) **In the page that loads afterwards, scroll down to the green text box that's labeled "Unraid OS"**
+<br> ![3.9](https://i.ibb.co/fQjQLQN/04.png)
+- 3.10) **Inside of the green Unraid OS text entry box field you will see** `apend initrd=/bzroot` **We're going to change that to** `append pcie_acs_override=downstream,multifunction video=efifb:off initrd=/bzroot` 
+<br> ![3.10](https://i.ibb.co/JzJhxv8/05.png)
+- 3.11) **Scroll down to the bottom of the page and click the "APPLY" button**
+<br> ![3.11](https://i.ibb.co/wwBTKKD/06.png)
+- 3.12) **Click the button called "MAIN" at the top, and when that page loads, scroll down to the bottom, and click on the REBOOT button**
+<br> ![3.12](https://i.ibb.co/TPP03Vw/07.png)
+- 3.13) **Once you're booted back up into your Unraid Server OS from your Unraid Server OS USB Key, click on "TOOLS", and then "System Devices"**
+<br> ![3.13](https://i.ibb.co/wcBNDqk/08.png)
+- 3.14) **Once System Devices is loaded, you'll want to make sure to isolate your Unraid USB on it's own USB controller, away from all of the other peripherals. This should be able to be done plug and play without having to reboot, but if it doesn't end up being possible to plug and play refresh the device list for you, then you can shut down and restart between each switching of the port, testing to see which port will allow for the Unraid USB to be isolated by itself. If needed/possible, use a rear lower port. (Feel free to use a USB hub with Unraid USB plugged into it if hot plugging it bare won't detect the USB when doing the process, or when attempting to reboot from Unraid USB)** 
+<br> ![3.14](https://i.ibb.co/2tqmPBB/09.png)
 - 3.15) **Once that has been accomplished, make sure to select the check boxes for your GPU, GPU audio, any potential supported onboard audio chipset (if needed), as well as your network controller (WiFi), and your NVME controller (or if you have two SATA groups, bind the SSD/HDD you want), and hit the "BIND SELECTED TO VFIO AT BOOT" button at the bottom**
 - 3.16) **Once that is done, you will want to go back to the "MAIN" tab and go to the bottom of the page and press the "REBOOT" button.
 - 3.17) **Once you are rebooted into your Unraid Server OS from your Unraid USB again, head to the bottom of the MAIN tab and make sure to press the "START" button to start your array.**
-- 3.18) **After that, we're going to go to "SETTINGS", and then select "Disk Settings"** ![3.18](https://i.ibb.co/Yj5GDG7/10.png)
-- 3.19) **Once we're in the Disk Settings page, we're going to change "Enable auto start" to "Yes", then click the "APPLY" button** ![3.19](https://i.ibb.co/9cW1Ltr/11.png)
+- 3.18) **After that, we're going to go to "SETTINGS", and then select "Disk Settings"** 
+<br> ![3.18](https://i.ibb.co/Yj5GDG7/10.png)
+- 3.19) **Once we're in the Disk Settings page, we're going to change "Enable auto start" to "Yes", then click the "APPLY" button** 
+<br> ![3.19](https://i.ibb.co/9cW1Ltr/11.png)
 
 
 ## 4) Setting Up Your macOS VM
 
 # !! **DISCLAIMER: YOUR LINE COUNT PLACINGS MIGHT NOT BE THE SAME AS IN THE GUIDE DUE TO ANY POTENTIAL DIFFERENCES IN HARDWARE CONFIGURATION, TAKE NOTE OF THIS AND BE ON THE LOOK OUT FOR THE DIFFERENCES** !!
 
-- 4.1) **Now we're going to head to the "VMS" tab of the backend and click on the "ADD VM" button** ![4.1](https://i.ibb.co/hLhL1jR/12.png)
-- 4.2) **When the Add VM page loads, we're going to select FreeBSD** ![4.2](https://i.ibb.co/NCYytQv/13.png)
-- 4.3) **Once loaded, click "EDIT" button load the edit page and edit VM settings. When that next page loads, go to the "Logical CPUs" section, and select every other CPU thread combination except for CPU 0 / X (where as X is the variable for your specific core / thread count). After that, make sure to set your Max Memory. Do keep in mind that Unraid needs 4GB of RAM, so anything 4GB less than your Maximum installed RAM should be sufficient if you don't need to allocate more elsewhere.** ![4.3](https://i.ibb.co/0Qdsk5J/14-5.png)
-- 4.4) **Next, scroll down on the page and select "3.0 qemu XHCI" from the drop down menu for USB Controller. This is really personal preference regarding the selection of USB Controller, and doesn't really matter since macOS doesn't support any of them. Then make sure to select your GPU from the Graphics Card drop down menu. Then select your appropriate Audio Chipset from the drop down menu in the selection named Sound Card.** ![4.4](https://i.ibb.co/ChvQdtR/14-6.png)
-- 4.5) **Make sure that Network Bridge is set to "br0" from the dropdown menu, and Network Model is set to "virtio-net" from the appropriate drop down selection as well. Then place check marks next to the two(or more?) devices in the "Other PCI Devices" section that you want to pass through. Uncheck "Start VM after creation", and then click on the "CREATE" button PS: This is only to be done if the user isn't already passing through, or able to pass through their Ethernet Controller** ![4.5](https://i.ibb.co/wdP7V24/14-7.png)
-- 4.6) **Click on FreeBSD icon, and choose "Edit". In the top right corner when the Edit page loads, you'll see a slider with the words "FORM VIEW" next to it.**  \
-![4.6.1](https://i.ibb.co/4jFdyLP/14-8.png)  
-**Then, click on that to change it to "XML VIEW".**  \
-![4.6.2](https://i.ibb.co/t826xfx/14-9.png)
+- 4.1) **Now we're going to head to the "VMS" tab of the backend and click on the "ADD VM" button**
+<br> ![4.1](https://i.ibb.co/hLhL1jR/12.png)
+- 4.2) **When the Add VM page loads, we're going to select FreeBSD** 
+<br> ![4.2](https://i.ibb.co/NCYytQv/13.png)
+- 4.3) **Once loaded, click "EDIT" button load the edit page and edit VM settings. When that next page loads, go to the "Logical CPUs" section, and select every other CPU thread combination except for CPU 0 / X (where as X is the variable for your specific core / thread count). After that, make sure to set your Max Memory. Do keep in mind that Unraid needs 4GB of RAM, so anything 4GB less than your Maximum installed RAM should be sufficient if you don't need to allocate more elsewhere.** 
+<br> ![4.3](https://i.ibb.co/0Qdsk5J/14-5.png)
+- 4.4) **Next, scroll down on the page and select "3.0 qemu XHCI" from the drop down menu for USB Controller. This is really personal preference regarding the selection of USB Controller, and doesn't really matter since macOS doesn't support any of them. Then make sure to select your GPU from the Graphics Card drop down menu. Then select your appropriate Audio Chipset from the drop down menu in the selection named Sound Card.** 
+<br> ![4.4](https://i.ibb.co/ChvQdtR/14-6.png)
+- 4.5) **Make sure that Network Bridge is set to "br0" from the dropdown menu, and Network Model is set to "virtio-net" from the appropriate drop down selection as well. Then place check marks next to the two(or more?) devices in the "Other PCI Devices" section that you want to pass through. Uncheck "Start VM after creation", and then click on the "CREATE" button PS: This is only to be done if the user isn't already passing through, or able to pass through their Ethernet Controller** 
+<br> ![4.5](https://i.ibb.co/wdP7V24/14-7.png)
+- 4.6) **Click on FreeBSD icon, and choose "Edit". In the top right corner when the Edit page loads, you'll see a slider with the words "FORM VIEW" next to it.**  
+<br> ![4.6.1](https://i.ibb.co/4jFdyLP/14-8.png)  
+**Then, click on that to change it to "XML VIEW".**
+<br> ![4.6.2](https://i.ibb.co/t826xfx/14-9.png)
 - 4.7) **After the XML view has loaded, we're going to go to line 37 and remove it (the entire line, that is) per what we have selected in the image here. This is done because QEMU's topology isn't read by macOS correctly and would require the topology kernel patch from the AMD kernel patches in order for it to work otherwise**  
-![4.7](https://i.ibb.co/Qbq5j1R/15.png)
+<br> ![4.7](https://i.ibb.co/Qbq5j1R/15.png)
 - 4.8) **Next, we're going to go to line 40 and select the text "utc",** ![4.8.1](https://i.ibb.co/xYFgx8D/17.png)  
 **and change it to "localtime"**  
-![4.8.2](https://i.ibb.co/5ry53yH/18.png)
-- 4.9) **Scroll down to what should be line 63 and copy multifunction =‘on’,** ![4.9.1](https://i.ibb.co/GTCJncP/19.png) **and paste it at the end of line 118 as shown in the corresponding picture, making sure to change the last zero in function='0x0' to function='0x1' after you're done doing the prior pasting job, since it needs to be changed, also.** ![4.9.2](https://i.ibb.co/MZDrV16/20.png)
-- 4.10) **The line below "hostdev1" should be your GPU. On 174 where it says bus=‘0x04’, we're going to change bus=‘0x04’ to 0x03 to match up with our GPU so that it will make the audio output of the GPU work within macOS. Do also make sure to change function='0x0' to '0x1' while we're at it.** ![4.10](https://i.imgur.com/DizvGhc.png) 
+<br> ![4.8.2](https://i.ibb.co/5ry53yH/18.png)
+- 4.9) **Scroll down to what should be line 63 and copy multifunction =‘on’,** <br> ![4.9.1](https://i.ibb.co/GTCJncP/19.png) <br> **and paste it at the end of line 118 as shown in the corresponding picture, making sure to change the last zero in function='0x0' to function='0x1' after you're done doing the prior pasting job, since it needs to be changed, also.** 
+<br>![4.9.2](https://i.ibb.co/MZDrV16/20.png)
+- 4.10) **The line below "hostdev1" should be your GPU. On 174 where it says bus=‘0x04’, we're going to change bus=‘0x04’ to 0x03 to match up with our GPU so that it will make the audio output of the GPU work within macOS. Do also make sure to change function='0x0' to '0x1' while we're at it.**
+<br> ![4.10](https://i.imgur.com/DizvGhc.png) 
 - **Steps number 9 and number 10 are done to make your GPU and GPU audio device be seen to macOS as one device. The multifunction argument tells the hypervisor to allow multiple devices to operate on the same bus. Only the GPU audio device must match the GPU device bus and slot. The GPU audio device must use the function 0x1 as shown above.**
-- 4.11) **Head to the bottom of the document and on line 144 click at the end of </devices> and hit enter/return to make a new line (145) and paste this:** ![4.11](https://i.ibb.co/P5YDmZy/22.png) 
+- 4.11) **Head to the bottom of the document and on line 144 click at the end of </devices> and hit enter/return to make a new line (145) and paste this:**  
 ```
      <qemu:commandline>  
      <qemu:arg value='-device'/>  
