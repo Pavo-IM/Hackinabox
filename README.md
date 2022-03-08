@@ -3,7 +3,7 @@
 
 ## MacOS install using UnRaid
 
-This guide is for the AMD motherboard/cpu user who would like to run macOS from a VM inside of UnRAID Server OS, in efforts of circumventing the need for multiple patches on AMD based hardware and motherboards when booting bare metal from OpenCore.
+This guide is for the computer / UnRAID Server OS user who would like to run macOS from a VM inside of UnRAID Server OS, in efforts of circumventing the need for multiple patches on AMD based hardware and motherboards when booting bare metal from OpenCore.
 
 ## Acknowledgements
 
@@ -20,7 +20,7 @@ This guide is for the AMD motherboard/cpu user who would like to run macOS from 
 
 ## DISCLAIMER
 
-THIS INFORMATION/RESEARCH HAS BEEN DECIDED TO BE SHARED PURELY FOR EXPERIMENTAL AND RESEARCH PURPOSES, AND IS IN NO MAY MEANT TO PROMOTE THE CIRCUMVENTION OF ANYTHING THAT BELONGS TO OR IS THE CREATION OF ANY CORPORATE ENTITY, OR SOMEONE ELSE'S PRIVATE PROPERTY. THE INFORMATION DOCUMENTED AND WRITTEN HERE IS PURELY FOR EDUCATIONAL PURPOSES, AND SHOULD YOU CHOOSE TO UTILIZE THE INFORMATION WRITTEN HERE IN ANY WAY, I AM IN NO WAY RESPONSIBLE FOR YOUR CHOOSING TO HAVE DONE SO/UTILIZED ANYTHING DISCUSSED IN THIS.
+THIS INFORMATION/RESEARCH HAS BEEN SHARED PURELY FOR EXPERIMENTAL AND RESEARCH PURPOSES, AND IS IN NO MAY MEANT TO PROMOTE THE CIRCUMVENTION OF ANYTHING THAT BELONGS TO OR IS THE CREATION OF ANY CORPORATE ENTITY, OR SOMEONE ELSE'S PRIVATE PROPERTY. THE INFORMATION DOCUMENTED AND WRITTEN HERE IS PURELY FOR EDUCATIONAL PURPOSES, AND SHOULD YOU CHOOSE TO UTILIZE THE INFORMATION WRITTEN HERE IN ANY WAY, I AM IN NO WAY RESPONSIBLE FOR YOUR CHOOSING TO HAVE DONE SO/UTILIZED ANYTHING DISCUSSED IN THIS.
 
 ## Appendix
 
@@ -78,8 +78,7 @@ If you're seeing this error, maybe with a different number in the set of numbers
 
 ## Requirements
 
-- An AMD based motherboard (AM4 or newer?)
-- An AMD based central processing unit (Ryzen or newer?)
+- Any computer running UnRAID Server OS (AMD *OR* Intel, as the OpenCore config settings and XML will work for both) 
 - A USB Flash Key larger than 1GB, no larger than 32GB (PS: It will need to be left inserted at all times, as this is required by UnRaid Server OS)
 - [The Unraid Server OS USB Creator application to properly create your UnRaid Server USB key that your machine will be booted from every time.](https://unraid.net/download)
 - A dedicated drive for the UnRaid Server OS (SSD?)
