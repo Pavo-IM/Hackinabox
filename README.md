@@ -87,7 +87,7 @@ If you're seeing this error, maybe with a different number in the set of numbers
 - One USB controller that you don't mind having allocated to the Host OS, as it will be unusable by the VM.
 - [A copy of the IORegistryExplorer application for macOS that can be obtained from here:](https://github.com/khronokernel/IORegistryClone)
 - [A copy of the MacIASL application that can be obtained from here:](https://github.com/acidanthera/MaciASL)
-- An ability to follow detailed instructions down to a meticulously accurate and finite level.
+- An ability to follow detailed instructions down to a meticulously accurate and minute level.
 - An ability to stay extremely calm as you follow a lengthy set of instructions.
 - An unbridled/unmatched zest for all things technological.
 
