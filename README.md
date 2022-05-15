@@ -169,7 +169,7 @@ If you're seeing this error, maybe with a different number in the set of numbers
 <br> ![4.8.2](https://i.ibb.co/5ry53yH/18.png)
 - 4.9) **Scroll down to what should be line 63 and copy multifunction =‘on’, and paste it at the end of line 125 as hightlighted and shown in the corresponding picture below: 
 <br> ![4.9.1](https://i.ibb.co/GTCJncP/19.png)
-- 4.10) Head to lines 130 and 132 as shown in the picture below and change the last zero in function='0x0' to function='0x1' to match each other since they need to be changed, also.** 
+- 4.10) **Head to lines 130 and 132 as shown in the picture below and change the last zero in function='0x0' to function='0x1' to match each other since they need to be changed, also.** 
 <br> ![4.9.2](https://i.ibb.co/Q6QGTQ3/20.png)
 - 4.11) **The line below "hostdev1" should be your GPU. On 174 where it says bus=‘0x04’, we're going to change bus=‘0x04’ to 0x03 to match up with our GPU so that it will make the audio output of the GPU work within macOS. Do also make sure to change function='0x0' to '0x1' while we're at it.**
 <br> ![4.11](https://i.imgur.com/DizvGhc.png)
