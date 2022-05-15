@@ -164,8 +164,8 @@ If you're seeing this error, maybe with a different number in the set of numbers
 <br> ![4.6.2](https://i.ibb.co/t826xfx/14-9.png)
 - 4.7) **After the XML view has loaded, we're going to go to line 37 and remove it (the entire line, that is) per what we have selected in the image here. This is done because QEMU's topology isn't read by macOS correctly and would require the topology kernel patch from the AMD kernel patches in order for it to work otherwise**  
 <br> ![4.7](https://i.ibb.co/Qbq5j1R/15.png)
-- 4.8) **Next, we're going to go to line 40 and select the text "utc",** ![4.8.1](https://i.ibb.co/xYFgx8D/17.png)  
-**and change it to "localtime"**  
+- 4.8) **Next, we're going to go to line 40 and select the text "utc", and change it to "localtime":**
+<br> ![4.8.1](https://i.ibb.co/xYFgx8D/17.png)
 <br> ![4.8.2](https://i.ibb.co/5ry53yH/18.png)
 - 4.9) **Scroll down to what should be line 63 and copy multifunction =‘on’, and paste it at the end of line 125 as hightlighted and shown in the corresponding picture below:**
 <br> ![4.9.1](https://i.ibb.co/GTCJncP/19.png)
