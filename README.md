@@ -42,9 +42,9 @@ THIS INFORMATION/RESEARCH HAS BEEN SHARED PURELY FOR EXPERIMENTAL AND RESEARCH P
 <br>[4.3) Setting Up Your Unraid Server OS Host](https://github.com/osx86-ijb/Hackinabox#3-setting-up-your-unraid-server-os-host)
 <br>[4.4) Setting up your macOS VM](https://github.com/osx86-ijb/Hackinabox#4-setting-up-your-macos-vm)
 - [5) Making the Recovery USB on Linux](https://github.com/osx86-ijb/Hackinabox#5-making-the-recovery-usb-on-linux)
-- [6) Obtaining and placing the EFI on the macOS USB Installer](https://github.com/osx86-ijb/Hackinabox#6-making-the-efi) 
-- [7) Installation of macOS from within your booted VM](https://github.com/osx86-ijb/Hackinabox#7-installation-of-macos)
-- [8) Post-Installation Finalization](https://github.com/osx86-ijb/Hackinabox#8-post-installation-finalization--ssdt-setup)
+- [6) Obtaining and placing the EFI on the macOS USB Installer](https://github.com/osx86-ijb/Hackinabox#6-obtaining-and-placing-the-efi-on-the-macos-usb-installer) 
+- [7) Installation of macOS from within your booted VM](https://github.com/osx86-ijb/Hackinabox#7-installation-of-macos-from-within-your-booted-vm)
+- [8) Post-Installation Finalization](https://github.com/osx86-ijb/Hackinabox#8-post-installation-finalization)
 - [9) SSDT Setup Examples - Before & After](https://github.com/osx86-ijb/Hackinabox#9-ssdt-setup-examples---before--after)
 
 ## FAQ
