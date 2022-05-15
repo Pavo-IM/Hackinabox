@@ -167,7 +167,7 @@ If you're seeing this error, maybe with a different number in the set of numbers
 - 4.8) **Next, we're going to go to line 40 and select the text "utc",** ![4.8.1](https://i.ibb.co/xYFgx8D/17.png)  
 **and change it to "localtime"**  
 <br> ![4.8.2](https://i.ibb.co/5ry53yH/18.png)
-- 4.9) **Scroll down to what should be line 63 and copy multifunction =‘on’, and paste it at the end of line 125 as hightlighted and shown in the corresponding picture below: 
+- 4.9) **Scroll down to what should be line 63 and copy multifunction =‘on’, and paste it at the end of line 125 as hightlighted and shown in the corresponding picture below:**
 <br> ![4.9.1](https://i.ibb.co/GTCJncP/19.png)
 - 4.10) **Head to lines 130 and 132 as shown in the picture below and change the last zero in function='0x0' to function='0x1' to match each other since they need to be changed, also.** 
 <br> ![4.9.2](https://i.ibb.co/Q6QGTQ3/20.png)
