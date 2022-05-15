@@ -22,15 +22,28 @@ This guide is for the computer / UnRAID Server OS user who would like to run mac
 
 THIS INFORMATION/RESEARCH HAS BEEN SHARED PURELY FOR EXPERIMENTAL AND RESEARCH PURPOSES, AND IS IN NO MAY MEANT TO PROMOTE THE CIRCUMVENTION OF ANYTHING THAT BELONGS TO OR IS THE CREATION OF ANY CORPORATE ENTITY, OR SOMEONE ELSE'S PRIVATE PROPERTY. THE INFORMATION DOCUMENTED AND WRITTEN HERE IS PURELY FOR EDUCATIONAL PURPOSES, AND SHOULD YOU CHOOSE TO UTILIZE THE INFORMATION WRITTEN HERE IN ANY WAY, I AM IN NO WAY RESPONSIBLE FOR YOUR CHOOSING TO HAVE DONE SO/UTILIZED ANYTHING DISCUSSED IN THIS.
 
-## Appendix
+## TABLE OF CONTENTS
 
-- [1) Getting Started](https://github.com/osx86-ijb/Hackinabox#1-getting-started)
-- [2) Making the UnRAID USB](https://github.com/osx86-ijb/Hackinabox#2-making-the-unraid-usb)
-- [3) Setting up your Host Device](https://github.com/osx86-ijb/Hackinabox#3-setting-up-your-unraid-server-os-host)
-- [4) Setting up your macOS VM](https://github.com/osx86-ijb/Hackinabox#4-setting-up-your-macos-vm)
+- [1) FAQ](https://github.com/osx86-ijb/Hackinabox#faq)
+  [1.1) This sounds great! Where do I begin?](https://github.com/osx86-ijb/Hackinabox#1-this-sounds-great-where-do-i-begin)
+  [1.2) This is great, but UnRaid says that it costs money on the website?](https://github.com/osx86-ijb/Hackinabox#2-this-is-great-but-unraid-says-that-it-costs-money-on-the-website)
+  [1.3) How do I access this server once I boot it up, and what's the deal with me not being able to boot into GUI mode?](https://github.com/osx86-ijb/Hackinabox#3-how-do-i-access-this-server-once-i-boot-it-up-and-whats-the-deal-with-me-not-being-able-to-boot-into-gui-mode)
+  [1.4) Why won't my UnRaid installation boot after I install it the first time?](https://github.com/osx86-ijb/Hackinabox#4-why-wont-my-unraid-installation-boot-after-i-install-it-the-first-time)
+  [1.5) Why can't I access some devices attached to my SATA controllers?](https://github.com/osx86-ijb/Hackinabox#5-why-cant-i-access-some-devices-attached-to-my-sata-controllers)
+  [1.6) Why don't some of my attached USB devices work?](https://github.com/osx86-ijb/Hackinabox#6-why-dont-some-of-my-attached-usb-devices-work)
+  [1.7) Why am I getting "VM Creation Error - XML error: Attempted double use of PCI address 0000:03:00.0"?](https://github.com/osx86-ijb/Hackinabox#7-why-am-i-getting-vm-creation-error---xml-error-attempted-double-use-of-pci-address-000003000)
+  [1.8) If I don't have an existing macOS installation to use to create an offline installer of macOS, yet am already booted into unRAID, what can I do to achieve such?](https://github.com/osx86-ijb/Hackinabox#8-if-i-dont-have-an-existing-macos-installation-to-use-to-create-an-offline-installer-of-macos-yet-am-already-booted-into-unraid-what-can-i-do-to-achieve-such)
+  [1.9) If my VM freezes and I cannot restart it properly from within the unRAID backend and am faced with the choices of hard restarting my computer, what can/should I do?](https://github.com/osx86-ijb/Hackinabox#9-if-my-vm-freezes-and-i-cannot-restart-it-properly-from-within-the-unraid-backend-and-am-faced-with-the-choices-of-hard-restarting-my-computer-what-canshould-i-do)
+- [2) Features](https://github.com/osx86-ijb/Hackinabox#features)
+- [3) Requirements](https://github.com/osx86-ijb/Hackinabox#requirements)
+- [4) Installation Procedurals](https://github.com/osx86-ijb/Hackinabox#installation-procedurals)
+  [4.1) Getting Started](https://github.com/osx86-ijb/Hackinabox#1-getting-started)
+  [4.2) Making the UnRAID USB](https://github.com/osx86-ijb/Hackinabox#2-making-the-unraid-usb)
+  [4.3) Setting Up Your Unraid Server OS Host](https://github.com/osx86-ijb/Hackinabox#3-setting-up-your-unraid-server-os-host)
+  [4.4) Setting up your macOS VM](https://github.com/osx86-ijb/Hackinabox#4-setting-up-your-macos-vm)
 - [5) Making the Recovery USB on Linux](https://github.com/osx86-ijb/Hackinabox#5-making-the-recovery-usb-on-linux)
-- [6) Making the EFI](https://github.com/osx86-ijb/Hackinabox#6-making-the-efi) 
-- [7) Installation of macOS](https://github.com/osx86-ijb/Hackinabox#7-installation-of-macos)
+- [6) Obtaining and placing the EFI on the macOS USB Installer](https://github.com/osx86-ijb/Hackinabox#6-making-the-efi) 
+- [7) Installation of macOS from within your booted VM](https://github.com/osx86-ijb/Hackinabox#7-installation-of-macos)
 - [8) Post-Installation Finalization](https://github.com/osx86-ijb/Hackinabox#8-post-installation-finalization--ssdt-setup)
 - [9) SSDT Setup Examples - Before & After](https://github.com/osx86-ijb/Hackinabox#9-ssdt-setup-examples---before--after)
 
