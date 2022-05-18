@@ -22,16 +22,29 @@ This guide is for the computer / UnRAID Server OS user who would like to run mac
 
 THIS INFORMATION/RESEARCH HAS BEEN SHARED PURELY FOR EXPERIMENTAL AND RESEARCH PURPOSES, AND IS IN NO MAY MEANT TO PROMOTE THE CIRCUMVENTION OF ANYTHING THAT BELONGS TO OR IS THE CREATION OF ANY CORPORATE ENTITY, OR SOMEONE ELSE'S PRIVATE PROPERTY. THE INFORMATION DOCUMENTED AND WRITTEN HERE IS PURELY FOR EDUCATIONAL PURPOSES, AND SHOULD YOU CHOOSE TO UTILIZE THE INFORMATION WRITTEN HERE IN ANY WAY, I AM IN NO WAY RESPONSIBLE FOR YOUR CHOOSING TO HAVE DONE SO/UTILIZED ANYTHING DISCUSSED IN THIS.
 
-## Appendix
+## TABLE OF CONTENTS
 
-- [1) Getting Started](https://github.com/osx86-ijb/Hackinabox#1-getting-started)
-- [2) Making the UnRAID USB](https://github.com/osx86-ijb/Hackinabox#2-making-the-unraid-usb)
-- [3) Setting up your Host Device](https://github.com/osx86-ijb/Hackinabox#3-setting-up-your-unraid-server-os-host)
-- [4) Setting up your macOS VM](https://github.com/osx86-ijb/Hackinabox#4-setting-up-your-macos-vm)
+- [1) FAQ](https://github.com/osx86-ijb/Hackinabox#faq)
+<br>[1.1) This sounds great! Where do I begin?](https://github.com/osx86-ijb/Hackinabox#1-this-sounds-great-where-do-i-begin)
+<br>[1.2) This is great, but UnRaid says that it costs money on the website?](https://github.com/osx86-ijb/Hackinabox#2-this-is-great-but-unraid-says-that-it-costs-money-on-the-website)
+<br>[1.3) How do I access this server once I boot it up, and what's the deal with me not being able to boot into GUI mode?](https://github.com/osx86-ijb/Hackinabox#3-how-do-i-access-this-server-once-i-boot-it-up-and-whats-the-deal-with-me-not-being-able-to-boot-into-gui-mode)
+<br>[1.4) Why won't my UnRaid installation boot after I install it the first time?](https://github.com/osx86-ijb/Hackinabox#4-why-wont-my-unraid-installation-boot-after-i-install-it-the-first-time)
+<br>[1.5) Why can't I access some devices attached to my SATA controllers?](https://github.com/osx86-ijb/Hackinabox#5-why-cant-i-access-some-devices-attached-to-my-sata-controllers)
+<br>[1.6) Why don't some of my attached USB devices work?](https://github.com/osx86-ijb/Hackinabox#6-why-dont-some-of-my-attached-usb-devices-work)
+<br>[1.7) Why am I getting "VM Creation Error - XML error: Attempted double use of PCI address 0000:03:00.0"?](https://github.com/osx86-ijb/Hackinabox#7-why-am-i-getting-vm-creation-error---xml-error-attempted-double-use-of-pci-address-000003000)
+<br>[1.8) If I don't have an existing macOS installation to use to create an offline installer of macOS, yet am already booted into unRAID, what can I do to achieve such?](https://github.com/osx86-ijb/Hackinabox#8-if-i-dont-have-an-existing-macos-installation-to-use-to-create-an-offline-installer-of-macos-yet-am-already-booted-into-unraid-what-can-i-do-to-achieve-such)
+<br>[1.9) If my VM freezes and I cannot restart it properly from within the unRAID backend and am faced with the choices of hard restarting my computer, what can/should I do?](https://github.com/osx86-ijb/Hackinabox#9-if-my-vm-freezes-and-i-cannot-restart-it-properly-from-within-the-unraid-backend-and-am-faced-with-the-choices-of-hard-restarting-my-computer-what-canshould-i-do)
+- [2) Features](https://github.com/osx86-ijb/Hackinabox#features)
+- [3) Requirements](https://github.com/osx86-ijb/Hackinabox#requirements)
+- [4) Installation Procedurals](https://github.com/osx86-ijb/Hackinabox#installation-procedurals)
+<br>[4.1) Getting Started](https://github.com/osx86-ijb/Hackinabox#1-getting-started)
+<br>[4.2) Making the UnRAID USB](https://github.com/osx86-ijb/Hackinabox#2-making-the-unraid-usb)
+<br>[4.3) Setting Up Your Unraid Server OS Host](https://github.com/osx86-ijb/Hackinabox#3-setting-up-your-unraid-server-os-host)
+<br>[4.4) Setting up your macOS VM](https://github.com/osx86-ijb/Hackinabox#4-setting-up-your-macos-vm)
 - [5) Making the Recovery USB on Linux](https://github.com/osx86-ijb/Hackinabox#5-making-the-recovery-usb-on-linux)
-- [6) Making the EFI](https://github.com/osx86-ijb/Hackinabox#6-making-the-efi) 
-- [7) Installation of macOS](https://github.com/osx86-ijb/Hackinabox#7-installation-of-macos)
-- [8) Post-Installation Finalization](https://github.com/osx86-ijb/Hackinabox#8-post-installation-finalization--ssdt-setup)
+- [6) Obtaining and placing the EFI on the macOS USB Installer](https://github.com/osx86-ijb/Hackinabox#6-obtaining-and-placing-the-efi-on-the-macos-usb-installer) 
+- [7) Installation of macOS from within your booted VM](https://github.com/osx86-ijb/Hackinabox#7-installation-of-macos-from-within-your-booted-vm)
+- [8) Post-Installation Finalization](https://github.com/osx86-ijb/Hackinabox#8-post-installation-finalization)
 - [9) SSDT Setup Examples - Before & After](https://github.com/osx86-ijb/Hackinabox#9-ssdt-setup-examples---before--after)
 
 ## FAQ
@@ -164,15 +177,16 @@ If you're seeing this error, maybe with a different number in the set of numbers
 <br> ![4.6.2](https://i.ibb.co/t826xfx/14-9.png)
 - 4.7) **After the XML view has loaded, we're going to go to line 37 and remove it (the entire line, that is) per what we have selected in the image here. This is done because QEMU's topology isn't read by macOS correctly and would require the topology kernel patch from the AMD kernel patches in order for it to work otherwise**  
 <br> ![4.7](https://i.ibb.co/Qbq5j1R/15.png)
-- 4.8) **Next, we're going to go to line 40 and select the text "utc",** ![4.8.1](https://i.ibb.co/xYFgx8D/17.png)  
-**and change it to "localtime"**  
+- 4.8) **Next, we're going to go to line 40 and select the text "utc", and change it to "localtime":**
+<br> ![4.8.1](https://i.ibb.co/xYFgx8D/17.png)
 <br> ![4.8.2](https://i.ibb.co/5ry53yH/18.png)
-- 4.9) **Scroll down to what should be line 63 and copy multifunction =‘on’,** <br> ![4.9.1](https://i.ibb.co/GTCJncP/19.png) <br> **and paste it at the end of line 118 as shown in the corresponding picture, making sure to change the last zero in function='0x0' to function='0x1' after you're done doing the prior pasting job, since it needs to be changed, also.** 
-<br>![4.9.2](https://i.ibb.co/MZDrV16/20.png)
-- 4.10) **The line below "hostdev1" should be your GPU. On 174 where it says bus=‘0x04’, we're going to change bus=‘0x04’ to 0x03 to match up with our GPU so that it will make the audio output of the GPU work within macOS. Do also make sure to change function='0x0' to '0x1' while we're at it.**
-<br> ![4.10](https://i.imgur.com/DizvGhc.png) 
-- **Steps number 9 and number 10 are done to make your GPU and GPU audio device be seen to macOS as one device. The multifunction argument tells the hypervisor to allow multiple devices to operate on the same bus. Only the GPU audio device must match the GPU device bus and slot. The GPU audio device must use the function 0x1 as shown above.**
-- 4.11) **Head to the bottom of the document and on line 144 click at the end of </devices> and hit enter/return to make a new line (145) and paste this:**  
+- 4.9) **Scroll down to what should be line 63 and copy multifunction =‘on’, and paste it at the end of line 125 as hightlighted and shown in the corresponding picture below:**
+<br> ![4.9.1](https://i.ibb.co/GTCJncP/19.png)
+- 4.10) **Head to lines 130 and 132 as shown in the picture below and change the last zero in function='0x0' to function='0x1' to match each other since they need to be changed, also.** 
+<br> ![4.9.2](https://i.ibb.co/Q6QGTQ3/20.png)
+- 4.11) **Do make sure at this time to go ahead and change the `bus=0x4` to `bus=0x3` on both lines 125 and 132 as well (lines can be seen in the image above).**
+- 4.12) **Do note as well that steps number 9 and number 10 are done in efforts of making your GPU and GPU audio device be seen to macOS accordingly. Therefore, in order to achieve such, we change our GPU audio device's logical address to match that of the GPU's. Do note that the `source` part of the devices does not change, only the logical address under the source.**
+- 4.13) **Head to the bottom of the document and click at the end of </devices> and hit enter/return to make a new line (145) and paste this:**  
 ```
      <qemu:commandline>  
      <qemu:arg value='-device'/>  
@@ -183,7 +197,7 @@ If you're seeing this error, maybe with a different number in the set of numbers
      <qemu:arg value='host,vendor=GenuineIntel,+invtsc,kvm=on'/>  
      </qemu:commandline>  
 ```
-- 4.12) **After pasting in the required text into new line 145, please hit the "UPDATE" button. Now after hitting update button we can shut down and reboot into our Linux Live Distro of choice and continue with making the macOS Installer, if one already doesn't have one made previously.**
+- 4.14) **After pasting in the required text into new line 145, please hit the "UPDATE" button. Now after hitting update button we can shut down and reboot into our Linux Live Distro of choice and continue with making the macOS Installer, if one already doesn't have one made previously.**
 
 
 ## 5) Making the Recovery USB on Linux
