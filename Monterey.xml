@@ -58,7 +58,7 @@ or other application using the libvirt API.
     <vcpupin vcpu='31' cpuset='63'/>
   </cputune>
   <os>
-    <type arch='x86_64' machine='pc-q35-6.0'>hvm</type>
+    <type arch='x86_64' machine='pc-q35-6.2'>hvm</type>
     <loader readonly='yes' type='pflash'>/usr/share/qemu/ovmf-x64/OVMF_CODE-pure-efi.fd</loader>
     <nvram>/etc/libvirt/qemu/nvram/32f3dcf1-75f5-dd3c-6b3f-857e7de6b326_VARS-pure-efi.fd</nvram>
     <boot dev='hd'/>
@@ -256,6 +256,11 @@ or other application using the libvirt API.
     <memballoon model='none'/>
   </devices>
   <qemu:commandline>
+    <!--
+      ICH9-LPC.acpi-pci-hotplug-with-bridge-support=off is needed for machine type of 6.1 and above.
+    -->
+    <qemu:arg value='-global'/>
+    <qemu:arg value='ICH9-LPC.acpi-pci-hotplug-with-bridge-support=off'/>
     <qemu:arg value='-device'/>
     <qemu:arg value='isa-applesmc,osk=ourhardworkbythesewordsguardedpleasedontsteal(c)AppleComputerInc'/>
     <qemu:arg value='-cpu'/>
