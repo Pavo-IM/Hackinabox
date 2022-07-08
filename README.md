@@ -166,11 +166,11 @@ If you're seeing this error, maybe with a different number in the set of numbers
 - 4.2) **When the Add VM page loads, we're going to select FreeBSD** 
 <br> ![4.2](https://i.ibb.co/NCYytQv/13.png)
 - 4.3) **Once loaded, click "EDIT" button load the edit page and edit VM settings. When that next page loads, go to the "Logical CPUs" section, and select every other CPU thread combination except for CPU 0 / X (where as X is the variable for your specific core / thread count). After that, make sure to set your Max Memory. Do keep in mind that Unraid needs 4GB of RAM, so anything 4GB less than your Maximum installed RAM should be sufficient if you don't need to allocate more elsewhere.** 
-<br> ![4.3](https://i.ibb.co/0Qdsk5J/14-5.png)
+<br> ![4.3](https://i.imgur.com/mlIPu42.png)
 - 4.4) **Next, scroll down on the page and select "3.0 qemu XHCI" from the drop down menu for USB Controller. This is really personal preference regarding the selection of USB Controller, and doesn't really matter since macOS doesn't support any of them. Then make sure to select your GPU from the Graphics Card drop down menu. Then select your appropriate Audio Chipset from the drop down menu in the selection named Sound Card.** 
-<br> ![4.4](https://i.ibb.co/ChvQdtR/14-6.png)
+<br> ![4.4](https://i.imgur.com/d0Vm4WW.png)
 - 4.5) **Make sure that Network Bridge is set to "br0" from the dropdown menu, and Network Model is set to "virtio-net" from the appropriate drop down selection as well. Then place check marks next to the two(or more?) devices in the "Other PCI Devices" section that you want to pass through. Uncheck "Start VM after creation", and then click on the "CREATE" button PS: This is only to be done if the user isn't already passing through, or able to pass through their Ethernet Controller** 
-<br> ![4.5](https://i.ibb.co/wdP7V24/14-7.png)
+<br> ![4.5](https://i.imgur.com/RYE9G5g.png)
 - 4.6) **Click on FreeBSD icon, and choose "Edit". In the top right corner when the Edit page loads, you'll see a slider with the words "FORM VIEW" next to it.**  
 <br> ![4.6.1](https://i.ibb.co/4jFdyLP/14-8.png)  
 **Then, click on that to change it to "XML VIEW".**
@@ -188,14 +188,14 @@ If you're seeing this error, maybe with a different number in the set of numbers
 - 4.12) **Do note as well that steps number 9 and number 10 are done in efforts of making your GPU and GPU audio device be seen to macOS accordingly. Therefore, in order to achieve such, we change our GPU audio device's logical address to match that of the GPU's. Do note that the `source` part of the devices does not change, only the logical address under the source.**
 - 4.13) **Head to the bottom of the document and click at the end of </devices> and hit enter/return to make a new line (145) and paste this:**  
 ```
-     <qemu:commandline>  
-     <qemu:arg value='-device'/>  
-     <qemu:arg value='isa-applesmc,osk=ourhardworkbythesewordsguardedpleasedontsteal(c)AppleComputerInc'/>  
-     <qemu:arg value='-smbios'/>  
-     <qemu:arg value='type=2'/>  
-     <qemu:arg value='-cpu'/>  
-     <qemu:arg value='host,vendor=GenuineIntel,+invtsc,kvm=on'/>  
-     </qemu:commandline>  
+    <qemu:commandline>
+    <qemu:arg value='-global'/>
+    <qemu:arg value='ICH9-LPC.acpi-pci-hotplug-with-bridge-support=off'/>
+    <qemu:arg value='-device'/>
+    <qemu:arg value='isa-applesmc,osk=ourhardworkbythesewordsguardedpleasedontsteal(c)AppleComputerInc'/>
+    <qemu:arg value='-cpu'/>
+    <qemu:arg value='Cascadelake-Server,,vendor=GenuineIntel'/>
+  </qemu:commandline>
 ```
 - 4.14) **After pasting in the required text into new line 145, please hit the "UPDATE" button. Now after hitting update button we can shut down and reboot into our Linux Live Distro of choice and continue with making the macOS Installer, if one already doesn't have one made previously.**
 
