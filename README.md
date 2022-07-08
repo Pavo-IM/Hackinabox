@@ -170,7 +170,7 @@ If you're seeing this error, maybe with a different number in the set of numbers
 - 4.4) **Next, scroll down on the page and select "3.0 qemu XHCI" from the drop down menu for USB Controller. This is really personal preference regarding the selection of USB Controller, and doesn't really matter since macOS doesn't support any of them. Then make sure to select your GPU from the Graphics Card drop down menu. Then select your appropriate Audio Chipset from the drop down menu in the selection named Sound Card.** 
 <br> ![4.4](https://i.imgur.com/d0Vm4WW.png)
 - 4.5) **Make sure that Network Bridge is set to "br0" from the dropdown menu, and Network Model is set to "virtio-net" from the appropriate drop down selection as well. Then place check marks next to the two(or more?) devices in the "Other PCI Devices" section that you want to pass through. Uncheck "Start VM after creation", and then click on the "CREATE" button PS: This is only to be done if the user isn't already passing through, or able to pass through their Ethernet Controller** 
-<br> ![4.5](https://i.imgur.com/RYE9G5g.png)
+<br> ![4.5](https://i.imgur.com/8NMBlsN.png)
 - 4.6) **Click on FreeBSD icon, and choose "Edit". In the top right corner when the Edit page loads, you'll see a slider with the words "FORM VIEW" next to it.**  
 <br> ![4.6.1](https://i.ibb.co/4jFdyLP/14-8.png)  
 **Then, click on that to change it to "XML VIEW".**
