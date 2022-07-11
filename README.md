@@ -186,7 +186,7 @@ If you're seeing this error, maybe with a different number in the set of numbers
 <br> ![4.9.2](https://i.ibb.co/Q6QGTQ3/20.png)
 - 4.11) **Do make sure at this time to go ahead and change the `bus=0x4` to `bus=0x3` on both lines 125 and 132 as well (lines can be seen in the image above).**
 - 4.12) **Do note as well that steps number 9 and number 10 are done in efforts of making your GPU and GPU audio device be seen to macOS accordingly. Therefore, in order to achieve such, we change our GPU audio device's logical address to match that of the GPU's. Do note that the `source` part of the devices does not change, only the logical address under the source.**
-- 4.13) **Head to the bottom of the document and click at the end of </devices> and hit enter/return to make a new line (145) and paste this:**  
+- 4.13) **Head to the bottom of the document and click at the end of ```devices``` and hit enter/return to make a new line and paste this:**  
 ```
     <qemu:commandline>
     <qemu:arg value='-global'/>
