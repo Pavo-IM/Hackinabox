@@ -1,7 +1,7 @@
 
 # Hackinabox
 
-## macOS install using UnRaid
+## mMacOS install using UnRaid
 
 This guide is for the computer / UnRAID Server OS user who would like to run macOS from a VM inside of UnRAID Server OS, in efforts of circumventing the need for multiple patches on AMD based hardware and motherboards when booting bare metal from OpenCore.
 
