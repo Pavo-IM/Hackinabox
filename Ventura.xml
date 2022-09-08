@@ -267,6 +267,6 @@ or other application using the libvirt API.
 	 <!--
       Cascadelake-Server,,vendor=GenuineIntel' is needed to Boot macOS 13
     -->
-    <qemu:arg value='Cascadelake-Server,,vendor=GenuineIntel'/>
+    <qemu:arg value='Cascadelake-Server,vendor=GenuineIntel'/>
   </qemu:commandline>
 </domain>
