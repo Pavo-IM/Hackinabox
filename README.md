@@ -24,28 +24,28 @@ THIS INFORMATION/RESEARCH HAS BEEN SHARED PURELY FOR EXPERIMENTAL AND RESEARCH P
 
 ## TABLE OF CONTENTS
 
-- [1) FAQ](https://github.com/osx86-ijb/Hackinabox#faq)
-<br>[1.1) This sounds great! Where do I begin?](https://github.com/osx86-ijb/Hackinabox#1-this-sounds-great-where-do-i-begin)
-<br>[1.2) This is great, but UnRaid says that it costs money on the website?](https://github.com/osx86-ijb/Hackinabox#2-this-is-great-but-unraid-says-that-it-costs-money-on-the-website)
-<br>[1.3) How do I access this server once I boot it up, and what's the deal with me not being able to boot into GUI mode?](https://github.com/osx86-ijb/Hackinabox#3-how-do-i-access-this-server-once-i-boot-it-up-and-whats-the-deal-with-me-not-being-able-to-boot-into-gui-mode)
-<br>[1.4) Why won't my UnRaid installation boot after I install it the first time?](https://github.com/osx86-ijb/Hackinabox#4-why-wont-my-unraid-installation-boot-after-i-install-it-the-first-time)
-<br>[1.5) Why can't I access some devices attached to my SATA controllers?](https://github.com/osx86-ijb/Hackinabox#5-why-cant-i-access-some-devices-attached-to-my-sata-controllers)
-<br>[1.6) Why don't some of my attached USB devices work?](https://github.com/osx86-ijb/Hackinabox#6-why-dont-some-of-my-attached-usb-devices-work)
-<br>[1.7) Why am I getting "VM Creation Error - XML error: Attempted double use of PCI address 0000:03:00.0"?](https://github.com/osx86-ijb/Hackinabox#7-why-am-i-getting-vm-creation-error---xml-error-attempted-double-use-of-pci-address-000003000)
-<br>[1.8) If I don't have an existing macOS installation to use to create an offline installer of macOS, yet am already booted into unRAID, what can I do to achieve such?](https://github.com/osx86-ijb/Hackinabox#8-if-i-dont-have-an-existing-macos-installation-to-use-to-create-an-offline-installer-of-macos-yet-am-already-booted-into-unraid-what-can-i-do-to-achieve-such)
-<br>[1.9) If my VM freezes and I cannot restart it properly from within the unRAID backend and am faced with the choices of hard restarting my computer, what can/should I do?](https://github.com/osx86-ijb/Hackinabox#9-if-my-vm-freezes-and-i-cannot-restart-it-properly-from-within-the-unraid-backend-and-am-faced-with-the-choices-of-hard-restarting-my-computer-what-canshould-i-do)
-- [2) Features](https://github.com/osx86-ijb/Hackinabox#features)
-- [3) Requirements](https://github.com/osx86-ijb/Hackinabox#requirements)
-- [4) Installation Procedurals](https://github.com/osx86-ijb/Hackinabox#installation-procedurals)
-<br>[4.1) Getting Started](https://github.com/osx86-ijb/Hackinabox#1-getting-started)
-<br>[4.2) Making the UnRAID USB](https://github.com/osx86-ijb/Hackinabox#2-making-the-unraid-usb)
-<br>[4.3) Setting Up Your Unraid Server OS Host](https://github.com/osx86-ijb/Hackinabox#3-setting-up-your-unraid-server-os-host)
-<br>[4.4) Setting up your macOS VM](https://github.com/osx86-ijb/Hackinabox#4-setting-up-your-macos-vm)
-- [5) Making the Recovery USB on Linux](https://github.com/osx86-ijb/Hackinabox#5-making-the-recovery-usb-on-linux)
-- [6) Obtaining and placing the EFI on the macOS USB Installer](https://github.com/osx86-ijb/Hackinabox#6-obtaining-and-placing-the-efi-on-the-macos-usb-installer) 
-- [7) Installation of macOS from within your booted VM](https://github.com/osx86-ijb/Hackinabox#7-installation-of-macos-from-within-your-booted-vm)
-- [8) Post-Installation Finalization](https://github.com/osx86-ijb/Hackinabox#8-post-installation-finalization)
-- [9) SSDT Setup Examples - Before & After](https://github.com/osx86-ijb/Hackinabox#9-ssdt-setup-examples---before--after)
+- [1) FAQ](#faq)
+<br>[1.1) This sounds great! Where do I begin?](#1-this-sounds-great-where-do-i-begin)
+<br>[1.2) This is great, but UnRaid says that it costs money on the website?](#2-this-is-great-but-unraid-says-that-it-costs-money-on-the-website)
+<br>[1.3) How do I access this server once I boot it up, and what's the deal with me not being able to boot into GUI mode?](#3-how-do-i-access-this-server-once-i-boot-it-up-and-whats-the-deal-with-me-not-being-able-to-boot-into-gui-mode)
+<br>[1.4) Why won't my UnRaid installation boot after I install it the first time?](#4-why-wont-my-unraid-installation-boot-after-i-install-it-the-first-time)
+<br>[1.5) Why can't I access some devices attached to my SATA controllers?](#5-why-cant-i-access-some-devices-attached-to-my-sata-controllers)
+<br>[1.6) Why don't some of my attached USB devices work?](#6-why-dont-some-of-my-attached-usb-devices-work)
+<br>[1.7) Why am I getting "VM Creation Error - XML error: Attempted double use of PCI address 0000:03:00.0"?](#7-why-am-i-getting-vm-creation-error---xml-error-attempted-double-use-of-pci-address-000003000)
+<br>[1.8) If I don't have an existing macOS installation to use to create an offline installer of macOS, yet am already booted into unRAID, what can I do to achieve such?](#8-if-i-dont-have-an-existing-macos-installation-to-use-to-create-an-offline-installer-of-macos-yet-am-already-booted-into-unraid-what-can-i-do-to-achieve-such)
+<br>[1.9) If my VM freezes and I cannot restart it properly from within the unRAID backend and am faced with the choices of hard restarting my computer, what can/should I do?](#9-if-my-vm-freezes-and-i-cannot-restart-it-properly-from-within-the-unraid-backend-and-am-faced-with-the-choices-of-hard-restarting-my-computer-what-canshould-i-do)
+- [2) Features](#features)
+- [3) Requirements](#requirements)
+- [4) Installation Procedurals](#installation-procedurals)
+<br>[4.1) Getting Started](#1-getting-started)
+<br>[4.2) Making the UnRAID USB](#2-making-the-unraid-usb)
+<br>[4.3) Setting Up Your Unraid Server OS Host](#3-setting-up-your-unraid-server-os-host)
+<br>[4.4) Setting up your macOS VM](#4-setting-up-your-macos-vm)
+- [5) Making the Recovery USB on Linux](#5-making-the-recovery-usb-on-linux)
+- [6) Obtaining and placing the EFI on the macOS USB Installer](#6-obtaining-and-placing-the-efi-on-the-macos-usb-installer) 
+- [7) Installation of macOS from within your booted VM](#7-installation-of-macos-from-within-your-booted-vm)
+- [8) Post-Installation Finalization](#8-post-installation-finalization)
+- [9) SSDT Setup Examples - Before & After](#9-ssdt-setup-examples---before--after)
 
 ## FAQ
 
@@ -166,11 +166,11 @@ If you're seeing this error, maybe with a different number in the set of numbers
 - 4.2) **When the Add VM page loads, we're going to select FreeBSD** 
 <br> ![4.2](https://i.ibb.co/NCYytQv/13.png)
 - 4.3) **Once loaded, click "EDIT" button load the edit page and edit VM settings. When that next page loads, go to the "Logical CPUs" section, and select every other CPU thread combination except for CPU 0 / X (where as X is the variable for your specific core / thread count). After that, make sure to set your Max Memory. Do keep in mind that Unraid needs 4GB of RAM, so anything 4GB less than your Maximum installed RAM should be sufficient if you don't need to allocate more elsewhere.** 
-<br> ![4.3](https://i.ibb.co/0Qdsk5J/14-5.png)
+<br> ![4.3](https://i.imgur.com/mlIPu42.png)
 - 4.4) **Next, scroll down on the page and select "3.0 qemu XHCI" from the drop down menu for USB Controller. This is really personal preference regarding the selection of USB Controller, and doesn't really matter since macOS doesn't support any of them. Then make sure to select your GPU from the Graphics Card drop down menu. Then select your appropriate Audio Chipset from the drop down menu in the selection named Sound Card.** 
-<br> ![4.4](https://i.ibb.co/ChvQdtR/14-6.png)
+<br> ![4.4](https://i.imgur.com/d0Vm4WW.png)
 - 4.5) **Make sure that Network Bridge is set to "br0" from the dropdown menu, and Network Model is set to "virtio-net" from the appropriate drop down selection as well. Then place check marks next to the two(or more?) devices in the "Other PCI Devices" section that you want to pass through. Uncheck "Start VM after creation", and then click on the "CREATE" button PS: This is only to be done if the user isn't already passing through, or able to pass through their Ethernet Controller** 
-<br> ![4.5](https://i.ibb.co/wdP7V24/14-7.png)
+<br> ![4.5](https://i.imgur.com/8NMBlsN.png)
 - 4.6) **Click on FreeBSD icon, and choose "Edit". In the top right corner when the Edit page loads, you'll see a slider with the words "FORM VIEW" next to it.**  
 <br> ![4.6.1](https://i.ibb.co/4jFdyLP/14-8.png)  
 **Then, click on that to change it to "XML VIEW".**
@@ -186,18 +186,18 @@ If you're seeing this error, maybe with a different number in the set of numbers
 <br> ![4.9.2](https://i.ibb.co/Q6QGTQ3/20.png)
 - 4.11) **Do make sure at this time to go ahead and change the `bus=0x4` to `bus=0x3` on both lines 125 and 132 as well (lines can be seen in the image above).**
 - 4.12) **Do note as well that steps number 9 and number 10 are done in efforts of making your GPU and GPU audio device be seen to macOS accordingly. Therefore, in order to achieve such, we change our GPU audio device's logical address to match that of the GPU's. Do note that the `source` part of the devices does not change, only the logical address under the source.**
-- 4.13) **Head to the bottom of the document and click at the end of </devices> and hit enter/return to make a new line (145) and paste this:**  
+- 4.13) **Head to the bottom of the document and click at the end of ```devices``` and hit enter/return to make a new line and paste this:**  
 ```
-     <qemu:commandline>  
-     <qemu:arg value='-device'/>  
-     <qemu:arg value='isa-applesmc,osk=ourhardworkbythesewordsguardedpleasedontsteal(c)AppleComputerInc'/>  
-     <qemu:arg value='-smbios'/>  
-     <qemu:arg value='type=2'/>  
-     <qemu:arg value='-cpu'/>  
-     <qemu:arg value='host,vendor=GenuineIntel,+invtsc,kvm=on'/>  
-     </qemu:commandline>  
+    <qemu:commandline>
+    <qemu:arg value='-global'/>
+    <qemu:arg value='ICH9-LPC.acpi-pci-hotplug-with-bridge-support=off'/>
+    <qemu:arg value='-device'/>
+    <qemu:arg value='isa-applesmc,osk=ourhardworkbythesewordsguardedpleasedontsteal(c)AppleComputerInc'/>
+    <qemu:arg value='-cpu'/>
+    <qemu:arg value='Cascadelake-Server,,vendor=GenuineIntel'/>
+  </qemu:commandline>
 ```
-- 4.14) **After pasting in the required text into new line 145, please hit the "UPDATE" button. Now after hitting update button we can shut down and reboot into our Linux Live Distro of choice and continue with making the macOS Installer, if one already doesn't have one made previously.**
+- 4.14) **After pasting in the required text into new line, please hit the "UPDATE" button. Now after hitting update button we can shut down and reboot into our Linux Live Distro of choice and continue with making the macOS Installer, if one already doesn't have one made previously.**
 
 
 ## 5) Making the Recovery USB on Linux

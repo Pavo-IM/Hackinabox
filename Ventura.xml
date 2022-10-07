@@ -6,7 +6,7 @@ or other application using the libvirt API.
 -->
 
 <domain type='kvm' xmlns:qemu='http://libvirt.org/schemas/domain/qemu/1.0'>
-  <name>Monterey</name>
+  <name>Ventura</name>
   <uuid>32f3dcf1-75f5-dd3c-6b3f-857e7de6b326</uuid>
   <metadata>
     <vmtemplate xmlns="unraid" name="FreeBSD" icon="Apple_OSX.png" os="freebsd"/>
@@ -264,6 +264,9 @@ or other application using the libvirt API.
     <qemu:arg value='-device'/>
     <qemu:arg value='isa-applesmc,osk=ourhardworkbythesewordsguardedpleasedontsteal(c)AppleComputerInc'/>
     <qemu:arg value='-cpu'/>
-    <qemu:arg value='host,vendor=GenuineIntel'/>
+	 <!--
+      Cascadelake-Server,,vendor=GenuineIntel' is needed to Boot macOS 13
+    -->
+    <qemu:arg value='Cascadelake-Server,vendor=GenuineIntel'/>
   </qemu:commandline>
 </domain>
