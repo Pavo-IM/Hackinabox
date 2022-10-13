@@ -194,7 +194,7 @@ If you're seeing this error, maybe with a different number in the set of numbers
     <qemu:arg value='-device'/>
     <qemu:arg value='isa-applesmc,osk=ourhardworkbythesewordsguardedpleasedontsteal(c)AppleComputerInc'/>
     <qemu:arg value='-cpu'/>
-    <qemu:arg value='Cascadelake-Server,,vendor=GenuineIntel'/>
+    <qemu:arg value='Cascadelake-Server,vendor=GenuineIntel'/>
   </qemu:commandline>
 ```
 - 4.14) **After pasting in the required text into new line, please hit the "UPDATE" button. Now after hitting update button we can shut down and reboot into our Linux Live Distro of choice and continue with making the macOS Installer, if one already doesn't have one made previously.**
