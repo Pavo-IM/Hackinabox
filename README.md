@@ -1,9 +1,18 @@
 
 # Hackinabox
 
-## MacOS install using UnRaid
+## MacOS installation using UnRaid
 
-This guide is for the computer / UnRAID Server OS user who would like to run macOS from a VM inside of UnRAID Server OS, in efforts of circumventing the need for multiple patches on AMD based hardware and motherboards when booting bare metal from OpenCore.
+### This guide is for the UnRAID Server OS user who would like to run macOS from a VM inside of UnRAID Server OS.
+There are growing reasons for why one would want to do so, IE:
+
+-  When running macOS bare metal on an AMD cpu, one is required to utilize patches made by AMD-OSX. Hackinabox abrogrates the need to use these patches.
+-  When running macOS on an AMD cpu, one has to use amdfriend to patch binaries for certain apps to run. Hackinabox mitigates this requirement.
+-  Full performance/utilization of supported GPU.
+-  Ethernet works OOB via setting up VirtIO networking device in VM settings, (no need to passthrough physical Ethernet controller).
+-  No hassle updating.
+-  macOS 13 Ventura compatibility
+
 
 ## Acknowledgements
 
@@ -11,83 +20,44 @@ This guide is for the computer / UnRAID Server OS user who would like to run mac
  - [UnRAID](https://unraid.net/)
  - [AcidAnthera, and the OpenCore Bootloader team](https://github.com/acidanthera/OpenCorePkg)
  - [Dortania Team for the OpenCore Install Guide](https://dortania.github.io/OpenCore-Install-Guide/)
-  
-## Authors of Guide
+
+
+## Authors of / Contributors to Guide
 
 - [@Pavo-IM](https://www.github.com/Pavo-IM)
 - [@osx86-ijb](https://www.github.com/osx86-ijb)
 - [@MattsCreative](https://www.youtube.com/c/MattsCreative)
 
+
 ## DISCLAIMER
 
 THIS INFORMATION/RESEARCH HAS BEEN SHARED PURELY FOR EXPERIMENTAL AND RESEARCH PURPOSES, AND IS IN NO MAY MEANT TO PROMOTE THE CIRCUMVENTION OF ANYTHING THAT BELONGS TO OR IS THE CREATION OF ANY CORPORATE ENTITY, OR SOMEONE ELSE'S PRIVATE PROPERTY. THE INFORMATION DOCUMENTED AND WRITTEN HERE IS PURELY FOR EDUCATIONAL PURPOSES, AND SHOULD YOU CHOOSE TO UTILIZE THE INFORMATION WRITTEN HERE IN ANY WAY, I AM IN NO WAY RESPONSIBLE FOR YOUR CHOOSING TO HAVE DONE SO/UTILIZED ANYTHING DISCUSSED IN THIS.
 
+
 ## TABLE OF CONTENTS
 
-- [1) FAQ](#faq)
-<br>[1.1) This sounds great! Where do I begin?](#1-this-sounds-great-where-do-i-begin)
-<br>[1.2) This is great, but UnRaid says that it costs money on the website?](#2-this-is-great-but-unraid-says-that-it-costs-money-on-the-website)
-<br>[1.3) How do I access this server once I boot it up, and what's the deal with me not being able to boot into GUI mode?](#3-how-do-i-access-this-server-once-i-boot-it-up-and-whats-the-deal-with-me-not-being-able-to-boot-into-gui-mode)
-<br>[1.4) Why won't my UnRaid installation boot after I install it the first time?](#4-why-wont-my-unraid-installation-boot-after-i-install-it-the-first-time)
-<br>[1.5) Why can't I access some devices attached to my SATA controllers?](#5-why-cant-i-access-some-devices-attached-to-my-sata-controllers)
-<br>[1.6) Why don't some of my attached USB devices work?](#6-why-dont-some-of-my-attached-usb-devices-work)
-<br>[1.7) Why am I getting "VM Creation Error - XML error: Attempted double use of PCI address 0000:03:00.0"?](#7-why-am-i-getting-vm-creation-error---xml-error-attempted-double-use-of-pci-address-000003000)
-<br>[1.8) If I don't have an existing macOS installation to use to create an offline installer of macOS, yet am already booted into unRAID, what can I do to achieve such?](#8-if-i-dont-have-an-existing-macos-installation-to-use-to-create-an-offline-installer-of-macos-yet-am-already-booted-into-unraid-what-can-i-do-to-achieve-such)
-<br>[1.9) If my VM freezes and I cannot restart it properly from within the unRAID backend and am faced with the choices of hard restarting my computer, what can/should I do?](#9-if-my-vm-freezes-and-i-cannot-restart-it-properly-from-within-the-unraid-backend-and-am-faced-with-the-choices-of-hard-restarting-my-computer-what-canshould-i-do)
-- [2) Features](#features)
-- [3) Requirements](#requirements)
-- [4) Installation Procedurals](#installation-procedurals)
-<br>[4.1) Getting Started](#1-getting-started)
-<br>[4.2) Making the UnRAID USB](#2-making-the-unraid-usb)
-<br>[4.3) Setting Up Your Unraid Server OS Host](#3-setting-up-your-unraid-server-os-host)
-<br>[4.4) Setting up your macOS VM](#4-setting-up-your-macos-vm)
-- [5) Making the Recovery USB on Linux](#5-making-the-recovery-usb-on-linux)
-- [6) Obtaining and placing the EFI on the macOS USB Installer](#6-obtaining-and-placing-the-efi-on-the-macos-usb-installer) 
-- [7) Installation of macOS from within your booted VM](#7-installation-of-macos-from-within-your-booted-vm)
-- [8) Post-Installation Finalization](#8-post-installation-finalization)
-- [9) SSDT Setup Examples - Before & After](#9-ssdt-setup-examples---before--after)
+<br>[1) Requirements](#requirements)
+<br>[2) Installation Procedurals](#installation-procedurals)
+<br>[2.1) Getting Started](#1-getting-started)
+<br>[2.2) Making the UnRAID USB](#2-making-the-unraid-usb)
+<br>[2.3) Setting Up Your Unraid Server OS Host](#3-setting-up-your-unraid-server-os-host)
+<br>[2.4) Setting up your macOS VM](#4-setting-up-your-macos-vm)
+<br>[3) Making the Recovery USB on Linux](#5-making-the-recovery-usb-on-linux)
+<br>[4) Obtaining and placing the EFI on the macOS USB Installer](#6-obtaining-and-placing-the-efi-on-the-macos-usb-installer) 
+<br>[5) Installation of macOS from within your booted VM](#7-installation-of-macos-from-within-your-booted-vm)
+<br>[6) Post-Installation Finalization](#8-post-installation-finalization)
+<br>[7) SSDT Setup Examples - Before & After](#9-ssdt-setup-examples---before--after)
+<br>[8) FAQ](#faq)
+<br>[8.1) This sounds great! Where do I begin?](#1-this-sounds-great-where-do-i-begin)
+<br>[8.2) This is great, but UnRaid says that it costs money on the website?](#2-this-is-great-but-unraid-says-that-it-costs-money-on-the-website)
+<br>[8.3) How do I access this server once I boot it up, and what's the deal with me not being able to boot into GUI mode?](#3-how-do-i-access-this-server-once-i-boot-it-up-and-whats-the-deal-with-me-not-being-able-to-boot-into-gui-mode)
+<br>[8.4) Why won't my UnRaid installation boot after I install it the first time?](#4-why-wont-my-unraid-installation-boot-after-i-install-it-the-first-time)
+<br>[8.5) Why can't I access some devices attached to my SATA controllers?](#5-why-cant-i-access-some-devices-attached-to-my-sata-controllers)
+<br>[8.6) Why don't some of my attached USB devices work?](#6-why-dont-some-of-my-attached-usb-devices-work)
+<br>[8.7) Why am I getting "VM Creation Error - XML error: Attempted double use of PCI address 0000:03:00.0"?](#7-why-am-i-getting-vm-creation-error---xml-error-attempted-double-use-of-pci-address-000003000)
+<br>[8.8) If I don't have an existing macOS installation to use to create an offline installer of macOS, yet am already booted into unRAID, what can I do to achieve such?](#8-if-i-dont-have-an-existing-macos-installation-to-use-to-create-an-offline-installer-of-macos-yet-am-already-booted-into-unraid-what-can-i-do-to-achieve-such)
+<br>[8.9) If my VM freezes and I cannot restart it properly from within the unRAID backend and am faced with the choices of hard restarting my computer, what can/should I do?](#9-if-my-vm-freezes-and-i-cannot-restart-it-properly-from-within-the-unraid-backend-and-am-faced-with-the-choices-of-hard-restarting-my-computer-what-canshould-i-do)
 
-## FAQ
-
-### 1) This sounds great! Where do I begin?
-You can begin by making sure that you can adhere to the requirements outlined in this guide
-
-### 2) This is great, but UnRaid says that it costs money on the website?
-That is correct, but as with all good things in life, there is a 30 day free trial, and the cheapest version costs a one time $60 USD payment. Gotta pay to play the game, right?
-
-### 3) How do I access this server once I boot it up, and what's the deal with me not being able to boot into GUI mode?
-In order to access your UnRaid Server OS page for the UnRaid server via tower.local (default name) or the IP address given by your network, you must connect to such from a browser on another device attached to the same network
-
-### 4) Why won't my UnRaid installation boot after I install it the first time?
-Due to requirements from the creators of UnRaid, the USB boot key created to boot UnRaid the first time around must be both booted from every time, and left inserted in the USB port at all times
-
-### 5) Why can't I access some devices attached to my SATA controllers?
-Per how UnRaid operates, one SATA controller must be allocated to the Host OS, thereby making it unsuable by a VM
-
-### 6) Why don't some of my attached USB devices work?
-Per how UnRaid operates, one USB controller must be allocated to the Host OS, thereby making it unusable by a VM
-
-### 7) Why am I getting "VM Creation Error - XML error: Attempted double use of PCI address 0000:03:00.0"?
-If you're seeing this error, maybe with a different number in the set of numbers as well, it's because function is set on the incorrect line, and bus might be set incorrectly as well. Double check your double check, and set them to the appropriate correct lines.
-
-### 8) If I don't have an existing macOS installation to use to create an offline installer of macOS, yet am already booted into unRAID, what can I do to achieve such?
-[Use Macinabox from SpaceinvaderOne](https://github.com/SpaceinvaderOne/Macinabox)
-
-### 9) If my VM freezes and I cannot restart it properly from within the unRAID backend and am faced with the choices of hard restarting my computer, what can/should I do?
-
-
-**NOTE:** 
-
-*Forcefully restarting the machine and or hard resetting your machine and not choosing to shut down using the option to do so in the unRAID backend can result in data corruption, and the potential need to remake the unRAID USB drive. At all costs, one should always make sure to use the SHUTDOWN button within the unRAID backend to shutdown your computer, instead of hard restarting. It also would be wise to make sure to have a 1/1 clone or backup of your unRAID installation, just in case the need should arise.*
-*If you find yourself needing to hard restart your machine, there is a potential that the VM's tab will not be present when you go to look for it. If that ends up being the case/situation for you, just re-enable it from the appropriate location nested within Settings.*
-  
-## Features
-
-- No need to use ANY of the AMD patches
-- Full performance/utilization of supported GPU
-- Ethernet works OOB via setting up VirtIO networking device, no need to passthrough physical Ethernet controllers
-- No hassle updating
-- macOS 12 Monterey Compatible
 
 ## Requirements
 
@@ -103,7 +73,8 @@ If you're seeing this error, maybe with a different number in the set of numbers
 - An ability to stay extremely calm as you follow a lengthy set of instructions.
 - An unbridled/unmatched zest for all things technological.
 
-# Installation Procedurals
+
+## Installation Procedurals
 
 ## 1) Getting Started:
 
@@ -111,6 +82,7 @@ If you're seeing this error, maybe with a different number in the set of numbers
 - 1.2) [Download Unraid Server OS USB Creator for Mac/Windows](https://unraid.net/download)
 - 1.4) **Open/Run the Unraid Server OS USB Creator.**
 - 1.5) **Proceed with the next step (#2), and continue from there.**
+
 
 ## 2) Making the Unraid USB:
 
@@ -250,6 +222,39 @@ If you're seeing this error, maybe with a different number in the set of numbers
 - 9.6a) **SSDT-XHC.aml Before Editing:** ![9.6a](https://i.ibb.co/cT5RmmF/SSDT-XHC-aml.png)
 
 
+## FAQ
+
+### 1) This sounds great! Where do I begin?
+You can begin by making sure that you can adhere to the requirements outlined in this guide
+
+### 2) This is great, but UnRaid says that it costs money on the website?
+That is correct, but as with all good things in life, there is a 30 day free trial, and the cheapest version costs a one time $60 USD payment. Gotta pay to play the game, right?
+
+### 3) How do I access this server once I boot it up, and what's the deal with me not being able to boot into GUI mode?
+In order to access your UnRaid Server OS page for the UnRaid server via tower.local (default name) or the IP address given by your network, you must connect to such from a browser on another device attached to the same network
+
+### 4) Why won't my UnRaid installation boot after I install it the first time?
+Due to requirements from the creators of UnRaid, the USB boot key created to boot UnRaid the first time around must be both booted from every time, and left inserted in the USB port at all times
+
+### 5) Why can't I access some devices attached to my SATA controllers?
+Per how UnRaid operates, one SATA controller must be allocated to the Host OS, thereby making it unsuable by a VM
+
+### 6) Why don't some of my attached USB devices work?
+Per how UnRaid operates, one USB controller must be allocated to the Host OS, thereby making it unusable by a VM
+
+### 7) Why am I getting "VM Creation Error - XML error: Attempted double use of PCI address 0000:03:00.0"?
+If you're seeing this error, maybe with a different number in the set of numbers as well, it's because function is set on the incorrect line, and bus might be set incorrectly as well. Double check your double check, and set them to the appropriate correct lines.
+
+### 8) If I don't have an existing macOS installation to use to create an offline installer of macOS, yet am already booted into unRAID, what can I do to achieve such?
+[Use Macinabox from SpaceinvaderOne](https://github.com/SpaceinvaderOne/Macinabox)
+
+### 9) If my VM freezes and I cannot restart it properly from within the unRAID backend and am faced with the choices of hard restarting my computer, what can/should I do?
+
+*Forcefully restarting the machine and or hard resetting your machine and not choosing to shut down using the option to do so in the unRAID backend can result in data corruption, and the potential need to remake the unRAID USB drive. At all costs, one should always make sure to use the SHUTDOWN button within the unRAID backend to shutdown your computer, instead of hard restarting. It also would be wise to make sure to have a 1/1 clone or backup of your unRAID installation, just in case the need should arise.*
+
+*If you find yourself needing to hard restart your machine, there is a potential that the VM's tab will not be present when you go to look for it. If that ends up being the case/situation for you, just re-enable it from the appropriate location nested within Settings.*
+  
+  
 # Support
 
 For support, please join the AMD-OSX Discord Server and ask your question there, or you could also join the UnRaid Server OS Discord Server! One can also seek out assistance regarding Unraid related questions at the Unraid forums! Thank you, enjoy, and regards!
