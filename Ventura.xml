@@ -265,7 +265,7 @@ or other application using the libvirt API.
     <qemu:arg value='isa-applesmc,osk=ourhardworkbythesewordsguardedpleasedontsteal(c)AppleComputerInc'/>
     <qemu:arg value='-cpu'/>
 	 <!--
-      Cascadelake-Server,,vendor=GenuineIntel' is needed to Boot macOS 13
+      Cascadelake-Server,vendor=GenuineIntel' is needed to Boot macOS 13
     -->
     <qemu:arg value='Cascadelake-Server,vendor=GenuineIntel'/>
   </qemu:commandline>
