@@ -49,7 +49,7 @@
 			<key>EnableSafeModeSlide</key>
 			<true/>
 			<key>EnableWriteUnprotector</key>
-			<false/>
+			<true/>
 			<key>ForceBooterSignature</key>
 			<false/>
 			<key>ForceExitBootServices</key>
@@ -65,7 +65,7 @@
 			<key>ProvideMaxSlide</key>
 			<integer>0</integer>
 			<key>RebuildAppleMemoryMap</key>
-			<true/>
+			<false/>
 			<key>ResizeAppleGpuBars</key>
 			<integer>-1</integer>
 			<key>SetupVirtualMap</key>
@@ -73,7 +73,7 @@
 			<key>SignalAppleOS</key>
 			<false/>
 			<key>SyncRuntimePermissions</key>
-			<true/>
+			<false/>
 		</dict>
 	</dict>
 	<key>DeviceProperties</key>
@@ -127,9 +127,7 @@
 				<key>Arch</key>
 				<string>Any</string>
 				<key>BundlePath</key>
-				<string>AppleMCEReporterDisabler.kext</string>
-				<key>Comment</key>
-				<string>AppleMCEReporterDisabler.kext</string>
+				<string>AGPMInjector.kext</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -170,6 +168,8 @@
 			<key>AppleXcpmExtraMsrs</key>
 			<false/>
 			<key>AppleXcpmForceBoost</key>
+			<false/>
+			<key>CustomPciSerialDevice</key>
 			<false/>
 			<key>CustomSMBIOSGuid</key>
 			<true/>
@@ -264,7 +264,7 @@
 			<key>DisplayDelay</key>
 			<integer>0</integer>
 			<key>DisplayLevel</key>
-			<integer>2147483648</integer>
+			<integer>2147483650</integer>
 			<key>LogModules</key>
 			<string>*</string>
 			<key>SysReport</key>
@@ -324,33 +324,6 @@
 		</dict>
 		<key>Serial</key>
 		<dict>
-			<key>Custom</key>
-			<dict>
-				<key>BaudRate</key>
-				<integer>115200</integer>
-				<key>ClockRate</key>
-				<integer>1843200</integer>
-				<key>DetectCable</key>
-				<false/>
-				<key>ExtendedTxFifoSize</key>
-				<integer>64</integer>
-				<key>FifoControl</key>
-				<integer>7</integer>
-				<key>LineControl</key>
-				<integer>7</integer>
-				<key>PciDeviceInfo</key>
-				<data></data>
-				<key>RegisterAccessWidth</key>
-				<integer>8</integer>
-				<key>RegisterBase</key>
-				<integer>1016</integer>
-				<key>RegisterStride</key>
-				<integer>1</integer>
-				<key>UseHardwareFlowControl</key>
-				<false/>
-				<key>UseMmio</key>
-				<false/>
-			</dict>
 			<key>Init</key>
 			<false/>
 			<key>Override</key>
@@ -366,7 +339,9 @@
 			<key>4D1EDE05-38C7-4A6A-9CC6-4BCCA8B38C14</key>
 			<dict>
 				<key>DefaultBackgroundColor</key>
-				<data>AAAAAA==</data>
+				<data>
+				AAAAAA==
+				</data>
 			</dict>
 			<key>4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102</key>
 			<dict>
@@ -455,13 +430,15 @@
 			<key>ProcessorType</key>
 			<integer>1537</integer>
 			<key>ROM</key>
-			<data></data>
+			<data>
+			LPBdBHJT
+			</data>
 			<key>SpoofVendor</key>
 			<true/>
 			<key>SystemMemoryStatus</key>
 			<string>Auto</string>
 			<key>SystemProductName</key>
-			<string>MacPro7,1</string>
+			<string>iMac20,2</string>
 			<key>SystemSerialNumber</key>
 			<string></string>
 			<key>SystemUUID</key>
@@ -491,9 +468,9 @@
 			<key>JumpstartHotPlug</key>
 			<false/>
 			<key>MinDate</key>
-			<integer>0</integer>
+			<integer>-1</integer>
 			<key>MinVersion</key>
-			<integer>0</integer>
+			<integer>-1</integer>
 		</dict>
 		<key>AppleInput</key>
 		<dict>
@@ -504,15 +481,15 @@
 			<key>GraphicsInputMirroring</key>
 			<true/>
 			<key>KeyInitialDelay</key>
-			<integer>0</integer>
+			<integer>50</integer>
 			<key>KeySubsequentDelay</key>
 			<integer>5</integer>
 			<key>PointerPollMask</key>
 			<integer>-1</integer>
-			<key>PointerPollMin</key>
-			<integer>10</integer>
 			<key>PointerPollMax</key>
 			<integer>80</integer>
+			<key>PointerPollMin</key>
+			<integer>10</integer>
 			<key>PointerSpeedDiv</key>
 			<integer>1</integer>
 			<key>PointerSpeedMul</key>
@@ -525,7 +502,7 @@
 			<key>AudioDevice</key>
 			<string></string>
 			<key>AudioOutMask</key>
-			<integer>-1</integer>
+			<integer>1</integer>
 			<key>AudioSupport</key>
 			<false/>
 			<key>DisconnectHda</key>
@@ -535,7 +512,7 @@
 			<key>MinimumAssistGain</key>
 			<integer>-30</integer>
 			<key>MinimumAudibleGain</key>
-			<integer>-128</integer>
+			<integer>-55</integer>
 			<key>PlayChime</key>
 			<string>Auto</string>
 			<key>ResetTrafficClass</key>
@@ -551,17 +528,17 @@
 				<key>Arguments</key>
 				<string></string>
 				<key>Comment</key>
-				<string>HfsPlus.efi</string>
+				<string>HFS+ Driver</string>
 				<key>Enabled</key>
 				<true/>
 				<key>Path</key>
-				<string>HfsPlus.efi</string>
+				<string>OpenHfsPlus.efi</string>
 			</dict>
 			<dict>
 				<key>Arguments</key>
 				<string></string>
 				<key>Comment</key>
-				<string>OpenRuntime.efi</string>
+				<string></string>
 				<key>Enabled</key>
 				<true/>
 				<key>Path</key>
@@ -615,6 +592,8 @@
 			<false/>
 			<key>TextRenderer</key>
 			<string>BuiltinGraphics</string>
+			<key>UIScale</key>
+			<integer>0</integer>
 			<key>UgaPassThrough</key>
 			<false/>
 			<key>UIScale</key>
@@ -651,7 +630,7 @@
 			<key>DeviceProperties</key>
 			<false/>
 			<key>FirmwareVolume</key>
-			<false/>
+			<true/>
 			<key>HashServices</key>
 			<false/>
 			<key>OSInfo</key>
