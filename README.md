@@ -63,7 +63,7 @@ THIS INFORMATION/RESEARCH HAS BEEN SHARED PURELY FOR EXPERIMENTAL AND RESEARCH P
 
 - Any computer running UnRAID Server OS (AMD *OR* Intel, as the OpenCore config settings and XML will work for both) 
 - A USB Flash Key larger than 1GB, no larger than 32GB (PS: It will need to be left inserted at all times, as this is required by UnRaid Server OS)
-- [The Unraid Server OS USB Creator application to properly create your UnRaid Server USB key that your machine will be booted from every time.](https://unraid.net/download)
+- [The Unraid USB Flash Creator application to properly create your UnRaid Server USB key that your machine will be booted from every time.](https://unraid.net/download)
 - A dedicated drive for the UnRaid Server OS (SSD?)
 - One SATA controller that you don't mind having allocated to the Host OS, as it will be unusable by the VM.
 - One USB controller that you don't mind having allocated to the Host OS, as it will be unusable by the VM.
@@ -79,14 +79,14 @@ THIS INFORMATION/RESEARCH HAS BEEN SHARED PURELY FOR EXPERIMENTAL AND RESEARCH P
 ## 1) Getting Started:
 
 - 1.1) **Double check and make sure that you can adhere to the requirements listed above. If so, then proceed to follow the rest of the instructions.**
-- 1.2) [Download Unraid Server OS USB Creator for Mac/Windows](https://unraid.net/download)
-- 1.4) **Open/Run the Unraid Server OS USB Creator.**
-- 1.5) **Proceed with the next step (#2), and continue from there.**
+- 1.2) [Download Unraid USB Flash Creator for Mac/Windows](https://unraid.net/download)
+- 1.3) **Open/Run the Unraid USB Flash Creator.**
+- 1.4) **Proceed with the next step (#2), and continue from there.**
 
 
 ## 2) Making the Unraid USB:
 
-- 2.1) **Under "select version", select "Stable", then Unraid 6.9.2 or newer version depending on when you read this** 
+- 2.1) **Under "select version", select "Stable", then Unraid 6.9.2 or whichever the newest version may be for you at your time of reading this guide.** 
 <br> 
 
 https://user-images.githubusercontent.com/67184728/198000718-1ee32a92-6b18-40e8-ad65-2f2d90c94a12.mov
