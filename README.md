@@ -80,8 +80,8 @@ THIS INFORMATION/RESEARCH HAS BEEN SHARED PURELY FOR EXPERIMENTAL AND RESEARCH P
 
 - 1.1) **Double check and make sure that you can adhere to the requirements listed above. If so, then proceed to follow the rest of the instructions.**
 - 1.2) [Download Unraid USB Flash Creator for Mac/Windows](https://unraid.net/download)
-- 1.3) **Open/Run the Unraid USB Flash Creator.**
-- 1.4) **Proceed with the next step (#2), and continue from there.**
+- 1.3) **Open/Run the Unraid USB Flash Creator and follow any prompts for entering your password if asked.**
+- 1.4) **Proceed with Section 2 now, and continue the process of creating your Unraid USB.**
 
 
 ## 2) Making the Unraid USB:
