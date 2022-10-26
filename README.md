@@ -301,4 +301,4 @@ If you're seeing this error, maybe with a different number in the set of numbers
   
 # Support
 
-For support, please join the UnRaid Server OS Discord Server! One can also seek out assistance regarding Unraid related questions at the Unraid forums! Thank you, enjoy, and regards!
+For support, please join the [Official UnRaid Discord Server](https://discord.gg/unraid) or the [UnRaid Forums](https://forums.unraid.net/).
