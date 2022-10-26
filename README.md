@@ -87,11 +87,23 @@ THIS INFORMATION/RESEARCH HAS BEEN SHARED PURELY FOR EXPERIMENTAL AND RESEARCH P
 ## 2) Making the Unraid USB:
 
 - 2.1) **Under "select version", select "Stable", then Unraid 6.9.2 or newer version depending on when you read this** 
-<br> ![UnraidUSBSelectVersion_01](https://i.ibb.co/cJ5ST55/Unraid-USBCreator-01.png)
+<br> 
+
+https://user-images.githubusercontent.com/67184728/198000718-1ee32a92-6b18-40e8-ad65-2f2d90c94a12.mov
+
+
 - 2.2) **Click on "Customize" and check the "Allow UEFI Boot" checkbox**
-<br> ![UnraidUSBSelectVersion_02](https://i.ibb.co/gjtpsd0/Unraid-USBCreator-02.png)
+<br> 
+
+https://user-images.githubusercontent.com/67184728/198000770-5620918f-ec6d-477d-accf-8ae6b5bf9f21.mov
+
+
 - 2.3) **Select USB Drive that you want to create as your Unraid USB, and then click on the "Write" button under Write Image**
-<br> ![UnraidUSBSelectVersion_03](https://i.ibb.co/bJwHGVk/Unraid-USBCreator-03.png)
+<br> 
+
+https://user-images.githubusercontent.com/67184728/198003952-190972d1-ad22-477a-982f-532fc9420d73.mov
+
+
 - 2.4) **Wait for USB Creator to finish creating Unraid USB and then restart machine and attempt to boot from newly created Unraid USB**
 
 
@@ -102,31 +114,63 @@ THIS INFORMATION/RESEARCH HAS BEEN SHARED PURELY FOR EXPERIMENTAL AND RESEARCH P
 - 3.3) **Enter the Username and Password = root**
 - 3.4) From another device connected to the same network as your booted Unraid Server OS, go to http://tower.local in your Browser of choice
 - 3.5) **Select the disk to install/store the Unraid Server OS files to from the drop down menu of "Disk 1"**
-<br> ![3.5](https://i.ibb.co/pychKXD/01.png)
+<br> 
+
+https://user-images.githubusercontent.com/67184728/198005164-c41b086b-a549-44b7-b5cb-8c7ea150b4fa.mov
+
+
 - 3.6) **Go the bottom of the page after selecting your disk in Disk 1 drop down menu, and click on "START" button**
-<br> ![3.6](https://i.ibb.co/NndYd5w/02.png)
+<br> 
+
+https://user-images.githubusercontent.com/67184728/198005357-032c4eaf-60d6-4144-9869-c6b75a1d92d4.mov
+
+
 - 3.7) **(It will then prompt you around the same time to confirm that you want to Format the drive, make sure to agree to such!)**
 - 3.8) **After it's finished, you're going to click on the clickable text that says "Flash"** 
-<br> ![3.8](https://i.ibb.co/wBd6p1m/03.png)
+<br> 
+
+https://user-images.githubusercontent.com/67184728/198005411-4ca58f4e-b4ff-41ef-9420-d36dc3ef5b59.mov
+
+
 - 3.9) **In the page that loads afterwards, scroll down to the green text box that's labeled "Unraid OS"**
 <br> ![3.9](https://i.ibb.co/fQjQLQN/04.png)
 - 3.10) **Inside of the green Unraid OS text entry box field you will see** `apend initrd=/bzroot` **We're going to change that to** `append pcie_acs_override=downstream,multifunction video=efifb:off initrd=/bzroot` 
-<br> ![3.10](https://i.ibb.co/JzJhxv8/05.png)
+<br> 
+
+https://user-images.githubusercontent.com/67184728/198005499-5cd2d74c-6982-4162-8591-47b236f48266.mov
+
+
 - 3.11) **Scroll down to the bottom of the page and click the "APPLY" button**
 <br> ![3.11](https://i.ibb.co/wwBTKKD/06.png)
 - 3.12) **Click the button called "MAIN" at the top, and when that page loads, scroll down to the bottom, and click on the REBOOT button**
-<br> ![3.12](https://i.ibb.co/TPP03Vw/07.png)
+<br> 
+
+https://user-images.githubusercontent.com/67184728/198005610-2e741cad-7dbc-4275-8913-48232e5f531b.mov
+
+
 - 3.13) **Once you're booted back up into your Unraid Server OS from your Unraid Server OS USB Key, click on "TOOLS", and then "System Devices"**
-<br> ![3.13](https://i.ibb.co/wcBNDqk/08.png)
+<br> 
+
+https://user-images.githubusercontent.com/67184728/198005734-bb172174-b854-4390-bca5-1110ac1b5520.mov
+
+
 - 3.14) **Once System Devices is loaded, you'll want to make sure to isolate your Unraid USB on it's own USB controller, away from all of the other peripherals. This should be able to be done plug and play without having to reboot, but if it doesn't end up being possible to plug and play refresh the device list for you, then you can shut down and restart between each switching of the port, testing to see which port will allow for the Unraid USB to be isolated by itself. If needed/possible, use a rear lower port. (Feel free to use a USB hub with Unraid USB plugged into it if hot plugging it bare won't detect the USB when doing the process, or when attempting to reboot from Unraid USB)** 
 <br> ![3.14](https://i.ibb.co/2tqmPBB/09.png)
 - 3.15) **Once that has been accomplished, make sure to select the check boxes for your GPU, GPU audio, any potential supported onboard audio chipset (if needed), as well as your network controller (WiFi), and your NVME controller (or if you have two SATA groups, bind the SSD/HDD you want), and hit the "BIND SELECTED TO VFIO AT BOOT" button at the bottom**
 - 3.16) **Once that is done, you will want to go back to the "MAIN" tab and go to the bottom of the page and press the "REBOOT" button.
 - 3.17) **Once you are rebooted into your Unraid Server OS from your Unraid USB again, head to the bottom of the MAIN tab and make sure to press the "START" button to start your array.**
 - 3.18) **After that, we're going to go to "SETTINGS", and then select "Disk Settings"** 
-<br> ![3.18](https://i.ibb.co/Yj5GDG7/10.png)
+<br> 
+
+https://user-images.githubusercontent.com/67184728/198005791-7bef4331-10ec-4434-b690-05e979bfe9c2.mov
+
+
 - 3.19) **Once we're in the Disk Settings page, we're going to change "Enable auto start" to "Yes", then click the "APPLY" button** 
-<br> ![3.19](https://i.ibb.co/9cW1Ltr/11.png)
+<br> 
+
+https://user-images.githubusercontent.com/67184728/198005859-2fb95000-818e-4c16-ac3e-f688ceba477c.mov
+
+
 
 
 ## 4) Setting Up Your macOS VM
