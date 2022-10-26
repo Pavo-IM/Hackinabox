@@ -3,7 +3,7 @@
 
 ## MacOS VM installation using Unraid as host OS
 
-### This guide is for the Unraid user who would like to run macOS in a VM from within Unraid, with hardware passthrough support.
+### This guide is for the computer user who would like to run macOS in a VM from within Unraid, with hardware passthrough support.
 
 <br>There are growing reasons for why one would want to do so, IE:
 
