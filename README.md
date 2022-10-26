@@ -1,10 +1,11 @@
 
 # Hackinabox
 
-## MacOS installation using Unraid
+## MacOS VM installation using Unraid as host OS
 
-### This guide is for the Unraid user who would like to run macOS in a VM from within Unraid.
-There are growing reasons for why one would want to do so, IE:
+### This guide is for the Unraid user who would like to run macOS in a VM from within Unraid, with hardware passthrough support.
+
+<br>There are growing reasons for why one would want to do so, IE:
 
 -  When running macOS bare metal on an AMD cpu, one is required to utilize patches made by AMD-OSX. Hackinabox abrogrates the need to use these patches.
 -  When running macOS on an AMD cpu, one has to use amdfriend to patch binaries for certain apps to run. Hackinabox mitigates this requirement.
