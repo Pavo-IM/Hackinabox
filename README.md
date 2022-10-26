@@ -1,9 +1,9 @@
 
 # Hackinabox
 
-## MacOS installation using UnRaid
+## MacOS installation using Unraid
 
-### This guide is for the UnRAID Server OS user who would like to run macOS from a VM inside of UnRAID Server OS.
+### This guide is for the Unraid user who would like to run macOS in a VM from within Unraid.
 There are growing reasons for why one would want to do so, IE:
 
 -  When running macOS bare metal on an AMD cpu, one is required to utilize patches made by AMD-OSX. Hackinabox abrogrates the need to use these patches.
@@ -27,15 +27,6 @@ There are growing reasons for why one would want to do so, IE:
 - [@Pavo-IM](https://www.github.com/Pavo-IM) (Creator of Original and Main Repository/Contributer to Code & README.md/Maintainer)
 - [@osx86-ijb](https://www.github.com/osx86-ijb) (Creator of modern README.md/Contributor to Code & README.md/Maintainer)
 - [@MattsCreative](https://www.github.com/RyzenDew) (Contributor to Code & README.md/Maintainer)
-
-## Donations
-
-<br>Thank You for reading this guide!
-<br>If you found it helpful, please consider sending us a donation if you're able to.
-<br>Our links to send donations to can be found below:
-<br>
-<br>[osx86-ijb](https://revolut.me/itsjoshuablaine)
-<br>[MattsCreative/RyzenDew](https://www.paypal.com/paypalme/gamedev1909)
 
 ## DISCLAIMER
 
@@ -89,7 +80,7 @@ THIS INFORMATION/RESEARCH HAS BEEN SHARED PURELY FOR EXPERIMENTAL AND RESEARCH P
 - 1.1) **Double check and make sure that you can adhere to the requirements listed above. If so, then proceed to follow the rest of the instructions.**
 - 1.2) [Download Unraid USB Flash Creator for Mac/Windows](https://unraid.net/download)
 - 1.3) **Open/Run the Unraid USB Flash Creator and follow any prompts for entering your password if asked.**
-- 1.4) **Proceed with Section 2 now, and continue the process of creating your Unraid USB.**
+- 1.4) **Proceed with Section 2 of this guide, and continue the process of creating your Unraid USB.**
 
 
 ## 2) Making the Unraid USB:
