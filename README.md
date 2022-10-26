@@ -110,7 +110,7 @@ https://user-images.githubusercontent.com/67184728/198003952-190972d1-ad22-477a-
 ## 3) Setting Up Your Unraid Server OS Host:
 
 - 3.1) **Boot from your Unraid USB**
-- 3.2) **Select the first option To boot Unraid**
+- 3.2) **Select the first option to boot Unraid**
 - 3.3) **Enter the username and password which will be "root"**
 - 3.4) From another device connected to the same network as your booted Unraid Server OS, go to http://tower.local in your Browser of choice
 - 3.5) **Select the disk to install/store the Unraid Server OS files to from the drop down menu of "Disk 1"**
