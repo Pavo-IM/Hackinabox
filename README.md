@@ -88,19 +88,19 @@ THIS INFORMATION/RESEARCH HAS BEEN SHARED PURELY FOR EXPERIMENTAL AND RESEARCH P
 - 2.1) **Under "select version", select "Stable", then Unraid 6.9.2 or whichever the newest version may be for you at your time of reading this guide.** 
 <br> 
 
-https://user-images.githubusercontent.com/67184728/198000718-1ee32a92-6b18-40e8-ad65-2f2d90c94a12.mov
+https://user-images.githubusercontent.com/67184728/198156236-db2e51e9-3bd4-4595-891c-16a8f1520ba6.mp4
 
 
 - 2.2) **Next, we're going to make sure that we click on the "Allow UEFI Boot" checkbox.**
 <br> 
 
-https://user-images.githubusercontent.com/67184728/198000770-5620918f-ec6d-477d-accf-8ae6b5bf9f21.mov
+https://user-images.githubusercontent.com/67184728/198155944-6af6bc2f-e946-4718-a72d-4125400828cf.mp4
 
 
 - 2.3) **Select USB Drive that you want to create as your Unraid USB, and then click on the "Write" button under Write Image**
 <br> 
 
-https://user-images.githubusercontent.com/67184728/198003952-190972d1-ad22-477a-982f-532fc9420d73.mov
+https://user-images.githubusercontent.com/67184728/198157504-60163ad5-a1fb-44f7-8333-b324c92670e3.mp4
 
 
 - 2.4) **Wait for USB Creator to finish creating Unraid USB and then restart machine and attempt to boot from newly created Unraid USB**
@@ -136,7 +136,7 @@ https://user-images.githubusercontent.com/67184728/198150015-6b475616-b2b8-4d3a-
 - 3.10) **Inside of the green Unraid OS text entry box field you will see** `apend initrd=/bzroot` **We're going to change that to** `append pcie_acs_override=downstream,multifunction video=efifb:off initrd=/bzroot` 
 <br> 
 
-https://user-images.githubusercontent.com/67184728/198005499-5cd2d74c-6982-4162-8591-47b236f48266.mov
+https://user-images.githubusercontent.com/67184728/198157641-7816236b-13f6-4fec-ac36-3073dfbd016a.mp4
 
 
 - 3.11) **Scroll down to the bottom of the page and click the "APPLY" button**
