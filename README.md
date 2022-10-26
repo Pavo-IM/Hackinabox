@@ -28,6 +28,14 @@ There are growing reasons for why one would want to do so, IE:
 - [@osx86-ijb](https://www.github.com/osx86-ijb) (Creator of modern README.md/Contributor to Code & README.md/Maintainer)
 - [@MattsCreative](https://www.github.com/RyzenDew) (Contributor to Code & README.md/Maintainer)
 
+## Donations
+
+<br>Thank You for reading this guide!
+<br>If you found it helpful, please consider sending us a donation if you're able to.
+<br>Our links to send donations to can be found below:
+<br>
+<br>[osx86-ijb](https://revolut.me/itsjoshuablaine)
+<br>[MattsCreative/RyzenDew](https://www.paypal.com/paypalme/gamedev1909)
 
 ## DISCLAIMER
 
