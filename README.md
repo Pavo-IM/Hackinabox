@@ -92,7 +92,7 @@ THIS INFORMATION/RESEARCH HAS BEEN SHARED PURELY FOR EXPERIMENTAL AND RESEARCH P
 https://user-images.githubusercontent.com/67184728/198000718-1ee32a92-6b18-40e8-ad65-2f2d90c94a12.mov
 
 
-- 2.2) **Click on "Customize" and check the "Allow UEFI Boot" checkbox**
+- 2.2) **Next, we're going to make sure that we click on the "Allow UEFI Boot" checkbox.**
 <br> 
 
 https://user-images.githubusercontent.com/67184728/198000770-5620918f-ec6d-477d-accf-8ae6b5bf9f21.mov
