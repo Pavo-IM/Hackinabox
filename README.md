@@ -115,20 +115,20 @@ https://user-images.githubusercontent.com/67184728/198003952-190972d1-ad22-477a-
 - 3.5) **Select the disk to install/store the Unraid Server OS files to from the drop down menu of "Disk 1"**
 <br> 
 
-https://user-images.githubusercontent.com/67184728/198005164-c41b086b-a549-44b7-b5cb-8c7ea150b4fa.mov
+https://user-images.githubusercontent.com/67184728/198149890-3da23bca-c436-45fa-9726-a382860e9005.mp4
 
 
 - 3.6) **Go the bottom of the page after selecting your disk in Disk 1 drop down menu, and click on "START" button**
 <br> 
 
-https://user-images.githubusercontent.com/67184728/198005357-032c4eaf-60d6-4144-9869-c6b75a1d92d4.mov
+https://user-images.githubusercontent.com/67184728/198150060-8770b470-4727-4f0e-a088-424d4457c44d.mp4
 
 
 - 3.7) **(It will then prompt you around the same time to confirm that you want to Format the drive, make sure to agree to such!)**
 - 3.8) **After it's finished, you're going to click on the clickable text that says "Flash"** 
 <br> 
 
-https://user-images.githubusercontent.com/67184728/198005411-4ca58f4e-b4ff-41ef-9420-d36dc3ef5b59.mov
+https://user-images.githubusercontent.com/67184728/198150015-6b475616-b2b8-4d3a-ba7b-bc8ef3acb4e2.mp4
 
 
 - 3.9) **In the page that loads afterwards, scroll down to the green text box that's labeled "Unraid OS"**
@@ -144,13 +144,13 @@ https://user-images.githubusercontent.com/67184728/198005499-5cd2d74c-6982-4162-
 - 3.12) **Click the button called "MAIN" at the top, and when that page loads, scroll down to the bottom, and click on the REBOOT button**
 <br> 
 
-https://user-images.githubusercontent.com/67184728/198005610-2e741cad-7dbc-4275-8913-48232e5f531b.mov
+https://user-images.githubusercontent.com/67184728/198150094-00f75a70-935b-4a2a-8f59-69d3f6a352ec.mp4
 
 
 - 3.13) **Once you're booted back up into your Unraid Server OS from your Unraid Server OS USB Key, click on "TOOLS", and then "System Devices"**
 <br> 
 
-https://user-images.githubusercontent.com/67184728/198005734-bb172174-b854-4390-bca5-1110ac1b5520.mov
+https://user-images.githubusercontent.com/67184728/198150143-afab68af-bc41-44a6-9105-e074332e57d3.mp4
 
 
 - 3.14) **Once System Devices is loaded, you'll want to make sure to isolate your Unraid USB on it's own USB controller, away from all of the other peripherals. This should be able to be done plug and play without having to reboot, but if it doesn't end up being possible to plug and play refresh the device list for you, then you can shut down and restart between each switching of the port, testing to see which port will allow for the Unraid USB to be isolated by itself. If needed/possible, use a rear lower port. (Feel free to use a USB hub with Unraid USB plugged into it if hot plugging it bare won't detect the USB when doing the process, or when attempting to reboot from Unraid USB)** 
@@ -161,7 +161,7 @@ https://user-images.githubusercontent.com/67184728/198005734-bb172174-b854-4390-
 - 3.18) **After that, we're going to go to "SETTINGS", and then select "Disk Settings"** 
 <br> 
 
-https://user-images.githubusercontent.com/67184728/198005791-7bef4331-10ec-4434-b690-05e979bfe9c2.mov
+https://user-images.githubusercontent.com/67184728/198150182-a571460f-b46b-452d-a37e-7c40439c389f.mp4
 
 
 - 3.19) **Once we're in the Disk Settings page, we're going to change "Enable auto start" to "Yes", then click the "APPLY" button** 
