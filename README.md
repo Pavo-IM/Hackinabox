@@ -64,9 +64,10 @@ THIS INFORMATION/RESEARCH HAS BEEN SHARED PURELY FOR EXPERIMENTAL AND RESEARCH P
 - Any computer running UnRAID Server OS (AMD *OR* Intel, as the OpenCore config settings and XML will work for both) 
 - A USB Flash Key larger than 1GB, no larger than 32GB (PS: It will need to be left inserted at all times, as this is required by UnRaid Server OS)
 - [The Unraid USB Flash Creator application to properly create your UnRaid Server USB key that your machine will be booted from every time.](https://unraid.net/download)
-- A dedicated drive for the UnRaid Server OS (SSD?)
+- A dedicated drive for the UnRaid Server OS to use an "Array Device". (SSD is preferrable!)
 - One SATA controller that you don't mind having allocated to the Host OS, as it will be unusable by the VM.
 - One USB controller that you don't mind having allocated to the Host OS, as it will be unusable by the VM.
+- macOS compatible hardware to be used in macOS via hardware passthrough. (GPU, etcetera)
 - [A copy of the IORegistryExplorer application for macOS that can be obtained from here:](https://github.com/khronokernel/IORegistryClone)
 - [A copy of the MacIASL application that can be obtained from here:](https://github.com/acidanthera/MaciASL)
 - An ability to follow detailed instructions down to a meticulously accurate and minute level.
