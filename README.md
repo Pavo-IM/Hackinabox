@@ -3,13 +3,13 @@
 
 ## MacOS VM installation using Unraid as host OS
 
-### This guide is for the computer user who would like to run macOS in a VM from within Unraid, with passthrough support for hardware that is supported in macOS.
+### This guide is for the computer user who would like to run macOS in a VM from within Unraid Server OS.
 
 <br>There are growing reasons for why one would want to do so, IE:
 
 -  When running macOS bare metal on an AMD cpu, one is required to utilize patches made by AMD-OSX. Hackinabox abrogrates the need to use these patches.
 -  When running macOS on an AMD cpu, one has to use amdfriend to patch binaries for certain apps to run. Hackinabox mitigates this requirement.
--  Full performance/utilization of supported GPU.
+-  Full performance/utilization of supported GPU passed through to VM.
 -  Ethernet works OOB via setting up VirtIO networking device in VM settings, (no need to passthrough physical Ethernet controller).
 -  No hassle updating.
 -  macOS 13 Ventura compatibility
