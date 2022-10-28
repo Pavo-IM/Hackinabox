@@ -156,7 +156,7 @@ https://user-images.githubusercontent.com/67184728/198150143-afab68af-bc41-44a6-
 
 
 - 3.14) **Once System Devices is loaded, you'll want to make sure to isolate your Unraid USB on it's own USB controller, away from all of the other peripherals. This should be able to be done plug and play without having to reboot, but if it doesn't end up being possible to plug and play refresh the device list for you, then you can shut down and restart between each switching of the port, testing to see which port will allow for the Unraid USB to be isolated by itself. If needed/possible, use a rear lower port. (Feel free to use a USB hub with Unraid USB plugged into it if hot plugging it bare won't detect the USB when doing the process, or when attempting to reboot from Unraid USB)** 
-<br> ![3.14](https://i.ibb.co/2tqmPBB/09.png)
+<br> ![3.14](https://i.imgur.com/73QioAa.png)
 - 3.15) **Once that has been accomplished, make sure to select the check boxes for your GPU, GPU audio, any potential supported onboard audio chipset (if needed), as well as your network controller (WiFi), and your NVME controller (or if you have two SATA groups, bind the SSD/HDD you want), and hit the "BIND SELECTED TO VFIO AT BOOT" button at the bottom**
 - 3.16) **Once that is done, you will want to go back to the "MAIN" tab and go to the bottom of the page and press the "REBOOT" button.
 - 3.17) **Once you are rebooted into your Unraid Server OS from your Unraid USB again, head to the bottom of the MAIN tab and make sure to press the "START" button to start your array.**
