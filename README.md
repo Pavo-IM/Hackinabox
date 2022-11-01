@@ -57,7 +57,7 @@ THIS INFORMATION/RESEARCH HAS BEEN SHARED PURELY FOR EXPERIMENTAL AND RESEARCH P
 <br>- [8.7) Why am I getting "VM Creation Error - XML error: Attempted double use of PCI address 0000:03:00.0"?](#7-why-am-i-getting-vm-creation-error---xml-error-attempted-double-use-of-pci-address-000003000)
 <br>- [8.8) If I don't have an existing macOS installation to use to create an offline installer of macOS, yet am already booted into unRAID, what can I do to achieve such?](#8-if-i-dont-have-an-existing-macos-installation-to-use-to-create-an-offline-installer-of-macos-yet-am-already-booted-into-unraid-what-can-i-do-to-achieve-such)
 <br>- [8.9) If my VM freezes and I cannot restart it properly from within the unRAID backend and am faced with the choices of hard restarting my computer, what can/should I do?](#9-if-my-vm-freezes-and-i-cannot-restart-it-properly-from-within-the-unraid-backend-and-am-faced-with-the-choices-of-hard-restarting-my-computer-what-canshould-i-do)
-
+<br>[9) Support](#support)
 
 ## Requirements
 
