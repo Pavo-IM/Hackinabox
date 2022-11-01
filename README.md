@@ -179,30 +179,72 @@ https://user-images.githubusercontent.com/67184728/198005859-2fb95000-818e-4c16-
 # !! **DISCLAIMER: YOUR LINE COUNT PLACINGS MIGHT NOT BE THE SAME AS IN THE GUIDE DUE TO ANY POTENTIAL DIFFERENCES IN HARDWARE CONFIGURATION, TAKE NOTE OF THIS AND BE ON THE LOOK OUT FOR THE DIFFERENCES** !!
 
 - 4.1) **Now we're going to head to the "VMS" tab of the backend and click on the "ADD VM" button**
-<br> ![4.1](https://i.ibb.co/hLhL1jR/12.png)
+<br> 
+
+https://user-images.githubusercontent.com/67184728/199256049-12d22033-fceb-4fcf-a3da-100dc5250d62.mov
+
+
 - 4.2) **When the Add VM page loads, we're going to select FreeBSD** 
-<br> ![4.2](https://i.ibb.co/NCYytQv/13.png)
-- 4.3) **Once loaded, click "EDIT" button load the edit page and edit VM settings. When that next page loads, go to the "Logical CPUs" section, and select every other CPU thread combination except for CPU 0 / X (where as X is the variable for your specific core / thread count). After that, make sure to set your Max Memory. Do keep in mind that Unraid needs 4GB of RAM, so anything 4GB less than your Maximum installed RAM should be sufficient if you don't need to allocate more elsewhere.** 
-<br> ![4.3](https://i.imgur.com/mlIPu42.png)
+<br> 
+
+https://user-images.githubusercontent.com/67184728/199256099-1ac0904d-06be-46e2-b848-cdada1c9f023.mov
+
+
+- 4.3) **Once loaded, click "EDIT" button load the edit page and edit VM settings. When that next page loads, go to the "Logical CPUs" section, and select every other CPU thread combination except for CPU 0 / X (where as X is the variable for your specific core / thread count). After that, make sure to set your Max Memory. Do keep in mind that Unraid needs 4GB of RAM, so anything 4GB less than your Maximum installed RAM should be sufficient if you don't need to allocate more elsewhere. Remember to select “Q35-6.1” from the drop down selection list for “Machine” (this isn’t shown in the video below, but is still necessary!)** 
+<br> 
+
+https://user-images.githubusercontent.com/67184728/199256143-1f795f1e-9119-4941-9bd3-430f589ffd1f.mov
+
+
 - 4.4) **Next, scroll down on the page and select "3.0 qemu XHCI" from the drop down menu for USB Controller. This is really personal preference regarding the selection of USB Controller, and doesn't really matter since macOS doesn't support any of them. Then make sure to select your GPU from the Graphics Card drop down menu. Then select your appropriate Audio Chipset from the drop down menu in the selection named Sound Card.** 
-<br> ![4.4](https://i.imgur.com/d0Vm4WW.png)
+<br> 
+
+https://user-images.githubusercontent.com/67184728/199256187-a3b91c7a-03a1-4df9-8bb8-e98ea8a598b3.mov
+
+
 - 4.5) **Make sure that Network Bridge is set to "br0" from the dropdown menu, and Network Model is set to "virtio-net" from the appropriate drop down selection as well. Then place check marks next to the two(or more?) devices in the "Other PCI Devices" section that you want to pass through. Uncheck "Start VM after creation", and then click on the "CREATE" button PS: This is only to be done if the user isn't already passing through, or able to pass through their Ethernet Controller** 
-<br> ![4.5](https://i.imgur.com/8NMBlsN.png)
-- 4.6) **Click on FreeBSD icon, and choose "Edit". In the top right corner when the Edit page loads, you'll see a slider with the words "FORM VIEW" next to it.**  
-<br> ![4.6.1](https://i.ibb.co/4jFdyLP/14-8.png)  
-**Then, click on that to change it to "XML VIEW".**
-<br> ![4.6.2](https://i.ibb.co/t826xfx/14-9.png)
+<br> 
+
+https://user-images.githubusercontent.com/67184728/199256227-74b9d99a-86f6-442f-b339-5661fb188a82.mov
+
+
+- 4.6) **Click on FreeBSD icon, and choose "Edit". In the top right corner when the Edit page loads, you'll see a slider with the words "FORM VIEW" next to it. Then, click on that to change it to "XML VIEW".**  
+<br> 
+
+https://user-images.githubusercontent.com/67184728/199260805-f25efc51-8776-452b-9bb3-2b113fad944e.mov
+
+
 - 4.7) **After the XML view has loaded, we're going to go to line 37 and remove it (the entire line, that is) per what we have selected in the image here. This is done because QEMU's topology isn't read by macOS correctly and would require the topology kernel patch from the AMD kernel patches in order for it to work otherwise**  
-<br> ![4.7](https://i.ibb.co/Qbq5j1R/15.png)
-- 4.8) **Next, we're going to go to line 40 and select the text "utc", and change it to "localtime":**
-<br> ![4.8.1](https://i.ibb.co/xYFgx8D/17.png)
-<br> ![4.8.2](https://i.ibb.co/5ry53yH/18.png)
-- 4.9) **Scroll down to what should be line 63 and copy multifunction =‘on’, and paste it at the end of line 125 as hightlighted and shown in the corresponding picture below:**
-<br> ![4.9.1](https://i.ibb.co/GTCJncP/19.png)
-- 4.10) **Head to lines 130 and 132 as shown in the picture below and change the last zero in function='0x0' to function='0x1' to match each other since they need to be changed, also.** 
-<br> ![4.9.2](https://i.ibb.co/Q6QGTQ3/20.png)
-- 4.11) **Do make sure at this time to go ahead and change the `bus=0x4` to `bus=0x3` on both lines 125 and 132 as well (lines can be seen in the image above).**
-- 4.12) **Do note as well that steps number 9 and number 10 are done in efforts of making your GPU and GPU audio device be seen to macOS accordingly. Therefore, in order to achieve such, we change our GPU audio device's logical address to match that of the GPU's. Do note that the `source` part of the devices does not change, only the logical address under the source.**
+<br> 
+
+https://user-images.githubusercontent.com/67184728/199260951-bb050823-f3a3-47a5-bd77-5380b89a8776.mov
+
+
+- 4.8) **Next, we're going to go to line 40 and select the text ``utc``, and change it to ``localtime``:**
+<br> 
+
+https://user-images.githubusercontent.com/67184728/199261008-daaf98bb-edf2-460a-a09d-6720563d74fd.mov
+
+
+- 4.9) **Scroll down to what should be line 63 and copy ``multifunction =‘on’``.**
+<br> 
+
+https://user-images.githubusercontent.com/67184728/199261077-55b1900f-30d6-4499-ad06-7f9af89ee203.mov
+
+
+- 4.10) **Head to lines 130 and 132 as shown in the video and change the last zero in ``function='0x0'`` to ``function='0x1'`` to match each other since they need to be changed, also. After doing this, we're going to insert a space and paste the ``multifunction ='on'`` that we copied in the previous step.** 
+<br> 
+
+https://user-images.githubusercontent.com/67184728/199261436-3adb9436-88d9-4d99-b747-b5986ff587e6.mov
+
+
+- 4.11) **Do make sure at this time to go ahead and change the `bus=0x4` to `bus=0x3` on the line for HDMI audio in order to have it match the same bus that the GPU is located on.**
+<br> 
+
+https://user-images.githubusercontent.com/67184728/199261992-4571eed0-b8d8-4e68-a1a9-8d25d5ee9f3f.mov
+
+
+- 4.12) **ATTENTION: Section 4.12 is listed here to explain in further detail that Section 4.11 above is done to make your GPU and GPU audio device be seen in the macOS VM and work correctly. Therefore, in order to achieve such, we changed our GPU audio device's logical address in this XML file to match that of the GPU's. Do note that the `source` part of the  devices does not change, only the logical address under the source.**
 - 4.13) **Head to the bottom of the document and click at the end of ```devices``` and hit enter/return to make a new line and paste this:**  
 ```
     <qemu:commandline>
@@ -219,7 +261,7 @@ https://user-images.githubusercontent.com/67184728/198005859-2fb95000-818e-4c16-
 
 ## 5) Making the Recovery USB on Linux
 
-- 5.1) [Head to the OpenCore Install Guide page for making a macOS Installer USB via Linux to continue making your USB, and once finished, return here to continue](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/linux-install.html)
+- 5.1) [Head to the relevant Dortania OpenCore Install Guide page for making a macOS Installer USB via Linux to continue making your USB, and once finished, return here to continue](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/linux-install.html)
 
 
 ## 6) Obtaining and placing the EFI on the macOS USB Installer
