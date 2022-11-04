@@ -211,7 +211,7 @@ https://user-images.githubusercontent.com/67184728/198005859-2fb95000-818e-4c16-
     <qemu:arg value='-device'/>
     <qemu:arg value='isa-applesmc,osk=ourhardworkbythesewordsguardedpleasedontsteal(c)AppleComputerInc'/>
     <qemu:arg value='-cpu'/>
-    <qemu:arg value='Cascadelake-Server,,vendor=GenuineIntel'/>
+    <qemu:arg value='Cascadelake-Server,vendor=GenuineIntel'/>
   </qemu:commandline>
 ```
 - 4.14) **After pasting in the required text into new line, please hit the "UPDATE" button. Now after hitting update button we can shut down and reboot into our Linux Live Distro of choice and continue with making the macOS Installer, if one already doesn't have one made previously.**
