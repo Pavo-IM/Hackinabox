@@ -140,7 +140,7 @@ https://user-images.githubusercontent.com/67184728/198150015-6b475616-b2b8-4d3a-
 
 - 3.9) **In the page that loads afterwards, scroll down to the green text box that's labeled "Unraid OS"**
 <br> ![3.9](https://i.ibb.co/fQjQLQN/04.png)
-- 3.10) **Inside of the green Unraid OS text entry box field you will see** `apend initrd=/bzroot` **We're going to change that to** `append pcie_acs_override=downstream,multifunction video=efifb:off initrd=/bzroot` 
+- 3.10) **Inside of the green Unraid OS text entry box field you will see** `append initrd=/bzroot` **We're going to change that to** `append pcie_acs_override=downstream,multifunction video=efifb:off initrd=/bzroot` 
 <br> 
 
 https://user-images.githubusercontent.com/67184728/198157641-7816236b-13f6-4fec-ac36-3073dfbd016a.mp4
