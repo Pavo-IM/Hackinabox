@@ -22,11 +22,11 @@
  - [Dortania Team for the OpenCore Install Guide](https://dortania.github.io/OpenCore-Install-Guide/)
 
 
-## Authors of / Contributors to Guide / Repo Maintainers
+## Authors of Guide / Code Contributors / Repo Maintainers
 
-- [@Pavo-IM](https://www.github.com/Pavo-IM) (Creator of Original and Main Repository/Contributer to Code & README.md/Maintainer)
-- [@osx86-ijb](https://www.github.com/osx86-ijb) (Creator of modern README.md/Contributor to Code & README.md/Maintainer)
-- [@MattsCreative](https://www.github.com/RyzenDew) (Contributor to Code & README.md/Maintainer)
+- [@Pavo-IM](https://www.github.com/Pavo-IM) (Creator of Original Repository / Code Contributor & README.md / Maintainer)
+- [@osx86-ijb](https://www.github.com/osx86-ijb) (Creator of Modern README.md / Code Contributor & README.md / Maintainer)
+- [@MattsCreative](https://www.github.com/RyzenDew) (Code Contributor & README.md / Maintainer)
 
 
 ## DISCLAIMER
