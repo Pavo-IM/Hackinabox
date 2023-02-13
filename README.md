@@ -3,12 +3,12 @@
 
 ## MacOS VM installation using Unraid as host OS
 
-### This guide is for the computer user who would like to run macOS in a VM from within Unraid Server OS.
+### This guide is for the computer user who would like to run macOS 12 Monterey (or newer) as a VM from within Unraid Server OS.
 
-<br>There are growing reasons for why one would want to do so, IE:
+###There are growing reasons for why someone would want to do so, for example:
 
--  When running macOS bare metal on an AMD cpu, one is required to utilize patches made by AMD-OSX. Hackinabox abrogrates the need to use these patches.
--  When running macOS on an AMD cpu, one has to use amdfriend to patch binaries for certain apps to run. Hackinabox mitigates this requirement.
+-  When running macOS bare metal on an AMD cpu, a user is required to utilize patches made by AMD-OSX. Hackinabox abrogrates the need to use these patches.
+-  When running macOS on an AMD cpu, a user has to use amdfriend to patch binaries for certain apps to run. Hackinabox mitigates this requirement.
 -  Full performance/utilization of supported GPU passed through to VM.
 -  Ethernet works OOB via setting up VirtIO networking device in VM settings, (no need to passthrough physical Ethernet controller).
 -  No hassle updating.
@@ -21,17 +21,15 @@
  - [AcidAnthera, and the OpenCore Bootloader team](https://github.com/acidanthera/OpenCorePkg)
  - [Dortania Team for the OpenCore Install Guide](https://dortania.github.io/OpenCore-Install-Guide/)
 
-
 ## Authors of Guide / Code Contributors / Repo Maintainers
 
-- [@Pavo-IM](https://www.github.com/Pavo-IM) (Creator of Original Repository / Code Contributor & README.md / Maintainer)
-- [@osx86-ijb](https://www.github.com/osx86-ijb) (Creator of Modern README.md / Code Contributor & README.md / Maintainer)
-- [@MattsCreative](https://www.github.com/RyzenDew) (Code Contributor & README.md / Maintainer)
-
+- [@Pavo-IM](https://www.github.com/Pavo-IM) (Creator of Original Repository / Code Contributor / README.md maintainer)
+- [@osx86-ijb](https://www.github.com/osx86-ijb) (Creator of Modern README.md / Code Contributor / README.md maintainer)
+- [@MattsCreative](https://www.github.com/RyzenDew) (Code Contributor / README.md maintainer)
 
 ## DISCLAIMER
 
-THIS INFORMATION/RESEARCH HAS BEEN SHARED PURELY FOR EXPERIMENTAL AND RESEARCH PURPOSES. IT IS IN NO WAY MEANT TO PROMOTE THE CIRCUMVENTION OF ANYTHING THAT BELONGS TO AND/OR ANYTHING THAT IS THE CREATION/PRIVATE PROPERTY OF ANY CORPORATE ENTITY. THE INFORMATION THAT IS DOCUMENTED AND TRANSCRIBED HERE IS PURELY FOR EDUCATIONAL PURPOSES, AND PROOF OF CONCEPT. SHOULD YOU (OR ANYONE ELSE) CHOOSE TO UTILIZE THE INFORMATION THAT YOU'VE OBTAINED FROM THIS REPOSITORY AND THAT IS WRITTEN HERE IN ANY WAY, KNOW THAT THIS DISCLAIMER SERVES AS A LEGAL PROTECTION TO US AS THE CODE REPOSITORY CREATORS/MAINTAINERS, AND THAT WE ABSOLVE OURSELVES AS SUCH FROM ANY AND ALL RESPONSIBILITIES OR SITUATIONS THAT MIGHT ARISE FROM YOUR CHOOSING TO HAVE UTILIZED ANYTHING DISCUSSED IN THIS CODE REPOSITORY (LEGAL OR OTHERWISE).
+#####THIS INFORMATION/RESEARCH HAS BEEN SHARED PURELY FOR EXPERIMENTAL AND RESEARCH PURPOSES. IT IS IN NO WAY MEANT TO PROMOTE THE CIRCUMVENTION OF ANYTHING THAT BELONGS TO AND/OR ANYTHING THAT IS THE CREATION/PRIVATE PROPERTY OF ANY CORPORATE ENTITY. THE INFORMATION THAT IS DOCUMENTED AND TRANSCRIBED HERE IS PURELY FOR EDUCATIONAL PURPOSES, AND PROOF OF CONCEPT. SHOULD YOU (OR ANYONE ELSE) CHOOSE TO UTILIZE THE INFORMATION THAT YOU'VE OBTAINED FROM THIS REPOSITORY AND THAT IS WRITTEN HERE IN ANY WAY, KNOW THAT THIS DISCLAIMER SERVES AS A LEGAL PROTECTION TO US AS THE CODE REPOSITORY CREATORS/MAINTAINERS, AND THAT WE ABSOLVE OURSELVES AS SUCH FROM ANY AND ALL RESPONSIBILITIES OR SITUATIONS THAT MIGHT ARISE FROM YOUR CHOOSING TO HAVE UTILIZED ANYTHING DISCUSSED IN THIS CODE REPOSITORY (LEGAL OR OTHERWISE).
 
 
 #### Repository Hit Counter
@@ -66,12 +64,12 @@ THIS INFORMATION/RESEARCH HAS BEEN SHARED PURELY FOR EXPERIMENTAL AND RESEARCH P
 
 ## Requirements
 
-- Any computer running UnRAID Server OS (AMD *OR* Intel, as the OpenCore config settings and XML will work for both) 
+- Any computer running UnRAID Server OS. This *technically* will work for AMD *OR* Intel, as the OpenCore config settings and XML will work for both (just bear in mind that there will need to be modifications done to the XML file for it to work properly on Intel, and that won't be discussed here in greater detail for the time being, however that might change at a later date)
 - A USB Flash Key larger than 1GB, no larger than 32GB (PS: It will need to be left inserted at all times, as this is required by UnRaid Server OS)
 - [The Unraid USB Flash Creator application to properly create your UnRaid Server USB key that your machine will be booted from every time.](https://unraid.net/download)
 - A dedicated drive for the UnRaid Server OS to use an "Array Device". (SSD is preferrable!)
-- One SATA controller that you don't mind having allocated to the Host OS, as it will be unusable by the VM.
-- One USB controller that you don't mind having allocated to the Host OS, as it will be unusable by the VM.
+- 1 SATA controller that you don't mind having allocated to the Host OS, as it will be unusable by the VM.
+- 1 USB controller that you don't mind having allocated to the Host OS, as it will be unusable by the VM.
 - macOS compatible hardware to be used in macOS via hardware passthrough. (GPU, etcetera)
 - [A copy of the IORegistryExplorer application for macOS that can be obtained from here:](https://github.com/khronokernel/IORegistryClone)
 - [A copy of the MacIASL application that can be obtained from here:](https://github.com/acidanthera/MaciASL)
@@ -261,7 +259,7 @@ https://user-images.githubusercontent.com/67184728/199261992-4571eed0-b8d8-4e68-
     <qemu:arg value='Cascadelake-Server,vendor=GenuineIntel'/>
   </qemu:commandline>
 ```
-- 4.14) **After pasting in the required text into new line, please hit the "UPDATE" button. Now after hitting update button we can shut down and reboot into our Linux Live Distro of choice and continue with making the macOS Installer, if one already doesn't have one made previously.**
+- 4.14) **After pasting in the required text into new line, please hit the "UPDATE" button. Now after hitting update button we can shut down and reboot into our Linux Live Distro of choice and continue with making the macOS Installer, if you haven't done so previously.**
 
 
 ## 5) Making the Recovery USB on Linux
@@ -271,7 +269,7 @@ https://user-images.githubusercontent.com/67184728/199261992-4571eed0-b8d8-4e68-
 
 ## 6) Obtaining and placing the EFI on the macOS USB Installer
 
-- 6.1) **So after you've made your macOS Installer USB, please follow the OpenCore Install Guide part of their guide where one creates the OpenCore USB and places the needed files on one's USB installer EFI/ESP partition. After doing so and making sure that has been successfully done, then apply/copy/merge the OpenCore folder downloaded from this repository to your newly created macOS USB Installer's OpenCore EFI/ESP partition, making sure to MERGE and not OVERWRITE, AND to be ever mindful of the structing of both files and folder hierarchies.**
+- 6.1) **So after you've made your macOS Installer USB, please follow and refer to the part of the OpenCore Install Guide guide where you create the OpenCore USB and place the needed files on your USB installer EFI/ESP partition. After doing so and making sure that has been done correctly, apply/copy/merge the OpenCore folder downloaded from this repository to your newly created macOS USB Installer's OpenCore EFI/ESP partition, making sure to MERGE and not OVERWRITE, AND to be ever mindful of the structing of both files and folder hierarchies. You can also choose to create your own config.plist from following the OpenCore Install Guide, and then diffing the two and making the proper adjustments that way, if that's your preferred way of doing things, however it is preferred to just grab the one from the repo and make any needed adjustments that way.**
 
 
 ## 7) Installation of macOS from within your booted VM
@@ -290,11 +288,11 @@ https://user-images.githubusercontent.com/67184728/199261992-4571eed0-b8d8-4e68-
 - 8.4) **Copy the "EFI" folder on the root of the macOS Installer USB to the root of the installed macOS drive.**
 - 8.5) **Next, we're going to want to set up our hardware via inputting the correct information and values into the correct locations using both IORegistryExplorer to obtain the appropriate Address locations and naming, and MaciASL to edit the SSDT files and place in our hardware's corresponding information. Remember to test your changes non destructively so you don't bork your EFI, and have a working backup EFI to boot from!**
 - 8.6) **Mount your installed macOS EFI/ESP partiton again using EFI Agent.**
-- 8.7) **Obtain and open IORegistryExplorer if you haven't already. (Preferrably the newest one if one has an Apple Developer account and it's possible, although any version of at least 2.x should suffice.)**
+- 8.7) **Obtain and open IORegistryExplorer if you haven't already. (Preferrably the newest version if one has an Apple Developer account, although any version of at least 2.x should suffice.)**
 - 8.8) **Obtain and open MaciASL if you haven't already.(Preferrably the version from Acidanthera's GitHub repo.)**
 - 8.9) **Load each of the SSDT's in MaciASL, working on them one at a time, replacing the information per your own hardwares addresses and devices names, so as not to convolute the process.**
 - 8.10) **In each loaded SSDT, look for the corresponding Address and Device Name, and copy both sets of information to the corresponding SSDT that you are working on. (See below in Section #9 for SSDT Setup Examples)**
-- 8.11) **After all have been replaced, you should be good to go, so you'll restart your VM and UnRaid Server OS again, if need be. (For Example: if one is using a Navi based GPU, as there's a Reset Bug that exists. Plus it's just a good practice to do so, anyway).**
+- 8.11) **After all have been replaced, you should be good to go, so you'll want to go ahead and shut down your VM and restart your UnRaid Server OS again, if need be. (For Example: if one is using a Navi based GPU, there's a Vendor Reset Bug that exists. This can be mitigated by using the Vendor Reset Bug fix plugin that's availble via the appropriate location).**
 - 8.12) **Go back into your UnRaid Server VM's, and start the macOS VM.**
 - 8.13) **Boot from your installed version of macOS without having to use the Installer USB, and profit!**
 
@@ -320,7 +318,7 @@ https://user-images.githubusercontent.com/67184728/199261992-4571eed0-b8d8-4e68-
 You can begin by making sure that you can adhere to the requirements outlined in this guide
 
 ### 2) This is great, but UnRaid says that it costs money on the website?
-That is correct, but as with all good things in life, there is a 30 day free trial, and the cheapest version costs a one time $60 USD payment. Gotta pay to play the game, right?
+That is correct, however there is a 30 day free trial, and the cheapest version costs $60 USD. Gotta pay to play the game, right?
 
 ### 3) How do I access this server once I boot it up, and what's the deal with me not being able to boot into GUI mode?
 In order to access your UnRaid Server OS page for the UnRaid server via tower.local (default name) or the IP address given by your network, you must connect to such from a browser on another device attached to the same network
@@ -329,10 +327,10 @@ In order to access your UnRaid Server OS page for the UnRaid server via tower.lo
 Due to requirements from the creators of UnRaid, the USB boot key created to boot UnRaid the first time around must be both booted from every time, and left inserted in the USB port at all times
 
 ### 5) Why can't I access some devices attached to my SATA controllers?
-Per how UnRaid operates, one SATA controller must be allocated to the Host OS, thereby making it unsuable by a VM
+Per how UnRaid operates, 1 SATA controller must be allocated to the Host OS, thereby making it unsuable by a VM
 
 ### 6) Why don't some of my attached USB devices work?
-Per how UnRaid operates, one USB controller must be allocated to the Host OS, thereby making it unusable by a VM
+Per how UnRaid operates, 1 USB controller must be allocated to the Host OS, thereby making it unusable by a VM
 
 ### 7) Why am I getting "VM Creation Error - XML error: Attempted double use of PCI address 0000:03:00.0"?
 If you're seeing this error, maybe with a different number in the set of numbers as well, it's because function is set on the incorrect line, and bus might be set incorrectly as well. Double check your double check, and set them to the appropriate correct lines.
@@ -342,7 +340,7 @@ If you're seeing this error, maybe with a different number in the set of numbers
 
 ### 9) If my VM freezes and I cannot restart it properly from within the unRAID backend and am faced with the choices of hard restarting my computer, what can/should I do?
 
-*Forcefully restarting the machine and or hard resetting your machine and not choosing to shut down using the option to do so in the unRAID backend can result in data corruption, and the potential need to remake the unRAID USB drive. At all costs, one should always make sure to use the SHUTDOWN button within the unRAID backend to shutdown your computer, instead of hard restarting. It also would be wise to make sure to have a 1/1 clone or backup of your unRAID installation, just in case the need should arise.*
+*Forcefully restarting the machine and or hard resetting your machine and not choosing to shut down using the option to do so in the unRAID backend can result in data corruption, and the potential need to remake the unRAID USB drive. At all costs, you should always make sure to use the SHUTDOWN button within the unRAID backend to shutdown your computer, instead of hard restarting. It also would be wise to make sure to have a 1/1 clone or backup of your unRAID installation, just in case the need should arise.*
 
 *If you find yourself needing to hard restart your machine, there is a potential that the VM's tab will not be present when you go to look for it. If that ends up being the case/situation for you, just re-enable it from the appropriate location nested within Settings.*
   
