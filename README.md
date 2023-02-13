@@ -264,12 +264,12 @@ https://user-images.githubusercontent.com/67184728/199261992-4571eed0-b8d8-4e68-
 
 ### 5) Making the Recovery based macOS Installer USB
 
-- 5.1) [Navigate to the appropriate/relevant section of the Dortania OpenCore Install Guide for creating a macOS Installer USB via Linux (or the OS of your choosing) to proceed with creating/making your macOS USB installation media. Once that's been completed, return here to continue on to the next section of the guide.](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/linux-install.html)
+- 5.1) [Head to the relevant Dortania OpenCore Install Guide page for making a macOS Installer USB via Linux to continue making your USB, and once finished, return here to continue on to the next section of the guide.](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/linux-install.html)
 
 
 ### 6) Obtaining and placing the EFI on the macOS USB Installer
 
-- 6.1) **So after you've made your macOS Installer USB, please follow and refer to the part of the OpenCore Install Guide guide where you create the OpenCore USB and place the needed files on your USB installer EFI/ESP partition. After doing so and making sure that has been done correctly, apply/copy/merge the OpenCore folder downloaded from this repository to your newly created macOS USB Installer's OpenCore EFI/ESP partition, making sure to MERGE and not OVERWRITE, AND to be ever mindful of the structing of both files and folder hierarchies. You can also choose to create your own config.plist from following the OpenCore Install Guide, and then diffing the two and making the proper adjustments that way if that's your preferred way of doing things, however it is preferred to just grab the one from our repo and make any adjustments that way.**
+- 6.1) **So after you've made your macOS Installer USB, please follow the OpenCore Install Guide part of their guide where one creates the OpenCore USB and places the needed files on one's USB installer EFI/ESP partition. After doing so and making sure that has been successfully done, then apply/copy/merge the OpenCore folder downloaded from this repository to your newly created macOS USB Installer's OpenCore EFI/ESP partition, making sure to MERGE and not OVERWRITE, AND to be ever mindful of the structing of both files and folder hierarchies.**
 
 
 ### 7) Installation of macOS from within your booted VM
