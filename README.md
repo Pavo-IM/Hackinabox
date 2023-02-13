@@ -45,7 +45,7 @@
 <br>- [2.2) Making the UnRAID USB](#2-making-the-unraid-usb)
 <br>- [2.3) Setting Up Your Unraid Server OS Host](#3-setting-up-your-unraid-server-os-host)
 <br>- [2.4) Setting up your macOS VM](#4-setting-up-your-macos-vm)
-<br>[3) Making the Recovery USB on Linux](#5-making-the-recovery-usb-on-linux)
+<br>[3) Making the Recovery based macOS Installer USB](#5-making-the-recovery-based-macos-installer-usb)
 <br>[4) Obtaining and placing the EFI on the macOS USB Installer](#6-obtaining-and-placing-the-efi-on-the-macos-usb-installer) 
 <br>[5) Installation of macOS from within your booted VM](#7-installation-of-macos-from-within-your-booted-vm)
 <br>[6) Post-Installation Finalization](#8-post-installation-finalization)
@@ -80,7 +80,7 @@
 
 ## Installation Procedurals
 
-## 1) Getting Started:
+### 1) Getting Started:
 
 - 1.1) **Double check and make sure that you can adhere to the requirements listed above. If so, then proceed to follow the rest of the instructions.**
 - 1.2) [Download Unraid USB Flash Creator for Mac/Windows](https://unraid.net/download)
@@ -88,7 +88,7 @@
 - 1.4) **Proceed with Section 2 of this guide, and continue the process of creating your Unraid USB.**
 
 
-## 2) Making the Unraid USB:
+### 2) Making the Unraid USB:
 
 - 2.1) **Under "select version", select "Stable", then Unraid 6.9.2 or whichever the newest version may be for you at your time of reading this guide.** 
 <br> 
@@ -111,7 +111,7 @@ https://user-images.githubusercontent.com/67184728/198157504-60163ad5-a1fb-44f7-
 - 2.4) **Wait for USB Creator to finish creating Unraid USB and then restart machine and attempt to boot from newly created Unraid USB**
 
 
-## 3) Setting Up Your Unraid Server OS Host:
+### 3) Setting Up Your Unraid Server OS Host:
 
 - 3.1) **Boot from your Unraid USB**
 - 3.2) **Select the first option to boot Unraid**
@@ -177,9 +177,9 @@ https://user-images.githubusercontent.com/67184728/198005859-2fb95000-818e-4c16-
 
 
 
-## 4) Setting Up Your macOS VM
+### 4) Setting Up Your macOS VM
 
-# !! **DISCLAIMER: YOUR LINE COUNT PLACINGS MIGHT NOT BE THE SAME AS IN THE GUIDE DUE TO ANY POTENTIAL DIFFERENCES IN HARDWARE CONFIGURATION, TAKE NOTE OF THIS AND BE ON THE LOOK OUT FOR THE DIFFERENCES** !!
+#### !! **DISCLAIMER: DO TAKE NOTE OF LINE COUNT PLACINGS. YOURS MIGHT NOT BE THE SAME AS IN THE GUIDE DUE TO ANY POTENTIAL DIFFERENCES IN HARDWARE CONFIGURATION. TAKE NOTE OF THIS AND BE ON THE LOOK OUT FOR THE DIFFERENCES** !!
 
 - 4.1) **Now we're going to head to the "VMS" tab of the backend and click on the "ADD VM" button**
 <br> 
@@ -262,17 +262,17 @@ https://user-images.githubusercontent.com/67184728/199261992-4571eed0-b8d8-4e68-
 - 4.14) **After pasting in the required text into new line, please hit the "UPDATE" button. Now after hitting update button we can shut down and reboot into our Linux Live Distro of choice and continue with making the macOS Installer, if you haven't done so previously.**
 
 
-## 5) Making the Recovery USB on Linux
+### 5) Making the Recovery based macOS Installer USB
 
-- 5.1) [Head to the relevant Dortania OpenCore Install Guide page for making a macOS Installer USB via Linux to continue making your USB, and once finished, return here to continue on to the next section of the guide.](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/linux-install.html)
-
-
-## 6) Obtaining and placing the EFI on the macOS USB Installer
-
-- 6.1) **So after you've made your macOS Installer USB, please follow and refer to the part of the OpenCore Install Guide guide where you create the OpenCore USB and place the needed files on your USB installer EFI/ESP partition. After doing so and making sure that has been done correctly, apply/copy/merge the OpenCore folder downloaded from this repository to your newly created macOS USB Installer's OpenCore EFI/ESP partition, making sure to MERGE and not OVERWRITE, AND to be ever mindful of the structing of both files and folder hierarchies. You can also choose to create your own config.plist from following the OpenCore Install Guide, and then diffing the two and making the proper adjustments that way, if that's your preferred way of doing things, however it is preferred to just grab the one from the repo and make any needed adjustments that way.**
+- 5.1) [Navigate to the appropriate/relevant section of the Dortania OpenCore Install Guide for creating a macOS Installer USB via Linux (or the OS of your choosing) to proceed with creating/making your macOS USB installation media. Once that's been completed, return here to continue on to the next section of the guide.](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/linux-install.html)
 
 
-## 7) Installation of macOS from within your booted VM
+### 6) Obtaining and placing the EFI on the macOS USB Installer
+
+- 6.1) **So after you've made your macOS Installer USB, please follow and refer to the part of the OpenCore Install Guide guide where you create the OpenCore USB and place the needed files on your USB installer EFI/ESP partition. After doing so and making sure that has been done correctly, apply/copy/merge the OpenCore folder downloaded from this repository to your newly created macOS USB Installer's OpenCore EFI/ESP partition, making sure to MERGE and not OVERWRITE, AND to be ever mindful of the structing of both files and folder hierarchies. You can also choose to create your own config.plist from following the OpenCore Install Guide, and then diffing the two and making the proper adjustments that way if that's your preferred way of doing things, however it is preferred to just grab the one from our repo and make any adjustments that way.**
+
+
+### 7) Installation of macOS from within your booted VM
 
 - 7.1) **Create your USB based macOS installer as you normally would. I suggest using the ```createinstallmedia``` method on macOS.**
 - 7.2) **Apply the EFI that can be obtained from this repo and in the previous step to the ESP partition of the created USB installer.**
@@ -280,7 +280,7 @@ https://user-images.githubusercontent.com/67184728/199261992-4571eed0-b8d8-4e68-
 - 7.4) **Install your macOS version, making sure to reboot your UnRaid server if necessary along the way, and then boot into it after everything has finished!**
 
 
-## 8) Post Installation Finalization
+### 8) Post Installation Finalization
 
 - 8.1) **Boot into your newly installed VM instance of macOS, yet again.**
 - 8.2) **Once you've gone through the first time user set up and set everything up the way that you prefer and have reached the desktop UI, make sure to obtain and run "EFI Agent" by HeadKaze from their appropriate GitHub repo, making sure to grant it the permissions that it asks for when it asks.**
@@ -297,7 +297,7 @@ https://user-images.githubusercontent.com/67184728/199261992-4571eed0-b8d8-4e68-
 - 8.13) **Boot from your installed version of macOS without having to use the Installer USB, and profit!**
 
 
-## 9) SSDT Setup Examples - Before & After
+### 9) SSDT Setup Examples - Before & After
 
 - 9.1a) **SSDT-ARPT.aml Before Editing:** ![9.1a](https://i.ibb.co/1bVw8XP/SSDT-ARPT-aml.png)  
 - 9.1b) **SSDT-ARPT.aml After Editing:** ![9.1b](https://i.ibb.co/3m211Ft/SSDT-ARPT-aml.png)
@@ -312,39 +312,37 @@ https://user-images.githubusercontent.com/67184728/199261992-4571eed0-b8d8-4e68-
 - 9.6a) **SSDT-XHC.aml Before Editing:** ![9.6a](https://i.ibb.co/cT5RmmF/SSDT-XHC-aml.png)
 
 
-## FAQ
+### FAQ
 
-### 1) This sounds great! Where do I begin?
+#### 1) This sounds great! Where do I begin?
 You can begin by making sure that you can adhere to the requirements outlined in this guide
 
-### 2) This is great, but UnRaid says that it costs money on the website?
+#### 2) This is great, but UnRaid says that it costs money on the website?
 That is correct, however there is a 30 day free trial, and the cheapest version costs $60 USD. Gotta pay to play the game, right?
 
-### 3) How do I access this server once I boot it up, and what's the deal with me not being able to boot into GUI mode?
+#### 3) How do I access this server once I boot it up, and what's the deal with me not being able to boot into GUI mode?
 In order to access your UnRaid Server OS page for the UnRaid server via tower.local (default name) or the IP address given by your network, you must connect to such from a browser on another device attached to the same network
 
-### 4) Why won't my UnRaid installation boot after I install it the first time?
+#### 4) Why won't my UnRaid installation boot after I install it the first time?
 Due to requirements from the creators of UnRaid, the USB boot key created to boot UnRaid the first time around must be both booted from every time, and left inserted in the USB port at all times
 
-### 5) Why can't I access some devices attached to my SATA controllers?
+#### 5) Why can't I access some devices attached to my SATA controllers?
 Per how UnRaid operates, 1 SATA controller must be allocated to the Host OS, thereby making it unsuable by a VM
 
-### 6) Why don't some of my attached USB devices work?
+#### 6) Why don't some of my attached USB devices work?
 Per how UnRaid operates, 1 USB controller must be allocated to the Host OS, thereby making it unusable by a VM
 
-### 7) Why am I getting "VM Creation Error - XML error: Attempted double use of PCI address 0000:03:00.0"?
+#### 7) Why am I getting "VM Creation Error - XML error: Attempted double use of PCI address 0000:03:00.0"?
 If you're seeing this error, maybe with a different number in the set of numbers as well, it's because function is set on the incorrect line, and bus might be set incorrectly as well. Double check your double check, and set them to the appropriate correct lines.
 
-### 8) If I don't have an existing macOS installation to use to create an offline installer of macOS, yet am already booted into unRAID, what can I do to achieve such?
+#### 8) If I don't have an existing macOS installation to use to create an offline installer of macOS, yet am already booted into unRAID, what can I do to achieve such?
 [Use Macinabox from SpaceinvaderOne](https://github.com/SpaceinvaderOne/Macinabox)
 
-### 9) If my VM freezes and I cannot restart it properly from within the unRAID backend and am faced with the choices of hard restarting my computer, what can/should I do?
+#### 9) If my VM freezes and I cannot restart it properly from within the unRAID backend and am faced with the choices of hard restarting my computer, what can/should I do?
 
-*Forcefully restarting the machine and or hard resetting your machine and not choosing to shut down using the option to do so in the unRAID backend can result in data corruption, and the potential need to remake the unRAID USB drive. At all costs, you should always make sure to use the SHUTDOWN button within the unRAID backend to shutdown your computer, instead of hard restarting. It also would be wise to make sure to have a 1/1 clone or backup of your unRAID installation, just in case the need should arise.*
-
-*If you find yourself needing to hard restart your machine, there is a potential that the VM's tab will not be present when you go to look for it. If that ends up being the case/situation for you, just re-enable it from the appropriate location nested within Settings.*
+*Forcefully restarting the machine and or hard resetting your machine and not choosing to shut down using the option to do so in the unRAID backend can result in data corruption, and the potential need to remake the unRAID USB drive. At all costs, you should always make sure to use the SHUTDOWN button within the unRAID backend to shutdown your computer, instead of hard restarting. It also would be wise to make sure to have a 1/1 clone or backup of your unRAID installation, just in case the need should arise. However, if you do find yourself needing to hard restart your machine, there is a potential that the VM's tab will not be present when you go to look for it. If that ends up being the case/situation for you, just re-enable it from the appropriate location nested within Settings.*
   
   
-# Support
+### Support
 
 For support, please join the [Official UnRaid Discord Server](https://discord.gg/unraid) or the [UnRaid Forums](https://forums.unraid.net/).
