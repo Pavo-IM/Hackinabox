@@ -1,19 +1,12 @@
+<div align="center">
+  
+ ![](https://github.com/osx86-ijb/Hackinabox/assets/67184728/84440950-099e-4657-bea0-070f3c3c0140)
+  
+__MacOS VM installation using Unraid as host OS__
 
-# Hackinabox
-
-## MacOS VM installation using Unraid as host OS
-
-### This guide is for the computer user who would like to run macOS 12 Monterey (or newer) as a VM from within Unraid Server OS.
-
-### There are growing reasons for why someone would want to do so, for example:
-
--  When running macOS bare metal on an AMD cpu, a user is required to utilize patches made by AMD-OSX. Hackinabox abrogrates the need to use these patches.
--  When running macOS on an AMD cpu, a user has to use amdfriend to patch binaries for certain apps to run. Hackinabox mitigates this requirement.
--  Full performance/utilization of supported GPU passed through to VM.
--  Ethernet works OOB via setting up VirtIO networking device in VM settings, (no need to passthrough physical Ethernet controller).
--  No hassle updating.
--  macOS 13 Ventura compatibility
-
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fosx86-ijb%2FHackinabox&count_bg=%23000000&title_bg=%234D0000&icon=github.svg&icon_color=%23E7E7E7&title=repo+views&edge_flat=false)](https://github.com/osx86-ijb/Hackinabox)
+</div>  
+  
 ## Acknowledgements
 
  - [Lime Technology](https://twitter.com/limetechnology)
@@ -23,20 +16,27 @@
 
 ## Authors of Guide / Code Contributors / Repo Maintainers
 
-- [@Pavo-IM](https://www.github.com/Pavo-IM) (Creator of Original Repository / Code Contributor / README.md maintainer)
-- [@osx86-ijb](https://www.github.com/osx86-ijb) (Creator of Modern README.md / Code Contributor / README.md maintainer)
-- [@MattsCreative](https://www.github.com/RyzenDew) (Code Contributor / README.md maintainer)
+- [@Pavo-IM](https://www.github.com/Pavo-IM) (Creator of original Repository / Code contributor / README.md maintainer)
+- [@osx86-ijb](https://www.github.com/osx86-ijb) (Creator of modern README.md / Code contributor / README.md maintainer)
+- [@MattsCreative](https://www.github.com/RyzenDew) (Code contributor / README.md contributer)
 
 ## DISCLAIMER
-
+  
 ##### THIS INFORMATION/RESEARCH HAS BEEN SHARED PURELY FOR EXPERIMENTAL AND RESEARCH PURPOSES. IT IS IN NO WAY MEANT TO PROMOTE THE CIRCUMVENTION OF ANYTHING THAT BELONGS TO AND/OR ANYTHING THAT IS THE CREATION/PRIVATE PROPERTY OF ANY CORPORATE ENTITY. THE INFORMATION THAT IS DOCUMENTED AND TRANSCRIBED HERE IS PURELY FOR EDUCATIONAL PURPOSES, AND PROOF OF CONCEPT. SHOULD YOU (OR ANYONE ELSE) CHOOSE TO UTILIZE THE INFORMATION THAT YOU'VE OBTAINED FROM THIS REPOSITORY AND THAT IS WRITTEN HERE IN ANY WAY, KNOW THAT THIS DISCLAIMER SERVES AS A LEGAL PROTECTION TO US AS THE CODE REPOSITORY CREATORS/MAINTAINERS, AND THAT WE ABSOLVE OURSELVES AS SUCH FROM ANY AND ALL RESPONSIBILITIES OR SITUATIONS THAT MIGHT ARISE FROM YOUR CHOOSING TO HAVE UTILIZED ANYTHING DISCUSSED IN THIS CODE REPOSITORY (LEGAL OR OTHERWISE).
 
+### This guide is for the computer user who would like to run macOS 12 Monterey (or newer) as a VM from within Unraid Server OS.
+  
+#### There are growing reasons for why someone would want to do so, for example:
 
-#### Repository Hit Counter
-
-[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fosx86-ijb%2FHackinabox&count_bg=%23000000&title_bg=%234D0000&icon=github.svg&icon_color=%23E7E7E7&title=repo+views&edge_flat=false)](https://github.com/osx86-ijb/Hackinabox)
-
-
+-  When running macOS bare metal on an AMD cpu, a user is required to utilize patches made by AMD-OSX. Hackinabox abrogrates the need to use these patches.
+-  When running macOS on an AMD cpu, a user has to use amdfriend to patch binaries for certain apps to run. Hackinabox mitigates this requirement.
+-  Full performance/utilization of supported GPU passed through to VM.
+-  Ethernet works OOB via setting up VirtIO networking device in VM settings, (no need to passthrough physical Ethernet controller).
+-  No hassle updating.
+-  macOS 13 Ventura compatibility
+-  macOS 14 Sonoma Beta compatibility
+  
+  
 ## TABLE OF CONTENTS
 
 <br>[1) Requirements](#requirements)
