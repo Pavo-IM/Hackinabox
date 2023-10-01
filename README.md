@@ -34,7 +34,7 @@ __MacOS VM installation using Unraid as host OS__
 -  Ethernet works OOB via setting up VirtIO networking device in VM settings, (no need to passthrough physical Ethernet controller).
 -  No hassle updating.
 -  macOS 13 Ventura compatibility
--  macOS 14 Sonoma Beta compatibility
+-  macOS 14 Sonoma compatibility
   
   
 ## TABLE OF CONTENTS
